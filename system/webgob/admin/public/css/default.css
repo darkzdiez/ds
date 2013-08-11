@@ -1,0 +1,476 @@
+body {
+    margin-top: 0px;
+    padding: 0px;
+    background: silver;
+    font: 14px 'trebuchet ms', arial, sans-serif;
+}
+.button_ui {
+    display: inline-block;
+    padding: .4em 1em .4em 20px;
+    text-decoration: none;
+    position: relative;
+    font-weight: normal !important;
+    cursor: pointer;
+}
+.button_ui span.ui-icon {
+    margin: 0 5px 0 0;
+    position: absolute;
+    left: .2em;
+    top: 50%;
+    margin-top: -8px;
+}
+ul, ol, dl, dt, dd {
+    padding: 0px;
+    margin: 0px;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+table, tr, th, td {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none #000;
+    border-collapse:collapse;
+}
+/** Structure */
+.headband{
+    width: 100%;
+    height: 50px;
+    background-color: #ffffff;
+}
+/*#header {
+    padding: 15px 20px;
+    background: #12407f;
+    color: #fff;
+    /*border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 4px solid #436fac;
+    text-align: right;
+}*/
+#header {
+    padding: 0px;
+    /*background: #12407f;*/
+    /*    background: #CC0000;;
+        color: #fff;*/
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 4px solid #436FAC;
+}
+
+.sidebar1 {
+    float: right;
+    width: 20%;
+    background-color: #93A5C4;
+    padding-bottom: 10px;
+}
+.content ul, .content ol {
+    padding: 0 15px 15px 40px;
+}
+dl.nav {
+    list-style: none;
+    /* border-top: 1px solid #666; */
+    margin-bottom: 0px;
+}
+dl.nav dt {
+    border-bottom: 1px solid #666;
+}
+dl.nav a, dl.nav a:visited {
+    padding: 5px 5px 5px 15px;
+    display: block;
+    text-decoration: none;
+    background-color: #8090AB;
+    color: #000;
+}
+dl.nav a:hover, dl.nav a:active, dl.nav a:focus {
+    background-color: #6F7D94;
+    color: #FFF;
+}
+#container {
+    padding: 0px;
+}
+#container_content{
+    background-color: #ffffff;
+    float: right;
+    width: 100%;
+}
+.content {
+    padding: 0px;
+    width: 100%;
+    float: left;
+}
+#footer {
+    text-align: center;
+    background: #12407f;
+    color: #fff;
+    padding: 10px;
+    border-top: 4px solid #436fac;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: relative;
+    clear: both;
+}
+#footer p{
+    margin: 0px;
+}
+#footer a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+/* Links */
+/*#header a {
+    color: #fff;
+    background: #436fac;
+    padding: 4px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bolder;
+}
+#header a:hover {
+    background: #4d8add
+}*/
+.styleLink{
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline-block;
+}
+/** Forms */
+h1 {
+    text-shadow:2px 2px 2px #888888;
+}
+thead th{
+    text-shadow:2px 2px 2px #888888;
+}
+form {
+    font: 100% verdana,arial,sans-serif;
+}
+form fieldset{
+    background: none repeat scroll 0 0 #EEEEEE;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 1px 1px 2px #FFFFFF inset;
+    margin-top: 1em;
+    padding: 1.5em;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+form fieldset legend {
+    background-color: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 3px 3px 15px #BBBBBB;
+    color: #444444;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+fieldset.tblFooters {
+    padding: 0.5em;
+    border-radius: 0 0 4px 5px;
+    border-top: 0 none;
+    clear: both;
+    float: none;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+    text-align: right;
+    background: none repeat scroll 0 0 #D3DCE3;
+}
+form label { 
+    display: block;
+    float: left;
+    padding: 0; 
+    margin: 6px 0 0;
+    text-align: right;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    max-width: 210px;
+}
+form .container_input_label {
+    float: left;
+    width: 430px;
+    height: 32px;
+}
+form .container_input_label p {
+    padding-top: 7px;
+    padding-left: 10px;
+    font-weight: bold;
+    float: left;
+    max-width: 190px;
+}
+form .container_input_label2 p {
+    padding-top: 7px;
+    padding-left: 10px;
+    font-weight: bold;
+    float: left;
+}
+form .container_input_label2 {
+    float: left;
+    width: 100%;
+}
+form input, form select, form textarea, form button {
+    width: auto;
+    float: left;
+    margin: 5px 0 0 10px;
+    border: 1px solid gray;
+    padding: 4px;
+}
+form textarea {
+    width: 630px;
+    height: 47px;
+    resize: none;
+}
+form select {
+    width: 210px;
+}
+form input[type=text]{
+    width: 200px;
+    height: 20px;
+}
+form input[type=file]{
+    width: 200px;
+}
+form input[type=password]{
+    width: 200px;
+    height: 20px;
+}
+form input[type=checkbox] {
+    margin: 0px;
+}
+form input[type=submit]:hover {
+    cursor: pointer;
+    background: silver;
+}
+
+
+form br {clear: left;}
+.previewIMG{
+    height: 80px;
+    width: 80px;
+    margin: 5px 0 0 10px;
+}
+/** CSS Jquery UI **/
+table.table-content { 
+    margin: 1em 0;
+    border-collapse: collapse;
+    width: 99%;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    box-shadow: 1px 1px 4px #888888;
+}
+table.table-content td, table.table-content th {
+    border: 1px solid #eee;
+    padding: .6em 10px;
+    text-align: left;
+}
+table.table-content tbody tr.alt{
+    background-color: #f0f0f0;
+}
+table.table-content tbody tr:hover{
+    background-color: #fff5ba;
+}
+a img {
+    border: none;
+}
+#dialog-confirm, #dialog-message, #dialog-success{
+    display: none;
+}
+fieldset{
+    /**width: 500px;
+    float: left;*/
+}
+.container-buttons{
+    width: 100%;
+    float: left;
+}
+.ui-dialog2{
+    vertical-align: central;
+    text-align: center;
+    background: none !important;
+    border: none !important;
+}
+.buttonbar{
+    padding-left: 5px;
+}
+.mceEditor{
+    margin: 5px 0 0 10px;
+    float: left;
+    width: 630px;
+}
+.styleNAV.ui-icon {
+    background-image: url(jquery/images/ui-icons_ffffff_256x240.png) !important;
+    margin: 0px !important;
+    display: inline-block;
+}
+.timeHeader{
+    font-size: 35px;
+    text-shadow: 2px 2px 2px #888888;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #cd0a0a;
+    height: 50px;
+    vertical-align: middle;
+}
+#header #infoTime{
+    float: left;
+}
+#header #time{
+    text-align: left;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+#header #trascurrido{
+    text-align: left;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ------------------------------------------- -------------------------------*/
+/* el menú en si mismo */
+.mi-menu  {
+/*  border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;*/
+    list-style-type: none;
+    margin: 0 auto; /* si queremos centrarlo */
+    padding: 0;
+    /* la altura y su ancho dependerán de los textos */
+    height: 40px; 
+    width: 100%;
+    /* el color de fondo */
+    background: #12407f;
+    /*                background: -moz-linear-gradient(#555,#222);
+                    background: -webkit-linear-gradient(#555,#222);
+                    background: -o-linear-gradient(#555,#222);
+                    background: -ms-linear-gradient(#555,#222);
+                    background: linear-gradient(#555,#222);*/
+}
+
+/* si es necesario, evitamos que Blogger de problemas con los saltos de línea cuando escribimos el HTML */
+.mi-menu  br { display:none; }
+
+/* cada item del menu */
+.mi-menu  li {
+    display: block;
+    float: left; /* la lista se ve horizontal */
+    height: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.mi-menu li:hover {
+    background: #436FAC;
+}
+.mi-menu li a {
+    border-left: 1px solid #000;
+    border-right: 1px solid #666;
+    color: #FFF;
+    display: block;
+    /*font-family: Tahoma;*/
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0 14px;
+    margin: 6px 0;
+    text-decoration: none;
+    /* animamos el cambio de color de los textos */
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    -ms-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+.mi-menu li span.sub {
+    cursor: pointer;
+    border-left: 1px solid #000;
+    border-right: 1px solid #666;
+    color: #FFF;
+    display: block;
+    /*font-family: Tahoma;*/
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 28px;
+    padding: 0 14px;
+    margin: 6px 0;
+    text-decoration: none;
+    /* animamos el cambio de color de los textos */
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    -ms-transition: color .3s ease-in-out;
+    transition: color .3s ease-in-out;
+}
+/* eliminamos los bordes del primer y el último */
+.mi-menu li:first-child a { border-left: none; }
+.mi-menu li:last-child a{ border-right: none; }
+.mi-menu li li:last-child:hover{
+    border-radius: 0 0 5px 5px;
+}
+/* efecto hover cambia el color */
+.mi-menu li:hover > a { color: #000; }
+.mi-menu li:hover > span.sub { color: #000; }
+
+/* los submenús */
+.mi-menu ul {
+    border-radius: 0 0 5px 5px;
+    left: 0;
+    margin: 0;
+    padding: 0px;
+    opacity: 0; /* no son visibles */
+    position: absolute;
+    top: 40px; /* se ubican debajo del enlace principal */
+    /* el color de fondo */
+    background: #436FAC;
+    background: -moz-linear-gradient(#436FAC,#12407f);
+    background: -webkit-linear-gradient(#436FAC,#12407f);
+    background: -o-linear-gradient(#436FAC,#12407f);
+    background: -ms-linear-gradient(#436FAC,#12407f);
+    background: linear-gradient(#436FAC,#12407f);
+    /* animamos su visibildiad */
+    -moz-transition: opacity .25s ease .1s;
+    -webkit-transition: opacity .25s ease .1s;
+    -o-transition: opacity .25s ease .1s;
+    -ms-transition: opacity .25s ease .1s;
+    transition: opacity .25s ease .1s;
+}
+/* son visibes al poner el cursor encima */
+.mi-menu li:hover > ul {
+    opacity: 1;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* cada un ode los items de los submenús */
+.mi-menu ul li {
+    height: 0; /* no son visibles */
+    overflow: hidden;
+    padding: 0;
+    /* animamos su visibildiad */
+    -moz-transition: height .25s ease .1s;
+    -webkit-transition: height .25s ease .1s;
+    -o-transition: height .25s ease .1s;
+    -ms-transition: height .25s ease .1s;
+    transition: height .25s ease .1s;
+}
+.mi-menu li:hover > ul li {
+    height: 36px; /* los mostramos */
+    overflow: visible;
+    padding: 0;
+}
+.mi-menu ul li a {
+    border: none;
+    border-bottom: 1px solid #111;
+    margin: 0;
+    /* el ancho dependerá de los textos a utilizar */
+    padding: 5px 20px;
+    width: 150px;
+}
+/* el último n otiene un borde */
+.mi-menu ul li:last-child a { border: none; }

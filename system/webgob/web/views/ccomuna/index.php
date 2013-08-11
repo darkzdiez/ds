@@ -1,0 +1,1 @@
+<iframe src="http://yaracuy.gob.ve/ccomuna/consultapublica" width="100%" scrolling="auto" frameborder="0" height="600"></iframe>
