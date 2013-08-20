@@ -90,8 +90,9 @@ class orden extends Controller {
             echo json_encode(array('mensaje'=>'No Hay Datos Para Mostrar'));
         }
     }
-    
-    
+    public function cantidadordenes(){
+        print json_encode($this->model->cantidadordenes());
+    }
     function cargar_responsable(){
         $html="";
         $array = $this->model->selectResponsables();

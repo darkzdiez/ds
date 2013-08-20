@@ -82,7 +82,7 @@ class CoverAdManager extends Controller {
             if ($infoImg[1] != 450) {
                 $error[] = 'Excede la Altura Maxima';
             }
-            if ($infoImg['filesize'] > 200000) {
+            if ($infoImg['filesize'] > 600000) {
                 $error[] = 'Excede el Peso Maximo';
             }
             if (isset($error)) {

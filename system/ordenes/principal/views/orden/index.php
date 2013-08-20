@@ -78,6 +78,12 @@ and also iPads specifically.
 <div class="container">
 	<div class="bs-docs-example">
 		<div class="descriptionForm">ADMINISTRAR ORDENES</div>
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#listado" data-toggle="tab">Listado</a></li>
+			<li><a href="#cantidades" data-toggle="tab">Estadística</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="listado">
 		<?php if (Session::get('role') == 1 or Session::get('role') == 2) { ?>
 		<div>
 			<a href="<?php print PATH_NAV.'orden/crear'; ?>" class="btn"><i class="icon-plus-sign"></i> Agregar</a>
@@ -144,6 +150,24 @@ and also iPads specifically.
 			<ul>
 				
 			</ul>
+		</div>
+		</div>
+		<div class="tab-pane" id="cantidades">
+			<table id="cantidadOrdenes">
+				<thead>
+					<tr>
+						<th>N°</th>
+						<th>RESPONSABLE</th>
+						<th>PENDIENTE</th>
+						<th>EN PROCESO</th>
+						<th>EJECUTADAS</th>
+						<th>TOTAL</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
 		</div>
 	</div>
 </div>

@@ -38,6 +38,7 @@
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Myriad_Pro.font.js"></script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/tiny_mce/jquery.tinymce.js"></script>
     <script type="text/javascript" src="<?php print PATH_FILE; ?>public/js/jquery.cycle.all.js"></script>
+    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/yoxview.js"></script>
     <link rel="shortcut icon" href="<?php print PATH_FILE; ?>public/images/favicon.ico" type="image/ico" />
     <script class="jwPlayer" type="application/swf" src="<?php print DOMAIN; ?>public/js/player.swf"></script>
     <script src="<?php print PATH_FILE; ?>public/js/custom.js"></script>

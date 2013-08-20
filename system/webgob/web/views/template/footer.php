@@ -18,7 +18,7 @@
         <a href="<?php print PATH_NAV; ?>galeria/movie" class="spritex282 spritex282-RINDIENDO-CUENTAS-FOTO-NUEVA" style="float: left;"></a>
     </div>
     <div class="container_col_right">
-        <a href="<?php print PATH_NAV; ?>directorio" class="spritex282 spritex282-directorio" style="float: left;"></a>
+        <a href="<?php print PATH_NAV; ?>directorio2" class="spritex282 spritex282-directorio" style="float: left;"></a>
     </div>
                                 <div id="anuncio_col_der">
                                     <a href="http://www.chavez.org.ve/" class="spritex282 spritex282-BLOG-CHAVEZ"></a>

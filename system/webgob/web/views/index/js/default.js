@@ -49,16 +49,19 @@ $(document).ready(function() {
         url: PATH_NAV + 'coverad/',
         success: function(data) {
             for (var i in data) {
-                $('#slide_ppal').append('<div class="item" style="background-image:url(' + PATH_SYSTEM + data[i].location + data[i].id + '/' + data[i].filename + ')">' +
-                        '<div class="descriptionContainer">' +
+                var slidehtml='<div class="item" style="background-image:url(' + PATH_SYSTEM + data[i].location + data[i].id + '/' + data[i].filename + ')">';
+                if (data[i].dtexto==1) {
+                    slidehtml+='<div class="descriptionContainer">' +
                         '<div class="descripcion">' +
                         '<div class="titulo">' + data[i].toptitle + '</div>' +
                         '<div class="subtitulo">' + data[i].title + '</div>' +
                         '<div class="comentario">' + data[i].description + '.</div>' +
                         '</div>' +
-                        '</div>' +
-                        '<div class="nav_slide"></div>' +
-                        '</div>');
+                        '</div>';
+                };
+                slidehtml+='<div class="nav_slide"></div>' +
+                '</div>';
+                $('#slide_ppal').append(slidehtml);
             }
             $('#slide_ppal').cycle({
                 fx: 'fade',

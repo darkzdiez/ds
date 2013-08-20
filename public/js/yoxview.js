@@ -12,8 +12,8 @@ function LoadScript(url)
 
 var jQueryIsLoaded = typeof jQuery != "undefined";
 
-if (!jQueryIsLoaded)
-    LoadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");
+/*if (!jQueryIsLoaded)
+    LoadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js");*/
     
 LoadScript(yoxviewPath + "public/js/jquery.yoxview-2.21.min.js");
 

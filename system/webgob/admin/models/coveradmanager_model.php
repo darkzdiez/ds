@@ -29,6 +29,11 @@ class coveradmanager_model extends Model {
     public function create($array) {
         $data['toptitle'] = $array['toptitle'];
         $data['title'] = $array['title'];
+        if(isset($array['dtexto']) AND $array['dtexto']==1){
+            $data['dtexto']=1;
+        }else{
+            $data['dtexto']=0;
+        }
         $data['description'] = $array['description'];
         $data['user_iduser'] = Session::get('iduser');
         $data['status'] = 0;

@@ -16,10 +16,16 @@
  * 
  */
 
-class coverad extends Controller{
-    function index() {
-            print json_encode($this->model->singleList('0,10'));
-    }
+class cover_adController extends Controller {
+	public function __construct() {
+		parent::__construct();
+		$this->view->js = array('cover_ad/js/default.js');
+	}
+	public function index($trash = NULL) {
+		$this->model=$this->loadModel('cover_adModel');
+        print json_encode($this->model->singleList());
+	}
+
 }
 
 ?>

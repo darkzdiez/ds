@@ -81,6 +81,32 @@ function guardarsupervision(data){
     $('#formCargarSupervision').hide();
     $('#fileupload').attr("action",PATH_NAV+"orden/upload/supervision/"+data.i+"/");
 }
+function cantidadordenes(){
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: PATH_NAV + 'orden/cantidadordenes/',
+        success : function(data){
+            var tablehtml="";
+            $.each(data, function(i,item){
+                var n = i+1;
+                var p = {};
+                p.pendiente_orden=((item.pendiente_orden * 100) / item.total_orden).toFixed(1);
+                p.proceso_orden=((item.proceso_orden * 100) / item.total_orden).toFixed(1);
+                p.ejecutada_orden=((item.ejecutada_orden * 100) / item.total_orden).toFixed(1);
+                tablehtml += "<tr>"
+                + "<td>" + n + "</td>"
+                + "<td>" + item.nombres.toUpperCase() + "</td>"
+                + '<td><table><tr><td style="width: 50%">' + item.pendiente_orden + '</td><td  style="width: 50%">' + p.pendiente_orden + "%</td></tr></table></td>"
+                + '<td><table><tr><td style="width: 50%">' + item.proceso_orden + '</td><td  style="width: 50%">' + p.proceso_orden + "%</td></tr></table></td>"
+                + '<td><table><tr><td style="width: 50%">' + item.ejecutada_orden + '</td><td  style="width: 50%">' + p.ejecutada_orden + "%</td></tr></table></td>"
+                + "<td>" + item.total_orden + "</td>"
+                + "</tr>"
+            });
+            $("#cantidadOrdenes tbody").html(tablehtml);
+        }
+    });
+}
     function buscar_ordenes(datos){
         ajaxLoader();
         var defaults={
@@ -394,6 +420,7 @@ tinymce.init({
 //            dataType:'json',
 //            selected_value:selected_estado
 //        });
+    cantidadordenes();
     $("#filtrarOrdenes").on("click",function(){
         buscar_ordenes({
             descripcion: $("#filtrar-admin").val(),

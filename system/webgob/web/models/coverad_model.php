@@ -24,7 +24,7 @@ class coverad_Model extends Model {
         } else {
             $_sqlLimit = '';
         }
-        return $this->db->select('SELECT `cover_ad`.`id`, `cover_ad`.`toptitle`, `cover_ad`.`title`, `cover_ad`.`description`, `file`.`filename`, `file_location`.`location` FROM `cover_ad`,  `file`,  `file_location` WHERE `cover_ad`.`file_idfile`=`file`.`idfile` AND  `file`.`file_location_idfile_location`=`file_location`.`idfile_location` ORDER BY `cover_ad`.`id` DESC' . $_sqlLimit);
+        return $this->db->select('SELECT `cover_ad`.`id`, `cover_ad`.`toptitle`, `cover_ad`.`title`, `cover_ad`.`description`, `cover_ad`.`dtexto`, `file`.`filename`, `file_location`.`location` FROM `cover_ad`,  `file`,  `file_location` WHERE `cover_ad`.`file_idfile`=`file`.`idfile` AND  `file`.`file_location_idfile_location`=`file_location`.`idfile_location` AND `status`=1 ORDER BY `cover_ad`.`id` DESC' . $_sqlLimit);
     }
 
 }
