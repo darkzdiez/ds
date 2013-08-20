@@ -1,9 +1,4 @@
-body {
-    margin-top: 0px;
-    padding: 0px;
-    background: silver;
-    font: 14px 'trebuchet ms', arial, sans-serif;
-}
+
 .button_ui {
     display: inline-block;
     padding: .4em 1em .4em 20px;
@@ -100,7 +95,7 @@ dl.nav a:hover, dl.nav a:active, dl.nav a:focus {
     width: 100%;
     float: left;
 }
-#footer {
+/*#footer {
     text-align: center;
     background: #12407f;
     color: #fff;
@@ -121,7 +116,7 @@ dl.nav a:hover, dl.nav a:active, dl.nav a:focus {
 }
 #footer a:hover {
     text-decoration: underline;
-}
+}*/
 /* Links */
 /*#header a {
     color: #fff;
@@ -135,9 +130,16 @@ dl.nav a:hover, dl.nav a:active, dl.nav a:focus {
     background: #4d8add
 }*/
 .styleLink{
-    cursor: pointer;
-    text-decoration: underline;
-    display: inline-block;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+    display: inline-block !important;
+}
+.styleLink.close{
+    font-size: 1em !important;
+    font-weight: normal !important;
+    color: #222 !important;
+    opacity: 1;
+    float: none;
 }
 /** Forms */
 h1 {
