@@ -1,12 +1,14 @@
-<h1>Ingresar al Sistema</h1>
-
-<form action="<?php print PATH_NAV; ?>login/run" class="ajaxForm" method="post" style="margin-bottom: 20px;">
-    <label>Usuario</label><input type="text" name="login" /><br />
-    <label>Clave</label><input type="password" name="password" /><br />
-    <label></label>
-    <button class="ui-state-default button_ui" type="submit">
-        <span class="ui-icon ui-icon-key"></span>
-        Ingresar
-    </button>
-    <br />
+<form class="form-signin" action="<?php print PATH_NAV; ?>login/run" class="ajaxForm" method="post">
+	<h2 class="form-signin-heading">Por favor ingrese</h2>
+	<input type="text" name="login" class="form-control" placeholder="Usuario" autofocus /><br />
+	<input type="password" name="password" class="form-control" placeholder="Clave" /><br />
+	<div class="checkbox">
+		<label class="">
+			<input type="checkbox" value="remember-me"> Recordar Usuario
+		</label>
+	</div>
+	<button class="btn btn-lg btn-primary btn-block" type="submit">
+		Ingresar
+	</button>
+	<br />
 </form>

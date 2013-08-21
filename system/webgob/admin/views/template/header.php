@@ -10,7 +10,10 @@
             PATH_NAV='<?php print PATH_NAV; ?>';
             START_SESSION='<?php print Session::get('sessionTime'); ?>'
         </script>
-        <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/default.css" />	
+        <!--<link rel="stylesheet" href="<?php print DOMAIN; ?>public/bootstrap-3.0/css/bootstrap.min.css" />-->
+        <link rel="stylesheet/less" type="text/css" href="<?php print DOMAIN; ?>public/bootstrap-3.0/less/bootstrap.less" />
+        <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/default.css" />    
+        <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/sticky-footer-navbar.css" />    
         <link rel="stylesheet" href="<?php print DOMAIN; ?>public/css/jquery-ui/redmond/jquery-ui-1.10.0.custom.min.css" />
         <!--<link href="<?php echo DOMAIN; ?>public/css/bootstrap.css" rel="stylesheet">-->
         <style>
@@ -20,12 +23,13 @@
             }
         </style>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/less.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/general.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/var.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery-ui-1.10.0.custom.min.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/tinymce/tinymce.min.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/tinymce/jquery.tinymce.min.js"></script>
-        <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/bootstrap/bootstrap-modal.js"></script>
+        <script type="text/javascript" src="<?php print DOMAIN; ?>public/bootstrap-3.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php print PATH_FILE; ?>public/js/custom.js"></script>
 
         <?php
@@ -37,14 +41,22 @@
         ?>
     </head>
     <body>
-
+    <div id="wrap">
         <?php Session::init(); ?>
-        <div class="headband">
-            <img src="<?php print PATH_FILE; ?>public/images/headband1.png" alt="Logo de Gobierno Bolivariano" height="50" id="Insert_logo" style="display:block; float: left;" /> 
-            <img src="<?php print PATH_FILE; ?>public/images/headband2.png" alt="Logo de corazon venezolano" height="50" id="Insert_logo" style="background-color: #8090AB; display:block; float: right;" /> 
+        <!-- strart bootstrap -->
+            <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="<?php print PATH_SYSTEM; ?>public/img/gobyaracuy.png" alt="Gob Yaracuy"></a>
         </div>
-        <div id="header">
-            <ul class="mi-menu">
+        <!-- end bootstrap -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
                 <li><a href="<?php print PATH_NAV; ?>"><span class="styleNAV ui-icon ui-icon-home" style="margin-top: 5px; margin-left: 5px;"></span>Inicio</a></li>
                 <?php
                 if (Session::get('loggedIn') == true):
@@ -53,16 +65,16 @@
                     $access->_listKeyAccessKey = Session::get('controller');
                     $access->_group = Session::get('profile');
                     $access->_groupAccess = 1;
-                    $access->_elementFirs = '<li style="z-index:1000">
-                        <span class="sub"><span class="styleNAV ui-icon ui-icon-pencil" style="margin-top: 5px; margin-left: 5px;"></span> Contenido</span>
-                        <ul>';
+                    $access->_elementFirs = '<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Contenido <b class="caret"></b></a>
+                        <ul class="dropdown-menu">';
                     $access->_elementEnd = '</ul>
                         </li>';
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'news"><span class="styleNAV ui-icon ui-icon-pencil" style="margin-top: 5px; margin-left: 5px;"></span>Noticias</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'comment"><span class="styleNAV ui-icon ui-icon-comment" style="margin-top: 5px; margin-left: 5px;"></span>Comentarios</a></li>');
                     $access->filterPrint(2, '<li><a href="' . PATH_NAV . 'ccontrataciones"><span class="styleNAV ui-icon ui-icon-document" style="margin-top: 5px; margin-left: 5px;"></span>C. Contrataciones</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'coveradmanager"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Portada</a></li>');
-                    $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'news"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Galeria</a></li>');
+                    $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'galeria"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Galeria</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'directorio"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Directorio Ejecutivo</a></li>');
                     $access->printEnd();
                     /* Inventario */
@@ -70,9 +82,9 @@
                     $access->_listKeyAccessKey = Session::get('controller');
                     $access->_group = Session::get('profile');
                     $access->_groupAccess = 1;
-                    $access->_elementFirs = '<li style="z-index:1000">
-                        <span class="sub"><span class="styleNAV ui-icon ui-icon-cart" style="margin-top: 5px; margin-left: 5px;"></span> Inventario</span>
-                        <ul>';
+                    $access->_elementFirs = '<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Inventario <b class="caret"></b></a>
+                        <ul class="dropdown-menu">';
                     $access->_elementEnd = '</ul>
                         </li>';
                     $access->filterPrint(1, '<li><a href="' . PATH_NAV . 'inventarioinformatica"><span class="styleNAV ui-icon ui-icon-cart" style="margin-top: 5px; margin-left: 5px;"></span>Informatica</a></li>');
@@ -83,9 +95,9 @@
                     $access->_listKeyAccessKey = Session::get('controller');
                     $access->_group = Session::get('profile');
                     $access->_groupAccess = 1;
-                    $access->_elementFirs = '<li style="z-index:1000">
-                        <span class="sub"><span class="styleNAV ui-icon ui-icon-gear" style="margin-top: 5px; margin-left: 5px;"></span> Sistema</span>
-                        <ul>';
+                    $access->_elementFirs = '<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Sistema <b class="caret"></b></a>
+                        <ul class="dropdown-menu">';
                     $access->_elementEnd = '</ul>
                         </li>';
                     $access->filterPrint(1, '<li><a href="' . PATH_NAV . 'profile"><span class="styleNAV ui-icon ui-icon-key" style="margin-top: 5px; margin-left: 5px;"></span>Perfiles</a></li>');
@@ -94,13 +106,18 @@
                     $access->filterPrint(1, '<li><a href="' . PATH_NAV . 'admconfig"><span class="styleNAV ui-icon ui-icon-wrench" style="margin-top: 5px; margin-left: 5px;"></span>Configuracion</a></li>');
                     $access->printEnd();
                     ?>
-                    <li><a href="<?php print PATH_NAV; ?>login/logout"><span class="styleNAV ui-icon ui-icon-locked" style="margin-top: 5px; margin-left: 5px;"></span>Salir</a></li>
-                <?php else: ?>
-                    <li><a href="<?php print PATH_NAV; ?>login"><span class="styleNAV ui-icon ui-icon-unlocked" style="margin-top: 5px; margin-left: 5px;"></span>Entrar</a></li>
-                <?php endif; ?>
             </ul>
-        </div>
-
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="<?php print PATH_NAV; ?>login/logout">Salir</a></li>
+            </ul>
+            <?php else: ?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<?php print PATH_NAV; ?>login">Entrar</a></li>
+                </ul>
+            <?php endif; ?>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
         <!--<div id="header">
             <div id="infoTime">
                 <table>
@@ -117,7 +134,7 @@
         <?php endif; ?>
         </div>-->
 
-        <div id="container">
+        <div class="container">
             <div id="container_content">
                 <!--<div class="sidebar1" style="<?php if (Session::get('panel') == 'hide') print 'display: none;'; ?>">
                     <dl class="nav">

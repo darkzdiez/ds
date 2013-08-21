@@ -1,6 +1,7 @@
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
     <p>Informacion de Desarrollo
             <br />Ralizado por la Direccion de Informatica
