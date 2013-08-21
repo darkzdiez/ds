@@ -23,8 +23,8 @@ class galeria_Model extends Model {
 
     public function showPpalImg($idgallery) {
         $query = "SELECT `gallery_has_file`.`type`,`gallery_has_file`.`idgallery`,`file_gallery`.`filename`,`file_location`.`location` FROM gallery_has_file
-LEFT JOIN `sitioweb`.`file_gallery` ON `gallery_has_file`.`idfile` = `file_gallery`.`idfile_gallery` 
-LEFT JOIN `sitioweb`.`file_location` ON `file_gallery`.`file_location_idfile_location` = `file_location`.`idfile_location` WHERE `idgallery`='" . $idgallery . "' AND `type`='ppal'";
+LEFT JOIN `file_gallery` ON `gallery_has_file`.`idfile` = `file_gallery`.`idfile_gallery` 
+LEFT JOIN `file_location` ON `file_gallery`.`file_location_idfile_location` = `file_location`.`idfile_location` WHERE `idgallery`='" . $idgallery . "' AND `type`='ppal'";
         $result = $this->db->select($query);
         return $result;
     }
@@ -32,8 +32,8 @@ LEFT JOIN `sitioweb`.`file_location` ON `file_gallery`.`file_location_idfile_loc
     public function singleShow($idGaleria) {
         $extract = $idGaleria;
         $query = "SELECT `gallery_has_file`.`type`,`gallery_has_file`.`idgallery`,`file_gallery`.`filename`,`file_location`.`location` FROM gallery_has_file
-LEFT JOIN `sitioweb`.`file_gallery` ON `gallery_has_file`.`idfile` = `file_gallery`.`idfile_gallery` 
-LEFT JOIN `sitioweb`.`file_location` ON `file_gallery`.`file_location_idfile_location` = `file_location`.`idfile_location` WHERE `idgallery`='" . $extract[0] . "' AND `type`='med'";
+LEFT JOIN `file_gallery` ON `gallery_has_file`.`idfile` = `file_gallery`.`idfile_gallery` 
+LEFT JOIN `file_location` ON `file_gallery`.`file_location_idfile_location` = `file_location`.`idfile_location` WHERE `idgallery`='" . $extract[0] . "' AND `type`='med'";
         if ($result['result'] = $this->db->select($query)) {
             $result['num'] = count($result['result']);
             return $result;
@@ -45,8 +45,8 @@ LEFT JOIN `sitioweb`.`file_location` ON `file_gallery`.`file_location_idfile_loc
     public function singleShowMin($idGaleria) {
         $extract = $idGaleria;
         $query = "SELECT `gallery_has_file`.`type`,`gallery_has_file`.`idgallery`,`file_gallery`.`filename`,`file_location`.`location` FROM gallery_has_file
-LEFT JOIN `sitioweb`.`file_gallery` ON `gallery_has_file`.`idfile` = `file_gallery`.`idfile_gallery` 
-LEFT JOIN `sitioweb`.`file_location` ON `file_gallery`.`file_location_idfile_location` = `file_location`.`idfile_location` WHERE `idgallery`='" . $extract[0] . "' AND `type`='min'";
+LEFT JOIN `file_gallery` ON `gallery_has_file`.`idfile` = `file_gallery`.`idfile_gallery` 
+LEFT JOIN `file_location` ON `file_gallery`.`file_location_idfile_location` = `file_location`.`idfile_location` WHERE `idgallery`='" . $extract[0] . "' AND `type`='min'";
         if ($result['result'] = $this->db->select($query)) {
             $result['num'] = count($result['result']);
             return $result;

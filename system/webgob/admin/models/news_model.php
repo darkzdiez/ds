@@ -11,7 +11,7 @@ class news_Model extends Model {
         $result['array'] = $this->db->select("SELECT `article`.`idarticle`,`article`.`title`,`article`.`summary`,`article`.`release_date`,`user`.`nameuser`,`article`.`status`, SUM(c.`idcategory`) as 'category', SUM( l.`idcategory`) as 'location'
             FROM article
 LEFT JOIN `user` ON `article`.`user_iduser` = `user`.`iduser`
-LEFT JOIN `sitioweb`.`article_has_category` ON `article`.`idarticle` = `article_has_category`.`article_idarticle` 
+LEFT JOIN `article_has_category` ON `article`.`idarticle` = `article_has_category`.`article_idarticle` 
 LEFT JOIN (
 SELECT DISTINCT *
 FROM `category`
@@ -35,7 +35,7 @@ ORDER BY `article`.`idarticle` DESC" . $limit);
         return $this->db->select("SELECT `article`.`idarticle`,`article`.`title`,`article`.`summary`,`article`.`content`,DATE(`article`.`date`) as date,`user`.`nameuser`,`article`.`prominent`,`article`.`status`, SUM(c.`idcategory`) as 'category', SUM( l.`idcategory`) as 'location'
 FROM article
 LEFT JOIN `user` ON `article`.`user_iduser` = `user`.`iduser`
-LEFT JOIN `sitioweb`.`article_has_category` ON `article`.`idarticle` = `article_has_category`.`article_idarticle` 
+LEFT JOIN `article_has_category` ON `article`.`idarticle` = `article_has_category`.`article_idarticle` 
 LEFT JOIN (
 SELECT DISTINCT *
 FROM `category`
