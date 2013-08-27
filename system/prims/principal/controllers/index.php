@@ -9,7 +9,7 @@ class Index extends Controller {
         if ($logged == false or Session::get('role') != 1) {
             Session::destroy();
             $this->view->redirect='orden';
-            $this->view->render('login/index');
+            $this->view->render('index/index');
             exit();
         }
     }
