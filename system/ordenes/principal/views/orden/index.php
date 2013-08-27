@@ -66,13 +66,14 @@ and also iPads specifically.
 	Label the data
 	*/
 	td:nth-of-type(1):before { content: "#"; }
-	td:nth-of-type(2):before { content: "Responsable"; }
-	td:nth-of-type(3):before { content: "Descripcion"; }
-	td:nth-of-type(4):before { content: "Emision"; }
-	td:nth-of-type(5):before { content: "Culminacion"; }
-	td:nth-of-type(6):before { content: "Restantes"; }
-	td:nth-of-type(7):before { content: "Estatus"; }
-	td:nth-of-type(8):before { content: "Acciones"; }
+	td:nth-of-type(2):before { content: "Codigo"; }
+	td:nth-of-type(3):before { content: "Responsable"; }
+	td:nth-of-type(4):before { content: "Descripcion"; }
+	td:nth-of-type(5):before { content: "Emision"; }
+	td:nth-of-type(6):before { content: "Culminacion"; }
+	td:nth-of-type(7):before { content: "Restantes"; }
+	td:nth-of-type(8):before { content: "Estatus"; }
+	td:nth-of-type(9):before { content: "Acciones"; }
 }
 </style>
 <div class="container">
@@ -90,7 +91,7 @@ and also iPads specifically.
 		</div>
 		<div class="bs-docs-example" style="padding: 5px !important; margin: 5px 0 5px 0 !important;">
 			<div class="row-fluid">
-				<div class="span3"><input type="text" class="span12" placeholder="Asunto o Descripción" name="filtrar-admin" id="filtrar-admin"></div>
+				<div class="span3"><input type="text" class="span12" placeholder="Asunto, Descripción o Codigo" name="filtrar-admin" id="filtrar-admin"></div>
 				<div class="span3"><select class="required span12" id="responsable" name="responsable"></select></div>
 				<div class="span6">
 					<label class="checkbox span4">
@@ -134,6 +135,7 @@ and also iPads specifically.
 			<thead>
 				<tr>
 					<th>#</th>
+					<th>Codigo</th>
 					<th>Responsable</th>
 					<th>Descripcion</th>
 					<th>Fecha Emision de la orden</th>

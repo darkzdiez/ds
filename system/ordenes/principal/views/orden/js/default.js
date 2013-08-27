@@ -166,6 +166,7 @@ function cantidadordenes(){
                         }
                         html += '<tr>\
                                     <td>' + p + '</td>\
+                                    <td>' + item.codigo + '</td>\
                                     <td>' + item.usuario_nombre.toUpperCase()  + ' | ' + item.usuario_instituto.toUpperCase()  + '</td>\
                                     <td>' + item.descripcion.toUpperCase() + '</td>\
                                     <td>' + item.fecha_emision + '</td>\

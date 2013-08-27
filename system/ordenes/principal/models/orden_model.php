@@ -78,7 +78,7 @@ class Orden_Model extends Model {
 
 
     public function selectOrdenes($data, $limit=TRUE){
-        $condicion="WHERE descripcion like '%" . $data['descripcion'] . "%'";
+        $condicion="WHERE (`referencia` like '%" . $data['descripcion'] . "%' OR `asunto` like '%" . $data['descripcion'] . "%' OR `descripcion` like '%" . $data['descripcion'] . "%' OR CONCAT(YEAR(`fecha_emision`),LPAD(`id_orden`, 5, '0')) like '%" . $data['descripcion'] . "%')";
         if (Session::get('role') == 3) {
             $data['responsable']=Session::get('iduser');
         }
@@ -126,7 +126,7 @@ class Orden_Model extends Model {
         }else{
             $limit = "";
         }
-        $data=$this->db->select("SELECT `orden`.`id_orden`, descripcion,date_format(fecha_emision,'%d/%m/%Y') as fecha_emision,date_format(DATE_ADD(fecha_emision,INTERVAL plazo DAY),'%d/%m/%Y') as fecha_culminacion, DATEDIFF(NOW(),DATE_ADD(fecha_emision,INTERVAL plazo DAY)) as dias_restantes,estatus, `app_user`.`nombres` as 'usuario_nombre', `institutos`.`nombre` as 'usuario_instituto' FROM orden LEFT JOIN app_user ON `app_user`.`iduser`=`orden`.`id_usuario_recibe` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` " . $condicion . " ORDER BY `orden`.`id_orden` DESC ".$limit);
+        $data=$this->db->select("SELECT CONCAT(YEAR(`fecha_emision`),LPAD(`id_orden`, 5, '0')) as 'codigo',`orden`.`id_orden`, descripcion,date_format(fecha_emision,'%d/%m/%Y') as fecha_emision,date_format(DATE_ADD(fecha_emision,INTERVAL plazo DAY),'%d/%m/%Y') as fecha_culminacion, DATEDIFF(NOW(),DATE_ADD(fecha_emision,INTERVAL plazo DAY)) as dias_restantes,estatus, `app_user`.`nombres` as 'usuario_nombre', `institutos`.`nombre` as 'usuario_instituto' FROM orden LEFT JOIN app_user ON `app_user`.`iduser`=`orden`.`id_usuario_recibe` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` " . $condicion . " ORDER BY `orden`.`id_orden` DESC ".$limit);
         $count=$this->db->select("SELECT count(`orden`.`id_orden`) as 'cantidad_orden' FROM orden LEFT JOIN app_user ON `app_user`.`iduser`=`orden`.`id_usuario_recibe` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` " . $condicion . " ORDER BY `orden`.`id_orden` DESC");
         $total=array('d'=>$data, 'i'=>$count[0]['cantidad_orden']);
         return $total;

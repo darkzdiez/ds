@@ -12,20 +12,20 @@
         <div class="control-group">
             <label class="control-label" for="referencia">Referencia: </label>
             <div class="controls">
-                    <textarea class="span7 required" type="text" rows="10" name="referencia" id="referencia" placeholder="Diario Yaracuy al dia P4"></textarea>
+                    <textarea class="span7 required" type="text" rows="3" name="referencia" id="referencia" placeholder="Diario Yaracuy al dia P4"></textarea>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label" for="marca">Asunto: </label>
             <div class="controls">
-                    <input class="span7 required" type="text" name="asunto" id="asunto" placeholder="Asfaltado de la marroquina" required>
+                    <textarea class="span7 required" type="text" rows="3" name="asunto" id="asunto" placeholder="Asfaltado de la marroquina" required></textarea>
             </div>
         </div>
 
         <div class="control-group">
             <label class="control-label" for="marca">Descripción: </label>
             <div class="controls">
-                    <textarea class="span7 required" type="text" rows="10" name="descripcion" id="descripcion" placeholder="Se requiere" required></textarea>
+                    <textarea class="span7 required" type="text" rows="3" name="descripcion" id="descripcion" placeholder="Se requiere" required></textarea>
             </div>
         </div>
 
