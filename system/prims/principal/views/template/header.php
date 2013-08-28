@@ -40,7 +40,7 @@
             <div class="input-group">
               <input type="text" class="form-control" id="s" name="s" value="">
               <span class="input-group-btn">
-                <button class="btn" type="submit">Buscar</button>
+                <button class="btn btn-danger" type="submit">Buscar</button>
               </span>
             </div>
           </form>
@@ -74,7 +74,7 @@
                   <input id="user_remember_me" type="checkbox" name="user[remember_me]" value="1" />
                   <label class="string optional" for="user_remember_me"> Recordar</label>
                  
-                  <input class="btn btn-primary" type="submit" name="commit" value="Sign In" />
+                  <input class="btn btn-danger" type="submit" name="commit" value="Sign In" />
                 </form>
               </li>
               <li class="divider"></li>
