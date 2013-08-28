@@ -9,9 +9,10 @@ class Index extends Controller {
     function index() {
         $this->view->coverAdShow=TRUE;
         $news=$this->distinctLoadModel('noticias');
-        $this->view->news[14]=$news->buscarPorCategoria(14);
-        $this->view->news[15]=$news->buscarPorCategoria(15);
-        $this->view->news[16]=$news->buscarPorCategoria(16);
+        $pNews=$news->buscarDestacada(14);
+        $this->view->news[14]=array_merge($pNews,$news->buscarPorCategoria(array(14), 4, array(0 => $pNews[0]['idarticle'])));
+        $pNews=$news->buscarDestacada(15);
+        $this->view->news[15]=array_merge($pNews,$news->buscarPorCategoria(array(15,16), 4, array(0 => $pNews[0]['idarticle'])));
         foreach ($this->view->news as $value) {
             foreach ($value as $newsVal) {
                 $excludeNewsid[]=$newsVal['idarticle'];

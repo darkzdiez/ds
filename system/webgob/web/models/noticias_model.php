@@ -39,53 +39,87 @@ LEFT JOIN `article_has_category` ON `category`.`idcategory` = `article_has_categ
     }
 public function busquedaSimple($idarticle){
     $result = $this->db->select("SELECT `article`.`idarticle`, `article`.`release_date`,`article`.`title`,`article`.`summary`,`article`.`content`,`article`.`date`,
-`category`.`idcategory` as 'categoryIdLocation',`category`.`name` as 'categoryLocation',
-(SELECT `category`.`idcategory`
-FROM `category`,`article_has_category` ahc
-WHERE `category`.`idcategory`=ahc.`category_idcategory`
-AND `category`.`idparent_category`=4
-AND ahc.`article_idarticle`=`article`.`idarticle`
-LIMIT 0,1) as 'categoryIdTipe',
- (SELECT `category`.`name`
-FROM `category`,`article_has_category` ahc
-WHERE `category`.`idcategory`=ahc.`category_idcategory`
-AND `category`.`idparent_category`=4
-AND ahc.`article_idarticle`=`article`.`idarticle`
-LIMIT 0,1) as 'categoryTipe'
-FROM `article`,`article_has_category`,`category`
-WHERE `article`.`idarticle`=`article_has_category`.`article_idarticle`
-AND `category`.`idcategory`=`article_has_category`.`category_idcategory`
-AND `article`.`idarticle`=:idarticle
-AND `article`.`status`=1
-LIMIT 1,1",array(':idarticle'=>$idarticle));
+    `category`.`idcategory` as 'categoryIdLocation',`category`.`name` as 'categoryLocation',
+    (SELECT `category`.`idcategory`
+    FROM `category`,`article_has_category` ahc
+    WHERE `category`.`idcategory`=ahc.`category_idcategory`
+    AND `category`.`idparent_category`=4
+    AND ahc.`article_idarticle`=`article`.`idarticle`
+    LIMIT 0,1) as 'categoryIdTipe',
+     (SELECT `category`.`name`
+    FROM `category`,`article_has_category` ahc
+    WHERE `category`.`idcategory`=ahc.`category_idcategory`
+    AND `category`.`idparent_category`=4
+    AND ahc.`article_idarticle`=`article`.`idarticle`
+    LIMIT 0,1) as 'categoryTipe'
+    FROM `article`,`article_has_category`,`category`
+    WHERE `article`.`idarticle`=`article_has_category`.`article_idarticle`
+    AND `category`.`idcategory`=`article_has_category`.`category_idcategory`
+    AND `article`.`idarticle`=:idarticle
+    AND `article`.`status`=1
+    LIMIT 1,1",array(':idarticle'=>$idarticle));
         return $result;
 }
-    public function buscarPorCategoria($category = 14, $limit = 3) {
+    public function buscarDestacada($category = 14) {
+        $limit = ' LIMIT 0,1';
+        $result = $this->db->select("SELECT `article`.`idarticle`, `article`.`release_date`,`article`.`title`,`article`.`summary`,
+        `category`.`idcategory` as 'categoryIdLocation',`category`.`name` as 'categoryLocation',
+        `file`.`filename`,
+        `file_location`.`location`,
+        (SELECT `category`.`idcategory`
+        FROM `category`,`article_has_category` ahc
+        WHERE `category`.`idcategory`=ahc.`category_idcategory`
+        AND `category`.`idparent_category`=4
+        AND ahc.`article_idarticle`=`article`.`idarticle`
+        LIMIT 0,1) as 'categoryIdTipe',
+         (SELECT `category`.`name`
+        FROM `category`,`article_has_category` ahc
+        WHERE `category`.`idcategory`=ahc.`category_idcategory`
+        AND `category`.`idparent_category`=4
+        AND ahc.`article_idarticle`=`article`.`idarticle`
+        LIMIT 0,1) as 'categoryTipe'
+        FROM `article`,`article_has_category`,`category`,`file`,`file_location`
+        WHERE `article`.`idarticle`=`article_has_category`.`article_idarticle`
+        AND `category`.`idcategory`=`article_has_category`.`category_idcategory`
+        AND `article_has_category`.`category_idcategory`=:idcategory
+        AND `article`.`main_idfile`=`file`.`idfile`
+        AND `file`.`file_location_idfile_location`=`file_location`.`idfile_location`
+        AND `article`.`status`=1
+        AND `article`.`prominent`=1
+        ORDER BY `article`.`idarticle` DESC" . $limit,array(':idcategory'=>$category));
+        return $result;
+    }
+    public function buscarPorCategoria($category, $limit = 3, $arrayExclude) {
+        $exclude = implode("' AND `article`.`idarticle`<>'", $arrayExclude);
+        $exclude = " AND `article`.`idarticle`<>'" . $exclude . "'";
+        $bcategory = implode("' OR `article_has_category`.`category_idcategory`='", $category);
+        $bcategory = " AND (`article_has_category`.`category_idcategory`='" . $bcategory . "')";
         $limit = ' LIMIT 0,' . $limit;
         $result = $this->db->select("SELECT `article`.`idarticle`, `article`.`release_date`,`article`.`title`,`article`.`summary`,
-`category`.`idcategory` as 'categoryIdLocation',`category`.`name` as 'categoryLocation',
-`file`.`filename`,
-`file_location`.`location`,
-(SELECT `category`.`idcategory`
-FROM `category`,`article_has_category` ahc
-WHERE `category`.`idcategory`=ahc.`category_idcategory`
-AND `category`.`idparent_category`=4
-AND ahc.`article_idarticle`=`article`.`idarticle`
-LIMIT 0,1) as 'categoryIdTipe',
- (SELECT `category`.`name`
-FROM `category`,`article_has_category` ahc
-WHERE `category`.`idcategory`=ahc.`category_idcategory`
-AND `category`.`idparent_category`=4
-AND ahc.`article_idarticle`=`article`.`idarticle`
-LIMIT 0,1) as 'categoryTipe'
-FROM `article`,`article_has_category`,`category`,`file`,`file_location`
-WHERE `article`.`idarticle`=`article_has_category`.`article_idarticle`
-AND `category`.`idcategory`=`article_has_category`.`category_idcategory`
-AND `article_has_category`.`category_idcategory`=:idcategory
-AND `article`.`main_idfile`=`file`.`idfile`
-AND `file`.`file_location_idfile_location`=`file_location`.`idfile_location`
-AND `article`.`status`=1
-ORDER BY `article`.`idarticle` DESC" . $limit,array(':idcategory'=>$category));
+        `category`.`idcategory` as 'categoryIdLocation',`category`.`name` as 'categoryLocation',
+        `file`.`filename`,
+        `file_location`.`location`,
+        (SELECT `category`.`idcategory`
+        FROM `category`,`article_has_category` ahc
+        WHERE `category`.`idcategory`=ahc.`category_idcategory`
+        AND `category`.`idparent_category`=4
+        AND ahc.`article_idarticle`=`article`.`idarticle`
+        LIMIT 0,1) as 'categoryIdTipe',
+         (SELECT `category`.`name`
+        FROM `category`,`article_has_category` ahc
+        WHERE `category`.`idcategory`=ahc.`category_idcategory`
+        AND `category`.`idparent_category`=4
+        AND ahc.`article_idarticle`=`article`.`idarticle`
+        LIMIT 0,1) as 'categoryTipe'
+        FROM `article`,`article_has_category`,`category`,`file`,`file_location`
+        WHERE `article`.`idarticle`=`article_has_category`.`article_idarticle`
+        AND `category`.`idcategory`=`article_has_category`.`category_idcategory`
+        ".$exclude."
+        ".$bcategory."
+        AND `article`.`main_idfile`=`file`.`idfile`
+        AND `file`.`file_location_idfile_location`=`file_location`.`idfile_location`
+        AND `article`.`status`=1
+        ORDER BY `article`.`idarticle` DESC" . $limit);
         return $result;
     }
 
@@ -161,7 +195,35 @@ GROUP BY `article`.`idarticle` DESC" . $limit);
         $result['num'] = $count[0]['cantidad'];
         return $result;
     }
+    public function test(){
+        $letras = array(
+            'Ã¡' => 'á',
+            'í©' => 'é',
+            'Ã³' => 'ó',
+            'íº' => 'ú',
+            'Ãº' => 'ú',
+            'Ã±' => 'ñ',
+            'í‘' => 'Ñ',
+            'Ã'  => 'í',
+            '&aacute;' => 'á',
+            '&eacute;' => 'é',
+            '&iacute;' => 'í',
+            '&oacute;' => 'ó',
+            '&uacute;' => 'ú',
+            '&ntilde;' => 'ñ'
+            );
+        $tabla=array(
+            'article' => array('title','summary','content'),
+            'category' => array('name'),
+            'ccontrataciones' => array('articulo','denominacion','lugar','info','lugarsobres'),
+            );
+        foreach ($campos as $keyC => $valueC) {
+            foreach ($letras as $keyL => $valueL) {
+                $sql="UPDATE $tabla SET $valueC = replace($valueC, '$keyL', '$valueL');";
+                $this->db->select($sql);
+            }
+        }
+    }
 
 }
-
 ?>

@@ -35,7 +35,10 @@ class Noticias extends Controller {
         $_POST['TITLE_WEBSITE'] = 'Noticias en ' . TITLE_WEBSITE;
         $this->view->render('noticias/filter.php');
     }
-
+    public function test(){
+        $this->model->test();
+        print 'chao cheo';
+    }
 }
 
 ?>
