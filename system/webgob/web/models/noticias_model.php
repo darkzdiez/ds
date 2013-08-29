@@ -196,7 +196,7 @@ GROUP BY `article`.`idarticle` DESC" . $limit);
         return $result;
     }
     public function test(){
-        $letras = array(
+        /*$letras = array(
             'Ã¡' => 'á',
             'í©' => 'é',
             'Ã³' => 'ó',
@@ -217,12 +217,29 @@ GROUP BY `article`.`idarticle` DESC" . $limit);
             'category' => array('name'),
             'ccontrataciones' => array('articulo','denominacion','lugar','info','lugarsobres'),
             );
-        foreach ($campos as $keyC => $valueC) {
-            foreach ($letras as $keyL => $valueL) {
-                $sql="UPDATE $tabla SET $valueC = replace($valueC, '$keyL', '$valueL');";
-                $this->db->select($sql);
+        foreach ($tabla as $key1 => $value1) {
+            foreach ($value1 as $key2 => $value2) {
+                foreach ($letras as $key3 => $value3) {
+                    $sql="UPDATE $key1 SET $value2 = replace($value2, '$key3', '$value3');";
+                    $this->db->select($sql);
+                }
             }
+        }*/
+        function latin1($txt) {
+         $encoding = mb_detect_encoding($txt, 'ASCII,UTF-8,ISO-8859-1');
+         if ($encoding == "UTF-8") {
+             $txt = utf8_decode($txt);
+         }
+         return $txt;
         }
+        function utf8($txt) {
+         $encoding = mb_detect_encoding($txt, 'ASCII,UTF-8,ISO-8859-1');
+         if ($encoding == "ISO-8859-1") {
+             $txt = utf8_encode($txt);
+         }
+         return $txt;
+        }
+        exit(utf8('Ã³'));
     }
 
 }

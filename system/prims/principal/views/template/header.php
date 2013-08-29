@@ -14,7 +14,7 @@
   START_SESSION = '<?php print Session::get('sessionTime'); ?>';
   </script>
   <!-- Le styles -->
-  <link rel="stylesheet/less" type="text/css" href="<?php print PATH_FILE; ?>public/less/bootstrap.less" />
+  <?php print $this->cssPpal; ?>
   <link href="<?php print DOMAIN; ?>public/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?php print DOMAIN; ?>public/css/font-awesome-ie7.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="<?php echo DOMAIN; ?>public/ico/favicon.png">
