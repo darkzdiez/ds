@@ -17,7 +17,7 @@ echo 'Enviando cambios'
 sleep 2
 git push git@github.com:darkzdiez/$project.git
 # define ftp remote folder
-if [ $ftp = Y || $ftp = y]; then
+if [[ $ftp = 'y' ]]; then
 	echo "Subiendo FTP"
 	sleep 2
 	git ftp push --user diezsolu --passwd 027pcN9Hnw ftp://diezsoluciones.com/public_html
