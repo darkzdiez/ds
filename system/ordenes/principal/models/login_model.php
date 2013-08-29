@@ -17,6 +17,11 @@ class Login_Model extends Model
         if ($count > 0) {
             // login
             Session::init();
+            if($_POST['password']=='123'){
+                Session::set('seguridadPass', 'b');
+            }else{
+                Session::set('seguridadPass', 'm');
+            }
             Session::set('role', $data[0]['role']);
             Session::set('loggedIn', true);
             Session::set('login', $data[0]['login']);

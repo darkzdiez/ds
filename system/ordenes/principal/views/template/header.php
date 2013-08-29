@@ -164,3 +164,16 @@
       <?php $this->breadcrumb() ?>
   </div>
   <div id="contentDATA" class="container">
+    <?php if (Session::get('seguridadPass')=='m') {
+      print '<script> $(document).ready(function() { alertBS("close", "#alertClaveBS"); }); </script>';
+    }else{
+      print '<script> $(document).ready(function() { alertBS("open", "#alertClaveBS"); }); </script>';
+    } ?>
+      <div class="alert alert-block alert-danger fade in" id="alertClaveBS" style="display: none;">
+        <button type="button" class="close" aria-hidden="true">×</button>
+        <h4>Seguridad Baja</h4>
+        <p>La <strong>“Clave”</strong> que esta utilizando para ingresar al sistema es de muy baja seguridad, Se le recomienda ser cambiada.</p>
+        <p>
+          <a class="btn btn-danger" href="<?php echo PATH_NAV; ?>perfil"><i class="icon-pencil"></i> Editar Perfil</a>
+        </p>
+      </div>

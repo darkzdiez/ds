@@ -23,9 +23,14 @@ class Perfil_Model extends Model {
         }
     }
     public function guardareditarclave($postData){
+        if($postData['password']=='123'){
+            Session::set('seguridadPass', 'b');
+        }else{
+            Session::set('seguridadPass', 'm');
+        }
     	$data['password']=Hash::create('sha256', $postData['password'], HASH_PASSWORD_KEY);
         if($this->db->update('app_user', $data, "`iduser` = " . Session::get('iduser'))){
-            return array("mensaje" => 'Clave cambiada correctamente.');
+            return array("mensaje" => 'Clave cambiada correctamente.', 'seguridadPass' => Session::get('seguridadPass'));
         }else{
             return array("mensaje" => 'No se pudo cambiar la clave.');
         }

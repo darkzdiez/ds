@@ -18,3 +18,18 @@ function alertDGC(mensaje){
 window.alert = function (message) {
   alertDGC(message);
 };*/
+function alertBS(action, selector){
+	if (action=='close') {
+		$(selector).hide('fadein');
+	} else{
+		$(selector).show('fadein');
+	};
+}
+$(document).ready(function() {
+	$('.alert .close').stop().on({
+		click: function(event){
+			event.preventDefault();
+			$(this).parent().hide('fadein');
+		}
+	});
+});

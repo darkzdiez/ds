@@ -9,7 +9,7 @@ sleep 2
 git add --all
 echo 'commit Archivos Locales'
 sleep 2
-git commit -a -m $mensaje
+git commit -a -m "$mensaje"
 echo 'Verificando cambios Remotos'
 sleep 2
 git pull git@github.com:darkzdiez/$project.git

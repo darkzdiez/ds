@@ -196,22 +196,6 @@ GROUP BY `article`.`idarticle` DESC" . $limit);
         return $result;
     }
     public function test(){
-        /*$letras = array(
-            'Ã¡' => 'á',
-            'í©' => 'é',
-            'Ã³' => 'ó',
-            'íº' => 'ú',
-            'Ãº' => 'ú',
-            'Ã±' => 'ñ',
-            'í‘' => 'Ñ',
-            'Ã'  => 'í',
-            '&aacute;' => 'á',
-            '&eacute;' => 'é',
-            '&iacute;' => 'í',
-            '&oacute;' => 'ó',
-            '&uacute;' => 'ú',
-            '&ntilde;' => 'ñ'
-            );
         $tabla=array(
             'article' => array('title','summary','content'),
             'category' => array('name'),
@@ -219,27 +203,10 @@ GROUP BY `article`.`idarticle` DESC" . $limit);
             );
         foreach ($tabla as $key1 => $value1) {
             foreach ($value1 as $key2 => $value2) {
-                foreach ($letras as $key3 => $value3) {
-                    $sql="UPDATE $key1 SET $value2 = replace($value2, '$key3', '$value3');";
-                    $this->db->select($sql);
-                }
+                $sql="UPDATE `$key1` SET `$value2` = CONVERT(BINARY CONVERT(`$value2` USING latin1) USING utf8)";
+                $this->db->select($sql);
             }
-        }*/
-        function latin1($txt) {
-         $encoding = mb_detect_encoding($txt, 'ASCII,UTF-8,ISO-8859-1');
-         if ($encoding == "UTF-8") {
-             $txt = utf8_decode($txt);
-         }
-         return $txt;
         }
-        function utf8($txt) {
-         $encoding = mb_detect_encoding($txt, 'ASCII,UTF-8,ISO-8859-1');
-         if ($encoding == "ISO-8859-1") {
-             $txt = utf8_encode($txt);
-         }
-         return $txt;
-        }
-        exit(utf8('Ã³'));
     }
 
 }

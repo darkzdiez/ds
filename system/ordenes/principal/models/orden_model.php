@@ -119,6 +119,20 @@ class Orden_Model extends Model {
         if(isset($data['gobcalle']) and $data['gobcalle']==1){
             $condicion.=" AND gc=1";
         }
+        $data['fechadesde']=str_replace('-','/', $data['fechadesde']);
+        $data['fechahasta']=str_replace('-','/', $data['fechahasta']);
+        $fechadesde = date_parse($data['fechadesde']);
+        $fechahasta = date_parse($data['fechahasta']);
+        $checkfechadesde=checkdate($fechadesde["month"], $fechadesde["day"], $fechadesde["year"]);
+        //exit(print_r($fechadesde));
+        $checkfechahasta=checkdate($fechahasta["month"], $fechahasta["day"], $fechahasta["year"]);
+        if ($checkfechadesde AND $checkfechahasta){
+            $condicion.=" AND DATE(`fecha_emision`) >= '" . $data['fechadesde'] . "' AND DATE(`fecha_emision`) <= '" . $data['fechahasta'] . "'";
+        }elseif($checkfechadesde){
+            $condicion.=" AND DATE(`fecha_emision`) >= '" . $data['fechadesde'] . "'";
+        }elseif($checkfechahasta){
+            $condicion.=" AND DATE(`fecha_emision`) <= '" . $data['fechahasta'] . "'";
+        }
         //exit($condicion);
         //exit("SELECT `orden`.`id_orden`, descripcion,date_format(fecha_emision,'%d/%m/%Y') as fecha_emision,date_format(DATE_ADD(fecha_emision,INTERVAL plazo DAY),'%d/%m/%Y') as fecha_culminacion, DATEDIFF(NOW(),DATE_ADD(fecha_emision,INTERVAL plazo DAY)) as dias_restantes,estatus, `app_user`.`nombres` as 'usuario_nombre', `institutos`.`nombre` as 'usuario_instituto' FROM orden LEFT JOIN app_user ON `app_user`.`iduser`=`orden`.`id_usuario_recibe` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` " . $condicion . " ORDER BY `orden`.`id_orden` DESC LIMIT " . 10*($data['pagina']-1) . " , " . $data['cantidad']);
         if ($limit==TRUE) {

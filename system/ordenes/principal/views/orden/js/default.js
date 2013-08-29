@@ -19,6 +19,8 @@ function generarPDF(){
             ejecutada: opt.ejecutada,
             pagina:opt.pagina,
             gobcalle:opt.gobcalle,
+            fechadesde:opt.fechadesde,
+            fechahasta:opt.fechahasta,
             cantidad:opt.cantidad
         },
         success : function(data){
@@ -117,6 +119,8 @@ function cantidadordenes(){
             ejecutada: '',
             gobcalle: '',
             pagina:1,
+            fechadesde: '',
+            fechahasta: '',
             cantidad:10
         }
 
@@ -134,6 +138,8 @@ function cantidadordenes(){
                 ejecutada: opt.ejecutada,
                 gobcalle: opt.gobcalle,
                 pagina:opt.pagina,
+                fechadesde:opt.fechadesde,
+                fechahasta:opt.fechahasta,
                 cantidad:opt.cantidad
             },
             success : function(data){
@@ -228,6 +234,8 @@ function cantidadordenes(){
                                 ejecutada: opt.ejecutada,
                                 gobcalle: opt.gobcalle,
                                 pagina:ir,
+                                fechadesde:opt.fechadesde,
+                                fechahasta:opt.fechahasta,
                                 cantidad:opt.cantidad
                             });
                         };
@@ -429,7 +437,9 @@ tinymce.init({
             pendiente: $("#pendiente:checked").val(),
             enproceso: $("#enproceso:checked").val(),
             ejecutada: $("#ejecutada:checked").val(),
-            gobcalle: $("#gobcalle:checked").val()
+            gobcalle: $("#gobcalle:checked").val(),
+            fechadesde:$("#fechadesde").val(),
+            fechahasta:$("#fechahasta").val()
         });
     });
 //    buscar_ordenes($(this).val());
