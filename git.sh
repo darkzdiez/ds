@@ -11,7 +11,7 @@ git pull git@github.com:darkzdiez/$project.git
 
 git push git@github.com:darkzdiez/$project.git
 # define ftp remote folder
-if [ ftp=1 ]; then
+if [ ftp=='1' ]; then
 	git ftp push --user diezsolu --passwd 027pcN9Hnw ftp://diezsoluciones.com/public_html
 fi
 echo 'Finalizado'
