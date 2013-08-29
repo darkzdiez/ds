@@ -16,9 +16,9 @@
   <!-- Le styles -->
   <?php
   if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
-      print '<link rel="stylesheet/less" type="text/css" href="' . PATH_FILE . 'public/less/bootstrap.less" />';
+      print '<link rel="stylesheet/less" type="text/css" href="' . PATH_FILE . 'public/less/bootstrap.less">';
   } else {
-      print '<link rel="stylesheet/css" type="text/css" href="' . PATH_FILE . 'public/css/styles.css" />';
+      print '<link rel="stylesheet" type="text/css" href="' . PATH_FILE . 'public/css/styles.css">';
   }
   ?>
   <link href="<?php print DOMAIN; ?>public/css/font-awesome.min.css" rel="stylesheet">
