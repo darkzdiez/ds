@@ -20,7 +20,7 @@ git push git@github.com:darkzdiez/$project.git
 if [ "$ftp" = 'y' -o "$ftp" = 'Y' ]; then
 	echo "Subiendo FTP"
 	sleep 2
-	git ftp push --user diezsolu --passwd 027pcN9Hnw ftp://diezsoluciones.com/public_html
+	git ftp push --user diezsolu --passwd 027pcN9Hnw ftp://diezsoluciones.com/public_html/w
 else
     echo "No se Subira al FTP"
     sleep 2
