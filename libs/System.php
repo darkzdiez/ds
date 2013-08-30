@@ -56,7 +56,7 @@ class System {
                     define('_pathMODULE', _pathSYSTEM . $listSYSTEM[$domain] . '/' . $DEFAULT_MODULE);
                 }
             }else{
-                print 'Dominio no definido';
+                exit('Dominio:' . $domain . ' no definido');
             }
         }
 //        print $domain . ' | ';
