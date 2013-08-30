@@ -8,6 +8,6 @@ define('SYSTEMDEFAULT','webgob');
 $listSYSTEM = array(
     'pgchost.com' => 'webgob',
     'www.pgchost.com' => 'webgob',
-    'diezsoluciones.com' => 'prims',
-    'www.diezsoluciones.com' => 'prims'
+    'primasalud.com.ve' => 'prims',
+    'www.primasalud.com.ve' => 'prims'
 );
