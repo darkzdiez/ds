@@ -4,7 +4,7 @@ class System {
 
     public function path($listSYSTEM) {
         $domain=$_SERVER["HTTP_HOST"];
-        if ($domain == 'localhost') {
+        if ($domain == 'localhost' or !array_key_exists($domain, $listSYSTEM)) {
 
             define('DOMAIN', 'http://' . $domain  . '/'.PROJECTNAME.'/');
             if(!isset($_GET['url'])){
@@ -34,7 +34,7 @@ class System {
             if (isset($_GET['url'])) {
                 $url = explode('/', rtrim($_GET['url'], '/'), 2);
             }
-            if (array_key_exists($domain, $listSYSTEM)) {
+            if (array_key_exists($domain, $listSYSTEM) AND is_array($listSYSTEM[$domain])) {
                 define('_pathActiveSYSTEM',_pathSYSTEM . $listSYSTEM[$domain]);
                 require _pathActiveSYSTEM . '/config.php';
                 if (isset($url[0]) && in_array($url[0], $MODULE)) {
