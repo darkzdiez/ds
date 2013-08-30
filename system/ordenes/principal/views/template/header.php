@@ -166,7 +166,7 @@
   <div id="contentDATA" class="container">
     <?php if (Session::get('seguridadPass')=='m') {
       print '<script> $(document).ready(function() { alertBS("close", "#alertClaveBS"); }); </script>';
-    }else{
+    }elseif (Session::get('seguridadPass')=='b'){
       print '<script> $(document).ready(function() { alertBS("open", "#alertClaveBS"); }); </script>';
     } ?>
       <div class="alert alert-block alert-danger fade in" id="alertClaveBS" style="display: none;">
