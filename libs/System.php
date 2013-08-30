@@ -4,7 +4,7 @@ class System {
 
     public function path($listSYSTEM) {
         $domain=$_SERVER["HTTP_HOST"];
-        if ($domain == 'localhost' or !array_key_exists($domain, $listSYSTEM)) {
+        if ($domain == 'localhost') {
 
             define('DOMAIN', 'http://' . $domain  . '/'.PROJECTNAME.'/');
             if(!isset($_GET['url'])){
@@ -29,13 +29,18 @@ class System {
                 }
                 define('_pathMODULE', _pathSYSTEM . $url[0] . '/' . $DEFAULT_MODULE);
             }
-        } else {
-            define('DOMAIN', 'http://' . $domain  . '/w/');
+        } elseif(array_key_exists($domain, $listSYSTEM)) {
+            define('DOMAIN', 'http://' . $domain  . '/');
             if (isset($_GET['url'])) {
                 $url = explode('/', rtrim($_GET['url'], '/'), 2);
             }
-            if (array_key_exists($domain, $listSYSTEM) AND is_array($listSYSTEM[$domain])) {
-                define('_pathActiveSYSTEM',_pathSYSTEM . $listSYSTEM[$domain]);
+            if(is_array($listSYSTEM[$domain])){
+                if(array_key_exists($url[0], $listSYSTEM[$domain])){
+
+                }
+            }else{
+                $system=$listSYSTEM[$domain];
+                define('_pathActiveSYSTEM',_pathSYSTEM . $system);
                 require _pathActiveSYSTEM . '/config.php';
                 if (isset($url[0]) && in_array($url[0], $MODULE)) {
                     if (isset($url[1])) {
@@ -43,7 +48,7 @@ class System {
                     } else {
                         define('_URLPath', '');
                     }
-                    define('_pathMODULE', _pathSYSTEM . $listSYSTEM[$domain] . '/' . $url[0]);
+                    define('_pathMODULE', _pathSYSTEM . $system . '/' . $url[0]);
                 } else {
                     if (isset($_GET['url'])) {
                         $url = explode('/', rtrim($_GET['url'], '/'), 1);
@@ -53,11 +58,11 @@ class System {
                     } else {
                         define('_URLPath', '');
                     }
-                    define('_pathMODULE', _pathSYSTEM . $listSYSTEM[$domain] . '/' . $DEFAULT_MODULE);
+                    define('_pathMODULE', _pathSYSTEM . $system . '/' . $DEFAULT_MODULE);
                 }
-            }else{
-                exit('Dominio:' . $domain . ' no definido');
             }
+      }else{
+            exit('Dominio:' . $domain . ' no definido');
         }
 //        print $domain . ' | ';
 //        print_r($listSYSTEM) . ' | ';

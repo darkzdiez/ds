@@ -6,8 +6,10 @@ define('_pathSYSTEM', 'system/');
 define('PROJECTNAME', 'webt');
 define('SYSTEMDEFAULT','webgob');
 $listSYSTEM = array(
-/*    'yaracuy.gob.ve' => 'ordenes',
-    'www.yaracuy.gob.ve' => 'ordenes',*/
+    #'prueba' => array('webgob', 'ordenes'),
+    'prueba' => 'ordenes',
+    'yaracuy.gob.ve' => array('webgob', 'ordenes'),
+    'www.yaracuy.gob.ve' => array('webgob', 'ordenes'),
     'primasalud.com.ve' => 'prims',
     'www.primasalud.com.ve' => 'prims'
 );
