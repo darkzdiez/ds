@@ -14,6 +14,7 @@
   START_SESSION = '<?php print Session::get('sessionTime'); ?>';
   </script>
   <!-- Le styles -->
+
   <?php
   if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
       print '<link rel="stylesheet/less" type="text/css" href="' . PATH_FILE . 'public/less/bootstrap.less">';
@@ -98,6 +99,25 @@
           </li>
           <li><a href="#contact"><i class="icon-comments"></i> Contactanos</a></li>
         </ul>
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown list-shopping-card">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="glyphicon glyphicon-shopping-cart"></i> Carrito <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li>
+                <form action="" method="post" class="form-inline form-nav" role="form" accept-charset="UTF-8">
+                <ul>
+                  <li class="item">
+                    <div class="col-xs-4"><img src="<?php print PATH_SYSTEM.'primasalud_ecologico2.png'; ?>"></div>
+                    <div class="col-xs-8">Solución Fisiologica 0.9</div>
+                  </li>
+                </ul>
+              </form>
+              </li>
+              <li><a href="#">No hay Productos en el Carrito</a></li>
+            </ul>
+          </li>
+        </ul>
       </div><!--/.nav-collapse -->
     </div>
   </div>
+    <div class="container">
