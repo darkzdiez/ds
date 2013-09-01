@@ -2,8 +2,15 @@
 # var project
 read -p 'Ingrese Nombre del Projecto: ' project
 read -p 'Subir al Servidor FTP [Y,n]: ' ftp
+read -p 'Procesar Less [Y,n]: ' plessc
 read -p 'Mensaje: ' mensaje
 echo 'Trabajando...'
+if [ "$plessc" = 'y' -o "$plessc" = 'Y' ]; then
+	echo "Procesando Less"
+	read -p 'LESS: Nombre del Proyecto a Procesar: ' projectless
+	sleep 2
+	lessc system/$projectless/principal/public/less/bootstrap.less system/$projectless/principal/public/css/styles.css
+fi
 echo 'Agregando Archivos Locales'
 sleep 2
 git add --all
