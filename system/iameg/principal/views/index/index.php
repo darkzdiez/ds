@@ -11,7 +11,7 @@
                   <li><a href="#">Link</a></li>
                   <li><a href="#">Link</a></li>
                   <li><a href="#">Link</a></li>
-                  <li><a href="#">Acceso a e-Minas</a></li>
+                  <li><a href="http://iameg.org.ve/eminas/">Acceso a e-Minas</a></li>
                   <li><a href="#">Link</a></li>
                   <li><a href="#">Link</a></li>
                 </ul>
