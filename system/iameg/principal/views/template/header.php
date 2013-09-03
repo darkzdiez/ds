@@ -24,7 +24,7 @@
   ?>
   <link href="<?php print DOMAIN; ?>public/css/font-awesome.min.css" rel="stylesheet">
   <link href="<?php print DOMAIN; ?>public/css/font-awesome-ie7.min.css" rel="stylesheet">
-  <link rel="shortcut icon" href="<?php echo DOMAIN; ?>public/ico/favicon.png">
+  <link rel="shortcut icon" href="<?php print PATH_FILE; ?>public/images/favicon.ico">
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery.js"></script>
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/less.js"></script>
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/general.js"></script>
