@@ -7350,6 +7350,16 @@ body {
 body .container {
   background-color: #fff;
 }
+.lead {
+  font-style: italic;
+}
+.lead a:hover {
+  text-decoration: none;
+}
+/*.lead:before{
+	content: "Social";
+	margin-left: -81px;
+}*/
 .header {
   border-bottom: 1px solid #E5E5E5;
   margin-bottom: 30px;

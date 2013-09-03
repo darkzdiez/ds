@@ -42,5 +42,5 @@
           <li><a href="#">Portafolio</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
-        <h3 class="text-muted">DiezSoluciones</h3>
+        <h3 class="text-muted">Alfonzo Diez</h3>
       </div>
