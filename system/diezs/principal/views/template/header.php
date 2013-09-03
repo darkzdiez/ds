@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Titulo P</title>
+  <title>DiezSoluciones.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="IAMEG - Instituto Autonomo de Minerales del Estado Guarico">
+  <meta name="description" content="Diseño y desarrollo web profecional">
   <meta name="author" content="DiezSoluciones.com">
-  <meta name="google-site-verification" content="nmUmgAYdYT9fFbXccXyz7RkF46tDAIPj8ssMEpHGRRE" />
-  <script type="text/javascript">
+  <meta name="google-site-verification" content="DjDcRdzYWlFvKTft7PlyuN3-GYKX0F0DwSnkgLT2AXc" />  <script type="text/javascript">
   DOMAIN = '<?php print DOMAIN; ?>';
   PATH_SYSTEM = '<?php print PATH_SYSTEM; ?>';
   PATH_FILE = '<?php print PATH_FILE; ?>';
