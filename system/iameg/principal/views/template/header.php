@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <title>Titulo P</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="IAMEG - Instituto Autonomo de Minerales del Estado Guarico">
+  <meta name="author" content="DiezSoluciones.com">
+  <meta name="google-site-verification" content="nmUmgAYdYT9fFbXccXyz7RkF46tDAIPj8ssMEpHGRRE" />
   <script type="text/javascript">
   DOMAIN = '<?php print DOMAIN; ?>';
   PATH_SYSTEM = '<?php print PATH_SYSTEM; ?>';
