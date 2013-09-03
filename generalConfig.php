@@ -13,5 +13,7 @@ $listSYSTEM = array(
     'primasalud.com.ve' => 'prims',
     'www.primasalud.com.ve' => 'prims',
     'iameg.org.ve' => 'iameg',
-    'www.iameg.org.ve' => 'iameg'
+    'www.iameg.org.ve' => 'iameg',
+    'diezsoluciones.com' => 'diezs',
+    'www.diezsoluciones.com' => 'diezs'
 );
