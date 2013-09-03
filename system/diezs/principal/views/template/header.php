@@ -18,7 +18,8 @@
 
   <?php
   if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
-      print '<link rel="stylesheet/less" type="text/css" href="' . PATH_FILE . 'public/less/bootstrap.less">';
+      print '<link rel="stylesheet/less" type="text/css" href="' . PATH_FILE . 'public/less/bootstrap.less">
+      <script type="text/javascript" src="' . DOMAIN . 'public/js/less.js"></script>';
   } else {
       print '<link rel="stylesheet" type="text/css" href="' . PATH_FILE . 'public/css/styles.css">';
   }
@@ -27,7 +28,6 @@
   <link href="<?php print DOMAIN; ?>public/css/font-awesome-ie7.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="<?php print PATH_FILE; ?>public/images/favicon.ico">
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery.js"></script>
-  <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/less.js"></script>
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/general.js"></script>
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/var.js"></script>
   <script type="text/javascript" src="<?php print DOMAIN; ?>public/bootstrap-3.0/js/bootstrap.min.js"></script>
