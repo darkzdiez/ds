@@ -19,9 +19,8 @@
           </div>
         </div><!--/span-->
         <div class="col-xs-12 col-md-9 col-sm-8">
-          <div class="jumbotron">
-            <h1>Banner Principal</h1>
-            <p>Este es un ejemplo de las dimenciones del banner principal<br><strong>Fijo <span style="font-style: italic;">(Recomendado)</span></strong>, o <strong>Rotativo</strong>.</p>
+          <div class="jumbotron hidden-xs">
+            <img src="<?php print PATH_SYSTEM . 'media/front/1.png' ?>" alt="">
           </div>
           <div class="row">
             <?php for ($i=0; $i < 9; $i++) { ?>
