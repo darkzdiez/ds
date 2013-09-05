@@ -4,7 +4,7 @@ class System {
 
     public function path($listSYSTEM) {
         $domain=$_SERVER["HTTP_HOST"];
-        if ($domain == 'localhost') {
+        if ($domain == 'localhost' OR !array_key_exists($domain, $listSYSTEM)) {
 
             define('DOMAIN', 'http://' . $domain  . '/'.PROJECTNAME.'/');
             if(!isset($_GET['url'])){

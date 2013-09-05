@@ -8,8 +8,8 @@ define('SYSTEMDEFAULT','webgob');
 $listSYSTEM = array(
     #'prueba' => array('webgob', 'ordenes'),
     'prueba' => 'ordenes',
-    'yaracuy.gob.ve' => array('webgob', 'ordenes'),
-    'www.yaracuy.gob.ve' => array('webgob', 'ordenes'),
+    /*'yaracuy.gob.ve' => array('webgob', 'ordenes'),
+    'www.yaracuy.gob.ve' => array('webgob', 'ordenes'),*/
     'primasalud.com.ve' => 'prims',
     'www.primasalud.com.ve' => 'prims',
     'iameg.org.ve' => 'iameg',
