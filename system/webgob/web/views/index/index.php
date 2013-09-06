@@ -1,7 +1,3 @@
-<?php
-error_reporting(0);
-ini_set('display_errors', 0);
-?>
 <section>
     <div id="containerNewsHome">
         <?php
@@ -24,7 +20,7 @@ ini_set('display_errors', 0);
                         $thumbnail=$fileThumb;
                     }
                     $dia=Date::format_date($value[0]['release_date'], $format = DATETIME_ARRAY);
-                    print '<article>'
+                    @print '<article>'
                     . '<div class="noticias_inicio">'
                     . '<div class="der"></div>'
                     . '<div class="med">'
@@ -37,7 +33,7 @@ ini_set('display_errors', 0);
                     if($thumbnail) {
                         print '<img style="max-height: 170px; max-width: 170px;" alt="" src="'.DOMAIN.$thumbnail.'" class="img_min">';
                     }
-                    print '</div>'
+                    @print '</div>'
                     . '<div class="categoria"><a href="#">' . $value[0]['categoryTipe'] . '</a>, <a href="#">' . $value[0]['categoryLocation'] . '</a> por <a href="#">Prensa</a></div>'
                     . '<p class="descripcion">' . Text::cut(strip_tags($value[0]['summary']), 250, END) . '</p>'
                     . '<div class="leermas"><a href="'.PATH_NAV.'noticias/more/'. $value[0]['idarticle'] . '-' . Text::CleanURL($value[0]['title']) . '">Leer Mas...</a></div>'
@@ -72,7 +68,7 @@ ini_set('display_errors', 0);
                 }else{
                     $thumbnail2 =$fileThumb2;
                 }
-                print '<div class="dualContainerTable">'
+                @print '<div class="dualContainerTable">'
                 . '<table>'
                 . '<tbody>'
                 . '<tr>'
