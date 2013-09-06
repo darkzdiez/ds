@@ -1,5 +1,5 @@
 </section>
-<div class="title_section cufon_myriad">Vídeos mas Recientes...</div>
+<!--<div class="title_section cufon_myriad">Vídeos mas Recientes...</div>-->
 <?php // aqui se llama los videos $this->callControllerModule('video','moduleDualYoutubeHome'); ?>
 </td>
 <td id="contenido_culum_b">
