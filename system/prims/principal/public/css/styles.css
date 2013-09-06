@@ -5920,6 +5920,9 @@ footer {
 .form-nav input {
   margin-bottom: 4px;
 }
+.jumbotron {
+  padding: 0 !important;
+}
 .list-shopping-card form {
   padding: 0;
 }
