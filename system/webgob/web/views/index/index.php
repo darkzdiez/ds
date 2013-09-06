@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 <section>
     <div id="containerNewsHome">
         <?php
