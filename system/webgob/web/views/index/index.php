@@ -55,16 +55,16 @@
                 }else{
                     $thumbnail1 =$fileThumb1;
                 }
-                $filenameExplode=explode('/', $value[$i+1]['filename']);
+                @$filenameExplode=explode('/', $value[$i+1]['filename']);
                 if(count($filenameExplode)>1){
                     $filename=$filenameExplode[1];
                 }else{
-                    $filename=$value[$i+1]['filename'];
+                    @$filename=$value[$i+1]['filename'];
                 }
-                $fileThumb2='system/webgob/temp/thumbnail/' . $value[$i+1]['idarticle'] . '-250x140'.$filename;
+                @$fileThumb2='system/webgob/temp/thumbnail/' . $value[$i+1]['idarticle'] . '-250x140'.$filename;
                 if(!file_exists($fileThumb2[$i+1])){
                     $obj = new Thumbnail();
-                    $thumbnail2 = $obj->generateThumbnail('system/webgob/'.$value[$i+1]['location'] . $value[$i+1]['idarticle'] . '/' . $filename, $fileThumb2, 250, 140);
+                    @$thumbnail2 = $obj->generateThumbnail('system/webgob/'.$value[$i+1]['location'] . $value[$i+1]['idarticle'] . '/' . $filename, $fileThumb2, 250, 140);
                 }else{
                     $thumbnail2 =$fileThumb2;
                 }
