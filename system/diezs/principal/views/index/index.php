@@ -27,7 +27,7 @@
           <p>Maquetación y personalización de estilos, uso de sus diversos componentes.</p>
 
           <h4><i class="glyphicon glyphicon-ok"></i> jQuery 2</h4>
-          <p>Para manipulación del DOM, Control de Eventos y por su soporte Cross-Browser.</p>
+          <p>Manipulación del DOM, Control de Eventos y por su soporte Cross-Browser.</p>
         </div>
 
         <div class="col-xs-6">

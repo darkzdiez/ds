@@ -38,10 +38,10 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-sm-6">
             <img src="<?php print PATH_FILE; ?>public/images/headband2.png">
         </div>
-        <div class="col-md-6">
+        <div class="col-sm-6">
           <img class="pull-right" src="<?php print PATH_FILE; ?>public/images/headband2.png" alt="">
         </div>
       </div>

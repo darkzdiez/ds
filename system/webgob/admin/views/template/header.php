@@ -11,7 +11,6 @@
             START_SESSION='<?php print Session::get('sessionTime'); ?>'
         </script>
         <!--<link rel="stylesheet" href="<?php print DOMAIN; ?>public/bootstrap-3.0/css/bootstrap.min.css" />-->
-        <link rel="stylesheet/less" type="text/css" href="<?php print PATH_FILE; ?>public/less/bootstrap.less" />
         <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/default.css" />    
         <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/sticky-footer-navbar.css" />    
         <link rel="stylesheet" href="<?php print DOMAIN; ?>public/css/jquery-ui/redmond/jquery-ui-1.10.0.custom.min.css" />
@@ -22,8 +21,15 @@
                 vertical-align: central;
             }
         </style>
+        <?php
+        if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
+            print '<link rel="stylesheet/less" type="text/css" href="' . PATH_FILE . 'public/less/bootstrap.less">
+            <script type="text/javascript" src="' . DOMAIN . 'public/js/less.js"></script>';
+        } else {
+            print '<link rel="stylesheet" type="text/css" href="' . PATH_FILE . 'public/css/styles.css">';
+        }
+        ?>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery.js"></script>
-        <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/less.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/general.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/var.js"></script>
         <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery-ui-1.10.0.custom.min.js"></script>

@@ -9,7 +9,9 @@ if [ "$plessc" = 'y' -o "$plessc" = 'Y' ]; then
 	echo "Procesando Less"
 	read -p 'LESS: Nombre del Proyecto a Procesar: ' projectless
 	sleep 2
-	lessc system/$projectless/principal/public/less/bootstrap.less system/$projectless/principal/public/css/styles.css
+	read -p 'LESS: Nombre de la Aplicacion a Procesar: ' apiless
+	sleep 2
+	lessc system/$projectless/$apiless/public/less/bootstrap.less system/$projectless/$apiless/public/css/styles.css
 fi
 echo 'Agregando Archivos Locales'
 sleep 2
