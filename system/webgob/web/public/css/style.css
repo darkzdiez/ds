@@ -1859,6 +1859,12 @@ a:hover .ccontratacionDenominacionHome{
     border-left: 1px solid #999999;
     border-right: 1px solid #999999;
     font-size: 12px;
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 253px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 .dualContainerTable table .title{
     line-height: 15px;
