@@ -68,7 +68,7 @@
                 if (Session::get('loggedIn') == true):
                     /* Contenido */
                     $access = new Permission();
-                    $access->_listKeyAccessKey = Session::get('controller');
+                    $access->_listKeyAccessKey = Session::get('profile');
                     $access->_group = Session::get('profile');
                     $access->_groupAccess = 1;
                     $access->_elementFirs = '<li class="dropdown">
@@ -81,7 +81,8 @@
                     $access->filterPrint(2, '<li><a href="' . PATH_NAV . 'ccontrataciones"><span class="styleNAV ui-icon ui-icon-document" style="margin-top: 5px; margin-left: 5px;"></span>C. Contrataciones</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'coveradmanager"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Portada</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'galeria"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Galeria</a></li>');
-                    $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'directorio"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Directorio Ejecutivo</a></li>');
+                    $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'videoyoutube"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Video Youtube</a></li>');
+                    $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'directorio"><span class="styleNAV ui-icon ui-icon-youtube" style="margin-top: 5px; margin-left: 5px;"></span>Directorio Ejecutivo</a></li>');
                     $access->printEnd();
                     /* Inventario */
                     $access = new Permission();

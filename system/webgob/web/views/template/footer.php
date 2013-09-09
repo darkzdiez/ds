@@ -11,6 +11,7 @@
         </form>
     </div>
     <div id="fondo_top_colum_b"></div>
+    <div class="container_col_right"><iframe style="width:100%;" src="http://www.youtube.com/embed/HhJbBXjk_ng" frameborder="0" allowfullscreen></iframe></div>
     <div class="container_col_right">
         <?php //llama el video $this->callControllerModule('video','moduleLastYoutube'); ?>
     </div>
