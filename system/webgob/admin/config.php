@@ -11,7 +11,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('DB_USER', 'root');
     define('DB_PASS', 'root');
 } else {
-    define('PATH_NAV', 'http://yaracuy.gob.ve/' . 'w/');
+    define('PATH_NAV', 'http://yaracuy.gob.ve/' . 'w/admin/');
     define('DB_TYPE', 'mysql');
     define('DB_HOST', 'localhost');
     define('DB_NAME', 'sitioweb2');
