@@ -5,6 +5,10 @@ function savedNews(data){
     document.getElementById('idnews').value=data.idnews;
     alert(data.mensaje);
 }
+function savedNews2(data){
+    alert(data.mensaje);
+    location.href = PATH_NAV + 'news';
+}
 
 $(document).ready(function() {
     $('.paso1').show();

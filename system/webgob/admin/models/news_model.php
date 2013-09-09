@@ -88,7 +88,7 @@ ORDER BY `article`.`idarticle` DESC", array(':id' => $id));
     }
     public function addcontent($data){
         $dataNews['content'] = $data['content'];
-        $this->db->update('article', $dataNews, "`idarticle` = {$data['idnews']}");
+        return $this->db->update('article', $dataNews, "`idarticle` = {$data['idnews']}");
     }
     public function editSave($data, $id) {
         $dataNews['title'] = $data['title'];

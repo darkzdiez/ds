@@ -12,7 +12,7 @@
             <th>Antetítulo</th>
             <th>Título</th>
             <th>Sumario</th>
-            <th>Usuario</th>
+            <th>Imagen</th>
             <th>Acción</th>
         </tr>
     </thead>
@@ -25,8 +25,7 @@ foreach ($this->singleList as $key => $value) {
                 <td><?php print $value['description']; ?></td>
                 <td><?php print $value['file_idfile']; ?></td>
                 <?php
-                print '<td style="white-space: nowrap;">
-                        <div ref="' . $value['id'] . '" class="styleLink edit close">Editar</div> ';
+                print '<td style="white-space: nowrap;"> ';
                 if ($value['status'] == 1) {
                     print '<div ref="' . $value['id'] . '" class="styleLink state disable">Desactivar</div></td>';
                 } else {

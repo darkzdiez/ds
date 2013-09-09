@@ -50,7 +50,7 @@ $(document).ready(function() {
         success: function(data) {
             for (var i in data) {
                 var slidehtml='<div class="item" style="background-image:url(' + PATH_SYSTEM + data[i].location + data[i].id + '/' + data[i].filename + ')">';
-                if (data[i].dtexto==1) {
+                if (data[i].dtexto!=1) {
                     slidehtml+='<div class="descriptionContainer">' +
                         '<div class="descripcion">' +
                         '<div class="titulo">' + data[i].toptitle + '</div>' +

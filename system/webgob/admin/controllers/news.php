@@ -69,7 +69,9 @@ class News extends Controller {
         $this->view->render('news/images_form', true);
     }
     public function addcontent(){
-        $this->model->addcontent($_POST); //
+        if ($this->model->addcontent($_POST)) {
+            print json_encode(array('mensaje' => 'Noticia Agregada satisfactoriamente', 'fn'=>'savedNews2'));
+        }
     }
     public function editSave($id) {
         $data = $_POST;
