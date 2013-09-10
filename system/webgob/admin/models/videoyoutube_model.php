@@ -5,7 +5,12 @@ class videoyoutube_Model extends Model {
     public function __construct() {
         parent::__construct();
     }
-
+    public function insertarVideo($postData){
+        return true;
+    }
+    public function listasrep(){
+        return $this->db->select('SELECT * FROM `videoyoutubegrupo`');
+    }
     public function disable($id) {
         $postData = array(
             'status' => '0'

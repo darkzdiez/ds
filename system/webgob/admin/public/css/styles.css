@@ -5906,3 +5906,9 @@ td.visible-print {
     display: none !important;
   }
 }
+.list-group.link > li {
+  cursor: pointer;
+}
+.list-group.link > li .oculto {
+  display: none;
+}

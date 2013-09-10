@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-08-2013 a las 08:57:04
+-- Tiempo de generación: 10-09-2013 a las 08:14:44
 -- Versión del servidor: 5.5.32
--- Versión de PHP: 5.3.10-1ubuntu3.7
+-- Versión de PHP: 5.3.10-1ubuntu3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`idarticle`),
   KEY `fk_article_user1` (`user_iduser`),
   KEY `fk_article_file1` (`main_idfile`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8029 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8421 ;
 
 -- --------------------------------------------------------
 
@@ -262,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `ccontrataciones` (
   `lugarsobres` text NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=31 ;
 
 -- --------------------------------------------------------
 
@@ -333,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `article_idarticle` int(11) NOT NULL,
   PRIMARY KEY (`idcomment`),
   KEY `fk_comentario_noticia1` (`article_idarticle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39226 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49999 ;
 
 -- --------------------------------------------------------
 
@@ -365,7 +365,7 @@ CREATE TABLE IF NOT EXISTS `cover_ad` (
   `dtexto` int(1) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -460,7 +460,7 @@ CREATE TABLE IF NOT EXISTS `file` (
   PRIMARY KEY (`idfile`),
   KEY `fk_image_image_location1` (`file_location_idfile_location`),
   KEY `fk_file_file_type1` (`file_type_idfile_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10043 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10698 ;
 
 -- --------------------------------------------------------
 
@@ -477,7 +477,7 @@ CREATE TABLE IF NOT EXISTS `file_gallery` (
   PRIMARY KEY (`idfile_gallery`),
   KEY `fk_image_image_location1` (`file_location_idfile_location`),
   KEY `fk_file_file_type1` (`file_type_idfile_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=99 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=108 ;
 
 -- --------------------------------------------------------
 
@@ -517,7 +517,7 @@ CREATE TABLE IF NOT EXISTS `gallery` (
   `description` mediumtext NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`idgallery`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 -- --------------------------------------------------------
 
@@ -643,6 +643,31 @@ CREATE TABLE IF NOT EXISTS `user_has_profile` (
   KEY `fk_user_has_profile_profile1` (`profile_idprofile`),
   KEY `fk_user_has_profile_user1` (`user_iduser`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `videoyoutube`
+--
+
+CREATE TABLE IF NOT EXISTS `videoyoutube` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `idyoutube` varchar(200) NOT NULL,
+  `idvideoyoutubegrupo` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `videoyoutubegrupo`
+--
+
+CREATE TABLE IF NOT EXISTS `videoyoutubegrupo` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Restricciones para tablas volcadas
