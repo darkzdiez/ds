@@ -1,18 +1,18 @@
 #/bin/bash
 # var project
 read -p 'Ingrese Nombre del Projecto [webt]: ' project
-project=${name:-'webt'}
+project=${project:-'webt'}
 read -p 'Subir al Servidor FTP [Y,n]: ' ftp
 read -p 'Procesar Less [Y,n]: ' plessc
 read -p "Mensaje [commit $(date +%F' '%r)]:" mensaje
-mensaje=${name:-"commit $(date +%F' '%r)"}
+mensaje=${mensaje:-"commit $(date +%F' '%r)"}
 echo 'Trabajando...'
 if [ "$plessc" = 'y' -o "$plessc" = 'Y' ]; then
 	echo "Procesando Less"
 	read -p 'LESS: Nombre del Proyecto a Procesar: ' projectless
 	sleep 2
 	read -p 'LESS: Nombre de la Aplicacion a Procesar [principal]: ' apiless
-	apiless=${name:-'principal'}
+	apiless=${apiless:-'principal'}
 	sleep 2
 	lessc system/$projectless/$apiless/public/less/bootstrap.less system/$projectless/$apiless/public/css/styles.css
 fi
