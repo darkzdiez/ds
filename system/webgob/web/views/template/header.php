@@ -113,9 +113,9 @@
                                     <li>
                                        <a href="<?php print PATH_NAV . 'informacion/yaracuy/simbolos'; ?>"><span>Símbolos</span></a>
                                     </li>
-                                    <li>
+                                    <!--<li>
                                         <a href="<?php print PATH_NAV . 'informacion/yaracuy/turismo'; ?>"><span>Turismo</span></a>
-                                    </li>
+                                    </li>-->
                                     <li>
                                         <a href="<?php print PATH_NAV . 'informacion/yaracuy/faunayflora'; ?>"><span>Flora y Fauna</span></a>
                                     </li>
