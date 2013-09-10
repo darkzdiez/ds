@@ -6,10 +6,15 @@ class videoyoutube_Model extends Model {
         parent::__construct();
     }
     public function insertarVideo($postData){
-        return true;
+        $data['idyoutube']=$postData['idvideoyoutube'];
+        $data['idvideoyoutubegrupo']=$postData['listaactiva'];
+        return $this->db->insert('videoyoutube', $data);
     }
     public function listasrep(){
         return $this->db->select('SELECT * FROM `videoyoutubegrupo`');
+    }
+    public function listarvideos($idlista){
+        return $this->db->select("SELECT * FROM `videoyoutube` WHERE `idvideoyoutubegrupo` = :idlista ORDER BY `id` DESC", array(':idlista' => $idlista));
     }
     public function disable($id) {
         $postData = array(

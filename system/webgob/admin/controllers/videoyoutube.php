@@ -25,4 +25,7 @@ class Videoyoutube extends Controller {
     public function listasrep(){
         print json_encode($this->model->listasrep());
     }
+    public function listarvideos($idlista){
+        print json_encode($this->model->listarvideos($idlista));
+    }
 }
