@@ -15,17 +15,17 @@ class Login_Model extends Model {
         ));
 
         $data = $sth->fetch();
-        $time=time()+60*60*24;
-        if (isset($_POST['recordarme'])) {
-            setcookie('recordarme','ab', $time, '/');
-            $recordar=true;
-        }else{
-            setcookie('recordarme','ac', $time, '/');
-            $recordar=false;
-        }
         $count = $sth->rowCount();
         if ($count > 0) {
             // login
+            $time=time()+60*60*24;
+            if (isset($_POST['recordarme'])) {
+                setcookie('recordarme','ab', $time, '/');
+                $recordar=true;
+            }else{
+                setcookie('recordarme','ac', $time, '/');
+                $recordar=false;
+            }
             Session::init($recordar);
             Session::set('iduser', $data['iduser']);
             Session::set('nameuser', $data['nameuser']);
