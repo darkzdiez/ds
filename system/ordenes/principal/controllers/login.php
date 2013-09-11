@@ -7,7 +7,7 @@ class Login extends Controller {
     }
     
     function index() {  
-        @session_destroy();
+        Session::destroy();
         unset($_SESSION);
         $this->view->render('login/index');
     }
