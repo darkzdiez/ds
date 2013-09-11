@@ -9,8 +9,7 @@ class Session {
         $this->_timeSession = 24*60*60;
     }
 
-    public static function init($recordar=false)
-    {
+    public static function init($recordar=false) {
 
         $Session = new Session;
         session_name($Session->_nameSession);
@@ -23,19 +22,16 @@ class Session {
         @session_start();
     }
     
-    public static function set($key, $value)
-    {
+    public static function set($key, $value) {
         $_SESSION[$key] = $value;
     }
     
-    public static function get($key)
-    {
+    public static function get($key) {
         if (isset($_SESSION[$key]))
         return $_SESSION[$key];
     }
     
-    public static function destroy()
-    {
+    public static function destroy() {
         $Session = new Session;
         session_name($Session->_nameSession);
         $time=time()+60*60*24;
