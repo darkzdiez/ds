@@ -19,7 +19,7 @@
 									<input type="text" id="idvideoyoutube" name="idvideoyoutube" class="form-control">
 									<input type="hidden" id="listaactiva" name="listaactiva" value="">
 									<span class="input-group-btn">
-										<button class="btn btn-primary" type="summit"><i class="icon-youtube"></i> Insertar Video</button>
+										<button class="btn btn-primary" type="summit"><i class="icon icon-youtube"></i> Insertar Video</button>
 									</span>
 								</div>
 							</form>

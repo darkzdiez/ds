@@ -1,0 +1,1 @@
+<iframe style="width:100%;" src="http://www.youtube.com/embed/<?php print $this->data['idyoutube']; ?>" frameborder="0" allowfullscreen></iframe>

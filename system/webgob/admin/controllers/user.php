@@ -13,6 +13,7 @@ class User extends Controller {
             exit;
         }
         $this->view->js = array('user/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     public function index() {

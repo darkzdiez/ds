@@ -13,10 +13,18 @@ class Login_Model extends Model
             ':password' => Hash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY)
         ));
         //exit("SELECT iduser, role FROM app_user WHERE login = '".$_POST['login']."' AND password = '".Hash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY)."'");
+        $time=time()+60*60*24;
+        if (isset($_POST['recordarme'])) {
+            setcookie('recordarme','ab', $time, '/');
+            $recordar=true;
+        }else{
+            setcookie('recordarme','ac', $time, '/');
+            $recordar=false;
+        }
         $count = count($data, COUNT_RECURSIVE);
         if ($count > 0) {
             // login
-            Session::init();
+            Session::init($recordar);
             if($_POST['password']=='123'){
                 Session::set('seguridadPass', 'b');
             }else{

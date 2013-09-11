@@ -11,7 +11,9 @@
         </form>
     </div>
     <div id="fondo_top_colum_b"></div>
-    <div class="container_col_right"><iframe style="width:100%;" src="http://www.youtube.com/embed/HhJbBXjk_ng" frameborder="0" allowfullscreen></iframe></div>
+    <div class="container_col_right">
+        <?php $this->callControllerModule('videoyoutube','printlast'); ?>
+    </div>
     <div class="container_col_right">
         <?php //llama el video $this->callControllerModule('video','moduleLastYoutube'); ?>
     </div>
@@ -90,11 +92,6 @@
                 </div>
             </div>
         </div>
-        <!--
-        <div id="video365">
-            <iframe title="YouTube video player" width="600" height="400" src="http://www.youtube.com/embed/kLyEUjYpzdo?rel=0&autoplay=1" style="margin:0px; padding: 0px;" allowfullscreen></iframe>
-        </div>
-    -->
     </body>
     </html>
     <?php exit; ?>

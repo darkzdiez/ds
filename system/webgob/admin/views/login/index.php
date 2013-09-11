@@ -4,7 +4,7 @@
 	<input type="password" name="password" class="form-control" placeholder="Clave" /><br />
 	<div class="checkbox">
 		<label class="">
-			<input type="checkbox" value="remember-me"> Recordar Usuario
+			<input type="checkbox" name="recordarme"> Recordar Usuario
 		</label>
 	</div>
 	<button class="btn btn-lg btn-primary btn-block" type="submit">

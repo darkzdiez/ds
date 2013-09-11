@@ -4,7 +4,6 @@ class Login extends Controller {
 
     function __construct() {
         parent::__construct();
-        Session::init();
         $this->view->js = array('login/js/default.js');
     }
 
@@ -22,7 +21,6 @@ class Login extends Controller {
         Session::destroy();
         $this->view->js = array('login/js/default.js');
         $this->view->render('login/index');
-        exit;
     }
 
 }

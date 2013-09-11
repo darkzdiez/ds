@@ -17,7 +17,7 @@
 			<div class="control-group">
 				<div class="controls">
 					<label class="checkbox">
-						<input type="checkbox"> No cerrar sesión
+						<input type="checkbox" name="recordarme"> No cerrar sesión
 					</label>
 					<button type="submit" class="btn btn-danger">Ingresar</button>
 				</div>

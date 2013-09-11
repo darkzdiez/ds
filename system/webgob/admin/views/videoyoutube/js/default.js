@@ -32,11 +32,11 @@ function cargarListaVideos(idlista){
         dataType: 'json',
         url: PATH_NAV + 'videoyoutube/listarvideos/' + idlista,
         success : function(data){
-            var html='';
+            var vhtml='';
             $.each(data, function(i,item){
-                html='<div class="col-sm-4"><iframe style="width:100%;" src="http://www.youtube.com/embed/' + data.idyoutube + '" frameborder="0" allowfullscreen></iframe></div>';
+                vhtml+='<div class="col-sm-4"><iframe style="width:100%;" src="http://www.youtube.com/embed/' + item.idyoutube + '" frameborder="0" allowfullscreen></iframe></div>';
             });
-            $('#listadoVideos').prepend(html);
+            $('#listadoVideos').html(vhtml);
             $('.ajaxLoader').addClass('oculto');
         }
     });

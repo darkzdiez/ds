@@ -29,6 +29,7 @@ class CoverAdManager extends Controller {
             exit;
         }
         $this->view->js = array('coveradmanager/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     function index() {

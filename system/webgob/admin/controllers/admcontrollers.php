@@ -13,6 +13,7 @@ class AdmControllers extends Controller {
             exit;
         }
         $this->view->js = array('admcontrollers/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     public function index() {

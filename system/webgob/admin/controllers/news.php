@@ -13,6 +13,7 @@ class News extends Controller {
             exit;
         }
         $this->view->js = array('news/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     public function index() {

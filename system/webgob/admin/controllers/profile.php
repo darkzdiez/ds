@@ -13,6 +13,7 @@ class Profile extends Controller {
             exit;
         }
         $this->view->js = array('profile/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     public function index() {

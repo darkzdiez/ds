@@ -5912,3 +5912,11 @@ td.visible-print {
 .list-group.link > li .oculto {
   display: none;
 }
+.btn .icon {
+  display: inline-block;
+}
+.btn:hover > .icon {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}

@@ -18,6 +18,7 @@ class admConfig extends Controller {
             exit;
         }
         $this->view->js = array('config/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     public function index() {

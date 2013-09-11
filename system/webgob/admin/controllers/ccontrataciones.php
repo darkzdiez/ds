@@ -13,6 +13,7 @@ class Ccontrataciones extends Controller {
             exit;
         }
         $this->view->js = array('ccontrataciones/js/default.js');
+        $this->view->css = array('public/css/old_form.css');
     }
 
     public function index() {

@@ -47,6 +47,13 @@
             }
         }
         ?>
+        <?php
+        if (isset($this->css)) {
+            foreach ($this->css as $css) {
+                echo '<link href="' . PATH_FILE . '' . $css . '" rel="stylesheet">';
+            }
+        }
+        ?>
     </head>
     <body>
     <div id="wrap">
