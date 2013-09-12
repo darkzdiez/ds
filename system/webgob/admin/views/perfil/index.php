@@ -40,7 +40,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <form name="form1" method="post" id="searchForm" class="form-horizontal ajaxForm" action="<?php print PATH_NAV; ?>">
+                            <form name="cambiarClave" method="post" id="cambiarClave" class="form-horizontal ajaxForm" action="<?php print PATH_NAV; ?>perfil/guardareditarclave">
                                 <div class="form-group">
                                     <label for="inputEmail1" class="col-lg-2 control-label">Clave</label>
                                     <div class="col-lg-10">
@@ -55,7 +55,7 @@
                                 </div>
                                <div class="form-group">
                                     <div class="col-lg-10 pull-right">
-                                        <button class="btn btn-danger pull-right" type="summit"><i class="icon icon-pencil"></i> GUARDAR CAMBIOS</button>
+                                        <button class="btn btn-danger pull-right" type="summit" onclick="return checkpass()"><i class="icon icon-pencil"></i> GUARDAR CAMBIOS</button>
                                     </div>
                                 </div>
                             </form>
