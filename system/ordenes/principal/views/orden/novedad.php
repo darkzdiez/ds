@@ -55,12 +55,12 @@
             break;
     }
     ?>
-    <dd id="estatus"><div class="btn disabled"><i class="<?php print $icon; ?>"></i> <strong><?php print $name; ?></strong></div><?php if($nextname!=''){ if (Session::get('role') == 3) { ?>, Cambiar a: <button class="btn <?php print $nextstyle; ?>" onclick="cambiarEstatus(<?php print $this->idOrden; ?>,<?php print $nextid; ?>)" type="button"><i class="<?php print $nexticon; ?>"></i> <?php print $nextname; ?></button><?php } } ?></dd>
+    <dd id="estatus"><div class="btn disabled"><i class="<?php print $icon; ?>"></i> <strong><?php print $name; ?></strong></div><?php if($nextname!=''){ if (Session::get('role') == 3 OR $this->datosOrden[0]['iduser']==Session::get('iduser')) { ?>, Cambiar a: <button class="btn <?php print $nextstyle; ?>" onclick="cambiarEstatus(<?php print $this->idOrden; ?>,<?php print $nextid; ?>)" type="button"><i class="<?php print $nexticon; ?>"></i> <?php print $nextname; ?></button><?php } } ?></dd>
 </dl>
 <div class="container">
     <div class="bs-docs-example">
         <div class="descriptionForm">NOVEDADES</div>
-        <?php if (Session::get('role') == 3) { ?>
+        <?php if (Session::get('role') == 3 OR $this->datosOrden[0]['iduser']==Session::get('iduser')) { ?>
         <div>
             <a href="<?php print PATH_NAV.'orden/novedadcrear/'.$this->idOrden; ?>" class="btn"><i class="icon-plus-sign"></i> Agregar</a>
         </div>

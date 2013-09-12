@@ -172,9 +172,9 @@ class orden extends Controller {
     }
     function novedadcrear($id){
         $this->view->bc=array_merge($this->view->bc, array('Novedad' => 'orden/novedad/' . $id, 'Crear Novedad' => 'orden/novedadcrear/'));
-        if (Session::get('role') == 3) {
-            $this->view->idOrden = $id;
-            $this->view->datosOrden = $this->model->buscarOrden($id);
+        $this->view->idOrden = $id;
+        $this->view->datosOrden = $this->model->buscarOrden($id);
+        if (Session::get('role') == 3 OR $this->view->datosOrden[0]['iduser']==Session::get('iduser')) {
             $this->view->render('orden/novedad_crear');
         }else{
             $this->view->render('error/index');

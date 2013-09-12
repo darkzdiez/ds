@@ -124,7 +124,15 @@
                     ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?php print PATH_NAV; ?>login/logout">Salir</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> <?php print Session::get('nameuser'); ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo PATH_NAV; ?>perfil"><i class="icon-pencil"></i> Editar Perfil</a></li>
+                        <li><a href="<?php echo PATH_NAV; ?>soporte"><i class="icon-phone"></i> Soporte y Sugerencias</a></li>
+                        <li class="divider"></li>
+                        <li><a href="<?php echo PATH_NAV; ?>login"><i class="icon-off"></i> Salir</a></li>
+                    </ul>
+                </li>
             </ul>
             <?php else: ?>
                 <ul class="nav navbar-nav navbar-right">

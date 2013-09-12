@@ -8,7 +8,7 @@ class Orden_Model extends Model {
 
     Public function guardarOrden($data){
         $datos=array(
-            'id_usuario_emite'                      => 1,
+            'id_usuario_emite'                      => Session::get('iduser'),
             'id_usuario_recibe'                     => $data['responsable'],
             'referencia'                            => $data['referencia'],
             'asunto'                                => $data['asunto'],
@@ -147,7 +147,7 @@ class Orden_Model extends Model {
     }
 
     public function buscarOrden($id){
-        return $this->db->select("SELECT `orden`.`id_orden`, `orden`.`referencia`, `orden`.`asunto`, `orden`.`plazo`, `orden`.`medio`, `orden`.`oficio`, `orden`.`fecha_emision`, descripcion,date_format(fecha_emision,'%d/%m/%Y') as fecha_emision,date_format(DATE_ADD(fecha_emision,INTERVAL plazo DAY),'%d/%m/%Y') as fecha_culminacion, DATEDIFF(NOW(),DATE_ADD(fecha_emision,INTERVAL plazo DAY)) as dias_restantes,estatus, `app_user`.`nombres` as 'usuario_nombre', `institutos`.`nombre` as 'usuario_instituto' FROM orden LEFT JOIN app_user ON `app_user`.`iduser`=`orden`.`id_usuario_recibe` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` WHERE `orden`.`id_orden`=:idorden", array(':idorden'=>$id));
+        return $this->db->select("SELECT `orden`.`id_orden`, `orden`.`referencia`, `orden`.`asunto`, `orden`.`plazo`, `orden`.`medio`, `orden`.`oficio`, `orden`.`fecha_emision`, descripcion,date_format(fecha_emision,'%d/%m/%Y') as fecha_emision,date_format(DATE_ADD(fecha_emision,INTERVAL plazo DAY),'%d/%m/%Y') as fecha_culminacion, DATEDIFF(NOW(),DATE_ADD(fecha_emision,INTERVAL plazo DAY)) as dias_restantes,estatus, `app_user`.`nombres` as 'usuario_nombre', `app_user`.`iduser` as 'iduser', `institutos`.`nombre` as 'usuario_instituto' FROM orden LEFT JOIN app_user ON `app_user`.`iduser`=`orden`.`id_usuario_recibe` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` WHERE `orden`.`id_orden`=:idorden", array(':idorden'=>$id));
     }
     public function cantidadordenes(){
         if (Session::get('role') == 3) {
