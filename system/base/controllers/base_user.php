@@ -1,6 +1,6 @@
 <?php
 
-class User extends Controller {
+class base_user extends Controller {
 
     public function __construct() {
         parent::__construct();

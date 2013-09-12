@@ -1,6 +1,6 @@
 <?php
 
-class Login extends Controller {
+class base_login extends Controller {
 
     function __construct() {
         parent::__construct();

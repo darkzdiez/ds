@@ -1,6 +1,6 @@
 <?php
 
-class Login_Model extends Model {
+class base_login_model extends Model {
 
     public function __construct() {
         parent::__construct();

@@ -1,6 +1,6 @@
 <?php
 
-class Soporte_Model extends Model {
+class base_soporte_model extends Model {
 
     public function __construct() {
         parent::__construct();

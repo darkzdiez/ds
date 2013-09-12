@@ -1,6 +1,6 @@
 <?php
 
-class Soporte extends Controller {
+class base_soporte extends Controller {
 
     function __construct() {
         parent::__construct();
