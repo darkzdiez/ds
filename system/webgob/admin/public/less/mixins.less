@@ -133,11 +133,6 @@
       -ms-transform: rotate(@degrees); // IE9+
           transform: rotate(@degrees);
 }
-.transform(@trans) {
-  -webkit-transform: @trans;
-      -ms-transform: @trans; // IE9+
-          transform: @trans;
-}
 .scale(@ratio) {
   -webkit-transform: scale(@ratio);
       -ms-transform: scale(@ratio); // IE9+
@@ -412,8 +407,8 @@
 .button-variant(@color; @background; @border) {
   color: @color;
   background-color: @background;
-  border: 1px dashed @color;
-  box-shadow: 0 0 0 2px @background;
+  border-color: @border;
+
   &:hover,
   &:focus,
   &:active,
@@ -421,8 +416,7 @@
   .open .dropdown-toggle& {
     color: @color;
     background-color: darken(@background, 8%);
-    box-shadow: 0 0 0 2px darken(@background, 8%);
-    border: 1px dashed @color;
+        border-color: darken(@border, 12%);
   }
   &:active,
   &.active,
@@ -446,7 +440,7 @@
 // Button sizes
 // -------------------------
 .button-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
-  padding: (@padding-vertical - 2) (@padding-horizontal - 4);
+  padding: @padding-vertical @padding-horizontal;
   font-size: @font-size;
   line-height: @line-height;
   border-radius: @border-radius;
