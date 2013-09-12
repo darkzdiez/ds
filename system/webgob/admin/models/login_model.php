@@ -20,10 +20,10 @@ class Login_Model extends Model {
             // login
             $time=time()+60*60*24;
             if (isset($_POST['recordarme'])) {
-                setcookie('recordarme','ab', $time, '/');
+                setcookie('recordarme','ab', $time, SESSIONPATH);
                 $recordar=true;
             }else{
-                setcookie('recordarme','ac', $time, '/');
+                setcookie('recordarme','ac', $time, SESSIONPATH);
                 $recordar=false;
             }
             Session::init($recordar);
