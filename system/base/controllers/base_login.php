@@ -2,11 +2,6 @@
 
 class base_login extends Controller {
 
-    function __construct() {
-        parent::__construct();
-        $this->view->js = array('login/js/default.js');
-    }
-
     function index() {
         Session::destroy();
         $this->view->js = array('login/js/default.js');
