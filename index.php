@@ -1,5 +1,5 @@
 <?php
-/* motor vDiez */
+/* index.php */
 date_default_timezone_set('America/Caracas');
 ini_set('zlib.output_compression', 'On');
 ini_set('zlib.output_compression_level', '9');
