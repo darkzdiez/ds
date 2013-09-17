@@ -20,8 +20,8 @@ require 'util/Auth.php';
 
 function __autoload($class) {
     $file = LIBS . $class . ".php";
-    $file2 = 'system/base/controllers/' . $class . ".php";
-    $file3 = 'system/base/models/' . $class . ".php";
+    $file2 = 'system/base/tema1/controllers/' . $class . ".php";
+    $file3 = 'system/base/tema1/models/' . $class . ".php";
     if (file_exists($file)) {
         require $file;
     }elseif(file_exists($file2)){
