@@ -1,0 +1,136 @@
+29 - Tuesday 17th of September 2013 03:39:03 PM: Imposible cargar lo requerido: system/iameg/principal/views/index/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg
+)
+
+30 - Tuesday 17th of September 2013 03:39:09 PM: Imposible cargar lo requerido: system/iameg/admin/views/index/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin
+)
+
+31 - Tuesday 17th of September 2013 03:54:21 PM: Imposible cargar lo requerido: system/iameg/admin/views/login/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin/login
+)
+
+32 - Tuesday 17th of September 2013 04:23:21 PM: Imposible cargar lo requerido: system/iameg/admin/views/login/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin/login
+)
+
+33 - Tuesday 17th of September 2013 04:44:30 PM: Imposible cargar lo requerido: system/iameg/admin/views/login/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin/login
+)
+
+34 - Tuesday 17th of September 2013 04:50:05 PM: Imposible cargar lo requerido: system/base/tema1/views/login/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin/login
+)
+
+35 - Tuesday 17th of September 2013 04:50:09 PM: Imposible cargar lo requerido: system/base/tema1/views/login/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin/login
+)
+
+36 - Tuesday 17th of September 2013 04:50:54 PM: Imposible cargar lo requerido: system/base/tema1/views/login/index.php
+Informacion de _SESSION: 
+Array
+(
+)
+
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => iameg/admin/login
+)
+

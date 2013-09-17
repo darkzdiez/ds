@@ -8,7 +8,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('PATH_NAV', DOMAIN . 'iameg/admin/');
     define('DB_TYPE', 'mysql');
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'iameg');
+    define('DB_NAME', 'diezsolu_iameg');
     define('DB_USER', 'root');
     define('DB_PASS', 'root');
     define('SESSIONPATH','/webt/iameg/admin/');
@@ -16,12 +16,14 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('PATH_NAV', DOMAIN . 'w/admin/');
     define('DB_TYPE', 'mysql');
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'iameg');
-    define('DB_USER', 'root');
-    define('DB_PASS', 'dbadmin$yara$2010');
+    define('DB_NAME', 'diezsolu_iameg');
+    define('DB_USER', 'diezsolu_gminas');
+    define('DB_PASS', 'qwe123');
     define('SESSIONPATH','/w/admin/');
 }
-
+/* DATOS DE LA BASE U TEMA A UTILIZAR */
+define('BASE', 'tema1');
+/* ... */
 define('PATH_SYSTEM', DOMAIN . 'system/webgob/');
 define('PATH_FILE', PATH_SYSTEM . 'admin/');
 // The sitewide hashkey, do not change this because its used for passwords!

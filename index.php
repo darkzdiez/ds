@@ -15,13 +15,23 @@ if($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
 }
 require 'generalConfig.php';
 require 'util/Auth.php';
+require LIBS . 'System.php';
 
 // Also spl_autoload_register (Take a look at it if you like)
 
+$path = new System();
+$path->path($listSYSTEM);
+
+// Load the Bootstrap!
+require _pathMODULE . '/config.php';
+
 function __autoload($class) {
+    if (!defined('BASE')) {
+        define('BASE', 'tema1');
+    }
     $file = LIBS . $class . ".php";
-    $file2 = 'system/base/tema1/controllers/' . $class . ".php";
-    $file3 = 'system/base/tema1/models/' . $class . ".php";
+    $file2 = 'system/base/' . BASE . '/controllers/' . $class . ".php";
+    $file3 = 'system/base/' . BASE . '/models/' . $class . ".php";
     if (file_exists($file)) {
         require $file;
     }elseif(file_exists($file2)){
@@ -30,12 +40,11 @@ function __autoload($class) {
         require $file3;
     }
 }
+function gestor_excepciones($excepcion) {
+    print 'Error: ' . DS::logERROR($excepcion->getMessage());
+}
+set_exception_handler('gestor_excepciones');
 
-$path = new System();
-$path->path($listSYSTEM);
-
-// Load the Bootstrap!
-require _pathMODULE . '/config.php';
 $bootstrap = new Bootstrap(_pathMODULE);
 // Optional Path Settings
 //$bootstrap->setControllerPath();

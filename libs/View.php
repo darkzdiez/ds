@@ -5,16 +5,27 @@ class View {
     function __construct() {
         //echo 'this is the view';
     }
-
-    public function render($name, $noInclude = false)
-    {
+    public function render($name, $noInclude = false){
         if ($noInclude == true) {
-            require _pathMODULE.'/views/' . $name . '.php';
+            if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
+                DS::file_exists(_pathMODULE . '/views/' . $name . '.php');
+            }else{
+                DS::file_exists($BASE . $name . '.php');
+            }
         } 
         else {
-            require _pathMODULE.'/views/template/header.php';
-            require _pathMODULE.'/views/' . $name . '.php';
-            require _pathMODULE.'/views/template/footer.php';    
+            if (!defined('BASE')) {
+                $BASE = _pathMODULE . '/views/';
+            }else{
+                $BASE = 'system/base/'. BASE . '/views/';
+            }
+            DS::file_exists($BASE . 'template/header.php');
+            if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
+                DS::file_exists(_pathMODULE . '/views/' . $name . '.php');
+            }else{
+                DS::file_exists($BASE . $name . '.php');
+            }
+            DS::file_exists($BASE . 'template/footer.php');
         }
     }
 
