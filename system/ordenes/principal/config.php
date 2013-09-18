@@ -26,6 +26,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('_SERVER', 'server');
     define('SESSIONPATH','/ordenes/');
 }
+define('TEMPLATE', 'LOCAL');
 define('PATH_SYSTEM', DOMAIN . 'system/ordenes/');
 define('PATH_FILE', PATH_SYSTEM . 'principal/');
 define('PATH_ORDENES',dirname($_SERVER['SCRIPT_FILENAME']).'/system/ordenes');

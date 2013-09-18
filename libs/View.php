@@ -14,7 +14,7 @@ class View {
             }
         } 
         else {
-            if (!defined('BASE')) {
+            if ((defined('TEMPLATE') AND TEMPLATE=='LOCAL') OR !defined('BASE')) {
                 $BASE = _pathMODULE . '/views/';
             }else{
                 $BASE = 'system/base/'. BASE . '/views/';
@@ -108,6 +108,8 @@ class View {
 
             $pdf->SetFont('helvetica', '', 12);
 
+            #$resolution= array(100, 100);
+            #$pdf->AddPage('P', $resolution);
             $pdf->AddPage();
             $pdf->setOpenCell(0);
             $pdf->writeHTML($this->getContent($data['location']));
