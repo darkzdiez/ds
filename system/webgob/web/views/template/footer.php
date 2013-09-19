@@ -18,7 +18,16 @@
         <?php //llama el video $this->callControllerModule('video','moduleLastYoutube'); ?>
     </div>
     <div class="container_col_right">
+        <a class="twitter-timeline"  href="https://twitter.com/JULIOLEONYARA"  data-widget-id="380710333662244864">Tweets por @JULIOLEONYARA</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+
+    <div class="container_col_right">
         <a href="<?php print PATH_NAV; ?>galeria/movie" class="spritex282 spritex282-RINDIENDO-CUENTAS-FOTO-NUEVA" style="float: left;"></a>
+    </div>
+    <div class="container_col_right">
+        <a class="twitter-timeline"  href="https://twitter.com/prensayaracuy"  data-widget-id="380712491174477824">Tweets por @prensayaracuy</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
     <div class="container_col_right">
         <a href="<?php print PATH_NAV; ?>directorio2" class="spritex282 spritex282-directorio" style="float: left;"></a>
