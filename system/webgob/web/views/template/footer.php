@@ -72,7 +72,7 @@
                         <div id="columna_a" class="columna_footer">
                             <div class="titulo">Informacion del Sitio</div>
                             Diseño, Desarrollo e implantación por Gobierno Bolivariano del Estado Yaracuy | Dirección de Informática, ultima actualización 24-09-2012<br />
-                            <a href="<?php print PATH_FILE; ?>">www.yaracuy.gob.ve</a>
+                            <a href="<?php print PATH_NAV; ?>">www.yaracuy.gob.ve</a>
                             <div id="address"><address>Av Caracas con Av Libertador, Edificio Administrativo. - San Felipe - Yaracuy - Venezuela RIF.: G-20000164-0</address></div>
                         </div>
                         <div id="columna_b" class="columna_footer columna_footer_medio">

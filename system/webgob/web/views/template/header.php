@@ -71,7 +71,10 @@
 
 <body>
     <div id="container_body">
-        <div class="fondo" id="gobierno_bolivariano_f"><div class="contenedor" id="gobierno_bolivariano_c"><img src="<?php print PATH_FILE; ?>public/images/headband1.png" style="float: left;" alt="imagen" /><img src="<?php print PATH_FILE; ?>public/images/headband2.png" style="float: right;" alt="imagen" /></div></div>
+        <div class="fondo" id="gobierno_bolivariano_f">
+            <div class="contenedor" id="gobierno_bolivariano_c"><img src="<?php print PATH_FILE; ?>public/images/headband1.png" style="float: left;" alt="imagen" /><img src="<?php print PATH_FILE; ?>public/images/headband2.png" style="float: right;" alt="imagen" /></div>
+            <div class="contenedor" id="gobierno_bolivariano_c" style="height: 100px;"><img src="<?php print PATH_FILE; ?>public/images/BANNERIDENTIFICACIONWEB.png" style="float: left;" alt="imagen" /></div>
+        </div>
         <header>
             <div class="fondo" id="nav_f">
                 <div class="contenedor" id="nav_c">
