@@ -14,18 +14,23 @@ class View {
             }
         } 
         else {
-            if ((defined('TEMPLATE') AND TEMPLATE=='LOCAL') OR !defined('BASE')) {
+            if ((!defined('TEMPLATE') OR TEMPLATE=='LOCAL')) {
+                $BASET = _pathMODULE . '/views/';
+            }else{
+                $BASET = 'system/base/'. BASE . '/views/';
+            }
+            if (!defined('BASE')) {
                 $BASE = _pathMODULE . '/views/';
             }else{
                 $BASE = 'system/base/'. BASE . '/views/';
             }
-            DS::file_exists($BASE . 'template/header.php');
+            DS::file_exists($BASET . 'template/header.php');
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
                 DS::file_exists(_pathMODULE . '/views/' . $name . '.php');
             }else{
                 DS::file_exists($BASE . $name . '.php');
             }
-            DS::file_exists($BASE . 'template/footer.php');
+            DS::file_exists($BASET . 'template/footer.php');
         }
     }
 

@@ -13,7 +13,7 @@
         <!--<link rel="stylesheet" href="<?php print DOMAIN; ?>public/bootstrap-3.0/css/bootstrap.min.css" />-->
         <link href="<?php echo DOMAIN; ?>public/css/font-awesome.min.css" rel="stylesheet">
         <link href="<?php echo DOMAIN; ?>public/css/font-awesome-ie7.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/default.css" />    
+        <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/default.css" />   
         <link rel="stylesheet" href="<?php print PATH_FILE; ?>public/css/sticky-footer-navbar.css" />    
         <link rel="stylesheet" href="<?php print DOMAIN; ?>public/css/jquery-ui/redmond/jquery-ui-1.10.0.custom.min.css" />
         <!--<link href="<?php echo DOMAIN; ?>public/css/bootstrap.css" rel="stylesheet">-->

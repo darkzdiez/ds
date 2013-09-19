@@ -197,7 +197,7 @@ textarea{
 }
 #nav_c #menu{
     height: 42px;
-    width: 650px;
+    width: 100%;
     float: left;
     overflow:hidden;
     margin: 0px;
@@ -241,7 +241,6 @@ textarea{
 }
 #nav_c #menu li:hover .submenu{
     opacity: 1;
-    box-shadow: 1px 1px 1px #333;
 }
 #nav_c #menu li .submenu li{
     height: 0px;

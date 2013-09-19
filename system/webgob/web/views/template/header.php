@@ -77,7 +77,7 @@
                 <div class="contenedor" id="nav_c">
                     <nav>
                         <ul id="menu">
-                            <li><a href="<?php print PATH_NAV; ?>" title="Inicio" id="home"><span></span></a></li>
+                            <li><a href="<?php print PATH_NAV; ?>" title="Inicio"><span class="cufon_myriad_bold">Inicio</span></a></li>
                             <li>
                                 <a href="<?php print PATH_NAV; ?>noticias"><span class="cufon_myriad_bold">Noticias</span></a>
                                 <!--<ul class="submenu">
@@ -124,17 +124,21 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li><a><span class="cufon_myriad_bold">Galeria</span></a>
+                                <ul class="submenu">
+                                    <li>
+                                       <a href="<?php print PATH_NAV . 'galeria/movie'; ?>"><span>Videos</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php print PATH_NAV . 'galeria/photo'; ?>"><span>Fotografias</span></a>
+                                    </li>
+                                </ul>
+                            </li>
                             <!--<li><a href="<?php print PATH_NAV; ?>galeria"><span class="cufon_myriad_bold">Galer&iacute;a</span></a></li>-->
                             <!--li><a href="<?php print PATH_NAV; ?>informacion"><span class="cufon_myriad_bold">Informaci&oacute;n</span></a></li>-->
                             <li><a href="<?php print PATH_NAV; ?>contacto"><span class="cufon_myriad_bold">Cont&aacute;ctenos</span></a></li>
                         </ul>
                     </nav>
-                    <div id="social1">
-                        <a id="socialicon1" href="<?php print PATH_NAV; ?>contacto" title="eMail"><span></span></a>
-                        <a id="socialicon2" href="<?php print PATH_NAV; ?>" title="RSS"><span></span></a>
-                        <a id="socialicon3" href="https://twitter.com/#!/JULIOLEONYARA" title="Twitter" target="_blank"><span></span></a>
-                        <a id="socialicon4" href="http://www.facebook.com/pages/Gobernacion-del-Estado-Yaracuy/238753326211242" title="Facebook" target="_blank"><span></span></a>
-                    </div>
                 </div>
             </div>
         </header>
