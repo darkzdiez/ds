@@ -32,9 +32,9 @@
         );
     </script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery-ui-1.10.0.custom.min.js"></script>
-    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon-yui.js"></script>
+    <!--<script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon-yui.js"></script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Gentium_Book.font.js"></script>
-    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Gudea.font.js"></script>
+    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Gudea.font.js"></script>-->
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Myriad_Pro.font.js"></script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/tiny_mce/jquery.tinymce.js"></script>
     <script type="text/javascript" src="<?php print PATH_FILE; ?>public/js/jquery.cycle.all.js"></script>
@@ -141,6 +141,13 @@
                             <!--li><a href="<?php print PATH_NAV; ?>informacion"><span class="cufon_myriad_bold">Informaci&oacute;n</span></a></li>-->
                             <li><a href="<?php print PATH_NAV; ?>contacto"><span class="cufon_myriad_bold">Cont&aacute;ctenos</span></a></li>
                         </ul>
+                        <div id="social1">
+                            <form name="form1" method="post" id="searchForm">
+                                <div id="inicio_buscar_nav"></div>
+                                <input type="text" name="campo_buscar_nav" id="campo_buscar_nav" placeholder="Buscar en el Sitio">
+                                <input type="submit" name="btn_buscar_nav" id="btn_buscar_nav" value="">
+                            </form>
+                        </div>
                     </nav>
                 </div>
             </div>

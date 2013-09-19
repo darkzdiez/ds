@@ -4,11 +4,12 @@
 </td>
 <td id="contenido_culum_b">
     <div id="search">
-        <form name="form1" method="post" id="searchForm">
+        <!--<form name="form1" method="post" id="searchForm">
             <div id="inicio_buscar_nav"></div>
             <input type="text" name="campo_buscar_nav" id="campo_buscar_nav" placeholder="Buscar en el Sitio">
             <input type="submit" name="btn_buscar_nav" id="btn_buscar_nav" value="">
-        </form>
+        </form>-->
+        <div style="float: right; height: 6px; width: 232px;"></div>
     </div>
     <div id="fondo_top_colum_b"></div>
     <div class="container_col_right">
