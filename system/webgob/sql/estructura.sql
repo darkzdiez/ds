@@ -3,10 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-09-2013 a las 08:14:44
+-- Tiempo de generación: 20-09-2013 a las 09:32:23
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.3.10-1ubuntu3.8
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -41,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`idarticle`),
   KEY `fk_article_user1` (`user_iduser`),
   KEY `fk_article_file1` (`main_idfile`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8421 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -225,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `idparent_category` int(11) DEFAULT NULL,
   PRIMARY KEY (`idcategory`),
   KEY `fk_categoria_categoria1` (`idparent_category`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=277 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -333,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `article_idarticle` int(11) NOT NULL,
   PRIMARY KEY (`idcomment`),
   KEY `fk_comentario_noticia1` (`article_idarticle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49999 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -365,7 +366,7 @@ CREATE TABLE IF NOT EXISTS `cover_ad` (
   `dtexto` int(1) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -460,7 +461,7 @@ CREATE TABLE IF NOT EXISTS `file` (
   PRIMARY KEY (`idfile`),
   KEY `fk_image_image_location1` (`file_location_idfile_location`),
   KEY `fk_file_file_type1` (`file_type_idfile_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10698 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -629,7 +630,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `role` varchar(255) NOT NULL,
   `creation` datetime DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -667,7 +668,7 @@ CREATE TABLE IF NOT EXISTS `videoyoutubegrupo` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Restricciones para tablas volcadas
@@ -685,6 +686,7 @@ ALTER TABLE `file_gallery`
 ALTER TABLE `gallery_has_file`
   ADD CONSTRAINT `gallery_has_file_ibfk_4` FOREIGN KEY (`idgallery`) REFERENCES `gallery` (`idgallery`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `gallery_has_file_ibfk_5` FOREIGN KEY (`idfile`) REFERENCES `file_gallery` (`idfile_gallery`) ON DELETE CASCADE ON UPDATE CASCADE;
+SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

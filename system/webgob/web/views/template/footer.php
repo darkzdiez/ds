@@ -67,7 +67,7 @@
                     </table>    
                 </div>
             </div>
-            <div class="fondo" id="pie_pagina_f">
+            <!--<div class="fondo" id="pie_pagina_f">
                 <div class="contenedor" id="pie_pagina_c">
                     <footer>
                         <div id="columna_a" class="columna_footer">
@@ -96,7 +96,9 @@
                         </div>
                     </footer>
                 </div>
-            </div>
+            </div>-->
+
+        </div>
         </div>
     </body>
     </html>

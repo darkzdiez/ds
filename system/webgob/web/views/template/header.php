@@ -20,7 +20,7 @@
     </script>
     <link href="<?php echo DOMAIN; ?>public/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo DOMAIN; ?>public/css/font-awesome-ie7.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?php print PATH_FILE; ?>public/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="<?php print PATH_FILE; ?>public/css/default.css" />
     <link rel="stylesheet" type="text/css" href="<?php print PATH_FILE; ?>public/css/tooltip.css" />
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/var.js"></script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery.js"></script>
@@ -31,11 +31,12 @@
         PATH_FILE + 'public/css/thickbox.css'
         );
     </script>
+    <link rel="stylesheet" type="text/css" href="<?php print PATH_FILE; ?>public/css/default.css" />
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/jquery-ui-1.10.0.custom.min.js"></script>
     <!--<script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon-yui.js"></script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Gentium_Book.font.js"></script>
-    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Gudea.font.js"></script>-->
-    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Myriad_Pro.font.js"></script>
+    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Gudea.font.js"></script>
+    <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/cufon_fonts/Myriad_Pro.font.js"></script>-->
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/tiny_mce/jquery.tinymce.js"></script>
     <script type="text/javascript" src="<?php print PATH_FILE; ?>public/js/jquery.cycle.all.js"></script>
     <script type="text/javascript" src="<?php print DOMAIN; ?>public/js/yoxview.js"></script>
@@ -70,6 +71,7 @@
 </head>
 
 <body>
+    <div id="old">
     <div id="container_body">
         <div class="fondo" id="gobierno_bolivariano_f">
             <div class="contenedor" id="gobierno_bolivariano_c"><img src="<?php print PATH_FILE; ?>public/images/headband1.png" style="float: left;" alt="imagen" /><img src="<?php print PATH_FILE; ?>public/images/headband2.png" style="float: right;" alt="imagen" /></div>

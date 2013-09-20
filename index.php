@@ -24,7 +24,7 @@ $path->path($listSYSTEM);
 
 // Load the Bootstrap!
 require _pathMODULE . '/config.php';
-
+/*exit(print_r(get_defined_constants(true)));*/
 function __autoload($class) {
     if (!defined('BASE')) {
         define('BASE', 'tema1');

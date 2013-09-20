@@ -24,6 +24,7 @@ $(document).ready(function() {
         timeout: 4000
     });
 });
+/*
 Cufon('.container_add_more_news_home .text', {
     fontFamily: 'Gudea',
     textShadow: '1px 1px 3px #999',
@@ -62,7 +63,7 @@ Cufon('.cufon_myriad_bold', {
 });
 Cufon('.table_pagination', {
     fontFamily: 'Myriad Pro'
-});
+});*/
 $(function() {
     $(".btm_desplegar").button({
         icons: {

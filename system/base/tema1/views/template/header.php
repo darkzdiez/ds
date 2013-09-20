@@ -67,7 +67,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="<?php print PATH_SYSTEM; ?>public/img/gobyaracuy.png" alt="Gob Yaracuy"></a>
+          <a class="navbar-brand" href="#"></a>
         </div>
         <!-- end bootstrap -->
         <div class="navbar-collapse collapse">
@@ -92,19 +92,6 @@
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'galeria"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Galeria</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'videoyoutube"><span class="styleNAV ui-icon ui-icon-image" style="margin-top: 5px; margin-left: 5px;"></span>Video Youtube</a></li>');
                     $access->filterPrint(3, '<li><a href="' . PATH_NAV . 'directorio"><span class="styleNAV ui-icon ui-icon-youtube" style="margin-top: 5px; margin-left: 5px;"></span>Directorio Ejecutivo</a></li>');
-                    $access->printEnd();
-                    /* Inventario */
-                    $access = new Permission();
-                    $access->_listKeyAccessKey = Session::get('controller');
-                    $access->_group = Session::get('profile');
-                    $access->_groupAccess = 1;
-                    $access->_elementFirs = '<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Inventario <b class="caret"></b></a>
-                        <ul class="dropdown-menu">';
-                    $access->_elementEnd = '</ul>
-                        </li>';
-                    $access->filterPrint(1, '<li><a href="' . PATH_NAV . 'inventarioinformatica"><span class="styleNAV ui-icon ui-icon-cart" style="margin-top: 5px; margin-left: 5px;"></span>Informatica</a></li>');
-                    $access->filterPrint(4, '<li><a href="' . PATH_NAV . 'goods"><span class="styleNAV ui-icon ui-icon-cart" style="margin-top: 5px; margin-left: 5px;"></span>Poder Comunal</a></li>');
                     $access->printEnd();
                     /* Sistema */
                     $access = new Permission();

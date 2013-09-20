@@ -22,7 +22,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('SESSIONPATH','/w/admin/');
 }
 /* DATOS DE LA BASE U TEMA A UTILIZAR */
-define('BASE', 'tema1');
+define('TEMPLATE', 'tema1');
 /* ... */
 define('PATH_SYSTEM', DOMAIN . 'system/webgob/');
 define('PATH_FILE', PATH_SYSTEM . 'admin/');

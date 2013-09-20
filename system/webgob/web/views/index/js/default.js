@@ -84,7 +84,7 @@ $(document).ready(function() {
 //                    }, 500);
 //                }
 //            });
-            Cufon('#slide_ppal .descripcion .titulo', {
+            /*Cufon('#slide_ppal .descripcion .titulo', {
                 fontFamily: 'Gudea',
                 textShadow: '1px 1px 2px #fff'
             });
@@ -104,7 +104,7 @@ $(document).ready(function() {
             });
             Cufon('#slide_ppal .titulo_adi .comentario_2', {
                 fontFamily: 'Gudea'
-            });
+            });*/
 
         }
     });

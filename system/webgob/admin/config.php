@@ -8,7 +8,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('PATH_NAV', DOMAIN . 'webgob/admin/');
     define('DB_TYPE', 'mysql');
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'sitioweb2');
+    define('DB_NAME', 'sitioweb5');
     define('DB_USER', 'root');
     define('DB_PASS', 'root');
     define('SESSIONPATH','/webt/webgob/admin/');
