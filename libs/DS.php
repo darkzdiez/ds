@@ -1,6 +1,6 @@
 <?php
 class DS{
-    public function callStatic($name, $arguments) {
+    public static function callStatic($name, $arguments) {
         $this->$name($arguments);
     }
     public static function logERROR($contenido){
@@ -57,7 +57,7 @@ class DS{
     public static function UTF8_json_encode($array){
 		return json_encode(self::_utf8_encode($array,"convert_before_json"));
     }
-    public function file_exists($filename){
+    public function incluir($filename){
         if (!file_exists($filename)) {
             throw new Exception("Imposible cargar lo requerido" . ": $filename");
         }else{

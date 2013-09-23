@@ -385,3 +385,27 @@ Array
     [url] => iameg/admin/
 )
 
+55 - Saturday 21st of September 2013 12:22:23 PM: Imposible cargar lo requerido: system/base/tema1/views/error/index.php
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => prims/empresa/ubicacion
+)
+
+56 - Saturday 21st of September 2013 12:22:27 PM: Imposible cargar lo requerido: system/base/tema1/views/error/index.php
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => prims/empresa/informacion
+)
+

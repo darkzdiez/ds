@@ -8,9 +8,9 @@ class View {
     public function render($name, $noInclude = false){
         if ($noInclude == true) {
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
-                DS::file_exists(_pathMODULE . '/views/' . $name . '.php');
+                DS::incluir(_pathMODULE . '/views/' . $name . '.php');
             }else{
-                DS::file_exists($BASE . $name . '.php');
+                DS::incluir($BASE . $name . '.php');
             }
         } 
         else {
@@ -24,13 +24,13 @@ class View {
             }else{
                 $BASE = 'system/base/'. BASE . '/views/';
             }
-            DS::file_exists($BASET . 'template/header.php');
+            DS::incluir($BASET . 'template/header.php');
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
-                DS::file_exists(_pathMODULE . '/views/' . $name . '.php');
+                DS::incluir(_pathMODULE . '/views/' . $name . '.php');
             }else{
-                DS::file_exists($BASE . $name . '.php');
+                DS::incluir($BASE . $name . '.php');
             }
-            DS::file_exists($BASET . 'template/footer.php');
+            DS::incluir($BASET . 'template/footer.php');
         }
     }
 

@@ -1,41 +1,3 @@
-      <div class="row">
-        <div class="col-xs-12 col-md-3 col-sm-4" id="sidebar" role="navigation">
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title">Drogueria</h3>
-            </div>
-            <div class="panel-body">
-                <ul class="nav">
-                  <li class="active"><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                </ul>
-            </div>
-          </div>
-          <div class="panel panel-danger">
-            <div class="panel-heading">
-              <h3 class="panel-title">Lenceria Descartable</h3>
-            </div>
-            <div class="panel-body">
-                <ul class="nav">
-                  <li class="active"><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                </ul>
-            </div>
-          </div>
-        </div><!--/span-->
-        <div class="col-xs-12 col-md-9 col-sm-8">
           <div class="jumbotron hidden-xs">
             <img src="<?php print PATH_SYSTEM.'media/images/banner1/banner1.jpg'; ?>" alt="">
           </div>
@@ -48,5 +10,3 @@
               </div><!--/span-->
             <?php } ?>
           </div><!--/row-->
-        </div><!--/span-->
-      </div><!--/row-->

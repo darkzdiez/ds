@@ -37,7 +37,7 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="logo">
             <img src="<?php print PATH_FILE; ?>public/images/logo3.gif">
           </div>
@@ -66,7 +66,7 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#"><i class="icon-user-md"></i> Inicio</a></li>
+          <li class="active"><a href="<?php print PATH_NAV; ?>"><i class="icon-user-md"></i> Inicio</a></li>
           <li><a href="#about"><i class="icon-medkit"></i> Productos</a></li>
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-group"></i> Clientes <b class="caret"></b></a>
@@ -90,14 +90,8 @@
               <li><a href="#"><i class="icon-facebook-sign"></i> Facebook</a></li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-hospital"></i> Conocenos <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Quienes Somos</a></li>
-              <li><a href="#">Donde Estamos</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact"><i class="icon-comments"></i> Contactanos</a></li>
+          <li><a href="<?php print PATH_NAV . 'empresa'; ?>"><i class="icon-hospital"></i> Conocenos</a></li>
+          <li><a href="<?php print PATH_NAV . 'contacto'; ?>"><i class="icon-comments"></i> Contactanos</a></li>
         </ul>
         <ul class="nav navbar-nav pull-right">
           <li class="dropdown list-shopping-card">
@@ -121,3 +115,41 @@
     </div>
   </div>
     <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-3 col-sm-4" id="sidebar" role="navigation">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Drogueria</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nav">
+                  <li class="active"><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Lenceria Descartable</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nav">
+                  <li class="active"><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+          </div>
+        </div><!--/span-->
+        <div class="col-xs-12 col-md-9 col-sm-8">
