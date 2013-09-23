@@ -13,7 +13,11 @@
     </div>
     <div id="fondo_top_colum_b"></div>
     <div class="container_col_right">
-        <?php $this->callControllerModule('videoyoutube','printlast'); ?>
+        <?php
+        if($_SERVER['REMOTE_ADDR'] != '200.11.197.74'){
+            $this->callControllerModule('videoyoutube','printlast');
+        }
+        ?>
     </div>
     <div class="container_col_right">
         <?php //llama el video $this->callControllerModule('video','moduleLastYoutube'); ?>
