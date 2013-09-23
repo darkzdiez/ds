@@ -71,7 +71,7 @@
                     </table>    
                 </div>
             </div>
-            <!--<div class="fondo" id="pie_pagina_f">
+            <div class="fondo" id="pie_pagina_f">
                 <div class="contenedor" id="pie_pagina_c">
                     <footer>
                         <div id="columna_a" class="columna_footer">
@@ -81,7 +81,7 @@
                             <div id="address"><address>Av Caracas con Av Libertador, Edificio Administrativo. - San Felipe - Yaracuy - Venezuela RIF.: G-20000164-0</address></div>
                         </div>
                         <div id="columna_b" class="columna_footer columna_footer_medio">
-                            <div class="titulo">Sitio WEB Amigos</div>
+                            <div class="titulo">Enlaces de Interés</div>
                             <a id="sitio_amigos1" href="<?php print PATH_NAV; ?>171" class="sitio_amigos" title="171 - Es un centro de atención a la ciudadanía, que se encarga de integrar y coordinar los cuerpos de seguridad competentes, en caso de situaciones de emergencias y solicitudes de servicios, para así brindar mayor seguridad y confianza al usuario."></a>
                             <a id="sitio_amigos2" href="http://www.cantv.com.ve/" class="sitio_amigos" title="CANTV - Es la primera empresa de telecomunicaciones en Venezuela que tiene como objetivo fundamental fomentar la inclusión social y la disminución de la brecha al acceso de tecnologías digitales."></a>
                             <a id="sitio_amigos3" href="http://www.ivss.gob.ve/Gran%20Misi%C3%B3n%20en%20Amor%20Mayor%20Venezuela" class="sitio_amigos" title="Gran Misión en Amor Mayor Venezuela - Creada para la atención de adultos mayores con las siguientes características."></a>
@@ -100,8 +100,7 @@
                         </div>
                     </footer>
                 </div>
-            </div>-->
-
+            </div>
         </div>
         </div>
     </body>
