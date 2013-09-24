@@ -1,8 +1,20 @@
-RewriteBase /
+#RewriteBase /
 RewriteEngine On
 
 #RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-l
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-l
 
-RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+#RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+# Set an environment variable based on the server name
+RewriteRule %{SERVER_NAME} diezsoluciones.com [E=REWRITEBASE:/w/]
+#RewriteRule %{SERVER_NAME} prodhost [E=REWRITEBASE:/prod_dir/]
+
+# Allow any files or directories that exist to be displayed directly
+RewriteCond %{ENV:REWRITEBASE}%{REQUEST_FILENAME} !-f 
+RewriteCond %{ENV:REWRITEBASE}%{REQUEST_FILENAME} !-l 
+RewriteCond %{REQUEST_URI} !^static
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule .* %{ENV:REWRITEBASE}index.php/$1 [QSA,L]
