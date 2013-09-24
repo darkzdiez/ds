@@ -31,7 +31,7 @@ class System {
             }
         } elseif(array_key_exists($domain, $listSYSTEM)) {
             if (array_key_exists($domain, $RewriteBase)) {
-                $ingresar = '/' . $RewriteBase[$domain] . '/';
+                $ingresar = $RewriteBase[$domain] . '/';
             }else{
                 $ingresar = '/';
             }

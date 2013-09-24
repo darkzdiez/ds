@@ -7,7 +7,7 @@ define('PROJECTNAME', 'webt');
 define('SYSTEMDEFAULT','webgob');
 $listSYSTEM = array(
     #'prueba' => array('webgob', 'ordenes'),
-    'prueba' => 'ordenes',
+    'prueba' => 'iameg',
     /*'yaracuy.gob.ve' => array('webgob', 'ordenes'),
     'www.yaracuy.gob.ve' => array('webgob', 'ordenes'),*/
     'primasalud.com.ve' => 'prims',
@@ -18,6 +18,7 @@ $listSYSTEM = array(
     'www.diezsoluciones.com' => 'diezs'
 );
 $RewriteBase = array(
+    'prueba' => '',
     'primasalud.com.ve' => '',
     'www.primasalud.com.ve' => '',
     'iameg.org.ve' => '',
