@@ -32,7 +32,7 @@ class System {
         } elseif(array_key_exists($domain, $listSYSTEM)) {
             $acceso=array_filter(explode('/', $_SERVER['REQUEST_URI']));
             if (isset($acceso[1])) {
-                $ingresar=$acceso[1].'/';
+                $ingresar='/'.$acceso[1].'/';
             }else{
                 $ingresar='/';
             }
