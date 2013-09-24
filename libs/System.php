@@ -30,7 +30,8 @@ class System {
                 define('_pathMODULE', _pathSYSTEM . $url[0] . '/' . $DEFAULT_MODULE);
             }
         } elseif(array_key_exists($domain, $listSYSTEM)) {
-            define('DOMAIN', 'http://' . $domain  . '/w/');
+            #define('DOMAIN', 'http://' . $domain  . '/w/'); revisar esto
+            define('DOMAIN', 'http://' . $domain  . '/');
             if (isset($_GET['url'])) {
                 $url = explode('/', rtrim($_GET['url'], '/'), 2);
             }
