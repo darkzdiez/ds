@@ -25,7 +25,7 @@ require LIBS . 'System.php';
 // Also spl_autoload_register (Take a look at it if you like)
 
 $path = new System();
-$path->path($listSYSTEM);
+$path->path($listSYSTEM,$RewriteBase);
 
 // Load the Bootstrap!
 require _pathMODULE . '/config.php';

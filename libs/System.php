@@ -2,7 +2,7 @@
 
 class System {
 
-    public function path($listSYSTEM) {
+    public function path($listSYSTEM,$RewriteBase) {
         $domain=$_SERVER["HTTP_HOST"];
         if ($domain == 'localhost' OR !array_key_exists($domain, $listSYSTEM)) {
 
@@ -30,11 +30,10 @@ class System {
                 define('_pathMODULE', _pathSYSTEM . $url[0] . '/' . $DEFAULT_MODULE);
             }
         } elseif(array_key_exists($domain, $listSYSTEM)) {
-            $acceso=array_filter(explode('/', $_SERVER['REQUEST_URI']));
-            if (isset($acceso[1])) {
-                $ingresar='/'.$acceso[1].'/';
+            if (array_key_exists($domain, $RewriteBase)) {
+                $ingresar = '/' . $RewriteBase[$domain] . '/';
             }else{
-                $ingresar='/';
+                $ingresar = '/';
             }
             define('DOMAIN', 'http://' . $domain  . $ingresar);
             if (isset($_GET['url'])) {

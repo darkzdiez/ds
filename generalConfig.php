@@ -17,3 +17,11 @@ $listSYSTEM = array(
     'diezsoluciones.com' => 'diezs',
     'www.diezsoluciones.com' => 'diezs'
 );
+$RewriteBase = array(
+    'primasalud.com.ve' => '',
+    'www.primasalud.com.ve' => '',
+    'iameg.org.ve' => '',
+    'www.iameg.org.ve' => '',
+    'diezsoluciones.com' => 'w',
+    'www.diezsoluciones.com' => 'w'
+);
