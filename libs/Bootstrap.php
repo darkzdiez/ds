@@ -165,7 +165,15 @@ class Bootstrap {
      * @return boolean
      */
     private function _error() {
-        require $this->_controllerPath . $this->_errorFile;
+        $file = $this->_controllerPath . $this->_errorFile;
+        $file2 = 'system/base/' . BASE . '/controllers/error.php';
+        if (file_exists($file)) {
+            require $file;
+        }elseif (file_exists($file2)){
+            require $file2;
+        }else{
+            throw new Exception("Imposible cargar lo requerido" . "\n: $file \n: $file2");
+        }
         $this->_controller = new Error();
         $this->_controller->index();
         return false;
