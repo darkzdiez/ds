@@ -30,8 +30,9 @@ class System {
                 define('_pathMODULE', _pathSYSTEM . $url[0] . '/' . $DEFAULT_MODULE);
             }
         } elseif(array_key_exists($domain, $listSYSTEM)) {
+            $RewriteBase=array_filter($RewriteBase);
             if (array_key_exists($domain, $RewriteBase)) {
-                $ingresar = $RewriteBase[$domain] . '/';
+                $ingresar = '/' . $RewriteBase[$domain] . '/';
             }else{
                 $ingresar = '/';
             }
