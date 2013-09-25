@@ -70,7 +70,7 @@ LEFT JOIN `profile` ON `user_has_profile`.`profile_idprofile` = `profile`.`idpro
             $data = array('fn'=>'postLogin', 'url' => PATH_NAV . 'index');
         } else {
             //$data = array('result_error' => $sth->queryString . '//' . Hash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY));
-            $data = array('fn'=>'postLogin', 'result_error' => 'Error al iniciar Sesion' . Hash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY));
+            $data = array('fn'=>'postLogin', 'result_error' => 'Error al iniciar Sesion ' . Hash::create('sha256', $_POST['password'], HASH_PASSWORD_KEY));
         }
         echo json_encode($data);
     }
