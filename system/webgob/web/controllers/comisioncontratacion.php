@@ -21,6 +21,7 @@ class Comisioncontratacion extends Controller {
     }
     public function modulePrintLast(){
     	$result=$this->model->searchLast();
+        exit(print_r($result));
     	$data['titulo']=$result[0]['titulo'];
     	$data['denominacion']=$result[0]['denominacion'];
         $this->view->data=$data;
