@@ -96,7 +96,7 @@
                                     </li>
                                 </ul>-->
                             </li>
-                            <li><a><span class="cufon_myriad_bold">Gobernación</span></a>
+                            <li><a style="cursor: default;"><span class="cufon_myriad_bold">Gobernación</span></a>
                                 <ul class="submenu">
                                     <li>
                                         <a href="<?php print PATH_NAV . 'informacion/gobernacion/visionymision'; ?>"><span>Visión y Misión</span></a>
@@ -112,7 +112,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a><span class="cufon_myriad_bold">Yaracuy</span></a>
+                            <li><a style="cursor: default;"><span class="cufon_myriad_bold">Yaracuy</span></a>
                                 <ul class="submenu">
                                     <li>
                                        <a href="<?php print PATH_NAV . 'informacion/yaracuy/simbolos'; ?>"><span>Símbolos</span></a>
@@ -128,7 +128,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a><span class="cufon_myriad_bold">Galeria</span></a>
+                            <li><a style="cursor: default;"><span class="cufon_myriad_bold">Galeria</span></a>
                                 <ul class="submenu">
                                     <li>
                                        <a href="<?php print PATH_NAV . 'galeria/movie'; ?>"><span>Videos</span></a>
