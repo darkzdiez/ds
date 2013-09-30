@@ -409,3 +409,27 @@ Array
     [url] => prims/empresa/informacion
 )
 
+57 - Sunday 29th of September 2013 07:44:21 PM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+58 - Sunday 29th of September 2013 07:45:47 PM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
