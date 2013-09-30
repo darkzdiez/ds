@@ -12,7 +12,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('DB_USER', 'root');
     define('DB_PASS', 'root');
     define('_SERVER', 'local');
-    define('SESSIONPATH','/webt/ordenes/');
+    define('SESSIONPATH','/w/ordenes/');
 } else {
     ini_set('track_errors', 0);
     ini_set('error_reporting', 0);

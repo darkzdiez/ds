@@ -245,21 +245,7 @@ $(document).ready(function() {
     loadTinymce();
     mueveReloj();
     tiempoTranscurrido();
-    $(".cant_kit").focusout(function() {
-        if ($(".cant_kit").val() != '' && $('.kit_product').val() != '') {
-            $('#container_kit').append('<div class="container_input_label" id="container_kit">' +
-                '<label>Nombre del Material</label>' +
-                '<input type="text" name="name" class="kit_product" placeholder="Nombre del Material" />' +
-                '</div>' +
-                '<div class="container_input_label">' +
-                '<label>Cantidad:</label>' +
-                '<input type="text" name="cant_kit" class="cant_kit" placeholder="25" />' +
-                '</div><br />');
-        }
-    })
-    $(".kit_product").autocomplete({
-        source: ["Saco de Cemento", "Cabilla", "Loza"]
-    });
+
     tableContent();
     $('.ui-state-default').hover(
         function() {

@@ -11,7 +11,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('DB_NAME', 'diezsolu_iameg');
     define('DB_USER', 'root');
     define('DB_PASS', 'root');
-    define('SESSIONPATH','/webt/iameg/admin/');
+    define('SESSIONPATH','/w/iameg/admin/');
 } else {
     define('PATH_NAV', DOMAIN . 'admin/');
     define('DB_TYPE', 'mysql');
@@ -19,7 +19,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
     define('DB_NAME', 'diezsolu_iameg');
     define('DB_USER', 'diezsolu_gminas');
     define('DB_PASS', 'qwe123');
-    define('SESSIONPATH','/w/admin/');
+    define('SESSIONPATH','/admin/');
 }
 /* DATOS DE LA BASE U TEMA A UTILIZAR */
 define('TEMPLATE', 'tema1');
