@@ -1,4 +1,4 @@
-RewriteBase /w/
+RewriteBase /
 RewriteEngine On
 
 #RewriteCond %{REQUEST_FILENAME} !-d
