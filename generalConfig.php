@@ -3,7 +3,7 @@
 // Definir configuracion general
 define('LIBS', 'libs/');
 define('_pathSYSTEM', 'system/');
-define('PROJECTNAME', 'webt');
+define('PROJECTNAME', 'w');
 define('SYSTEMDEFAULT','webgob');
 $listSYSTEM = array(
     #'prueba' => array('webgob', 'ordenes'),
