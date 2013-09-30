@@ -7,7 +7,7 @@ ini_set('session.gc_maxlifetime', 5400);
 $version = (float) phpversion();
 /*if($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1'){*/
 	ini_set('track_errors', 1);
-    if($version <= (float) 5.4){
+    if($version < (float) 5.4){
         ini_set('error_reporting', E_ALL);
     }else{
         ini_set('error_reporting', E_ALL ^ E_STRICT);

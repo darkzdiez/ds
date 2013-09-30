@@ -5984,3 +5984,60 @@ footer {
   max-height: 43px;
   width: 100%;
 }
+#contact .map .box_wrapp {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: 0 0 7px 0 rgba(26, 26, 26, 0.4);
+  margin: 0;
+  padding: 33px 0;
+  position: absolute;
+  top: 30px;
+  width: 400px;
+}
+#contact .map .box_wrapp .box_cont {
+  margin: 0 auto;
+  width: 76%;
+}
+#contact .map .box_wrapp .box_cont .center {
+  text-align: center;
+}
+#contact .map .box_wrapp .box_cont .center .btn {
+  margin: 15px 0 0 0;
+}
+#contact .map .box_wrapp .box_cont .head {
+  margin-bottom: 17px;
+  overflow: hidden;
+  width: 100%;
+}
+#contact .map .box_wrapp .box_cont .head h6 {
+  border-bottom: 1px solid;
+  float: left;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+  padding-bottom: 2px;
+}
+#contact .map .box_wrapp .box_cont ul.street {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+#contact .map .box_wrapp .box_cont ul.street li {
+  color: #777777;
+  font-size: 14px;
+}
+#contact .map .box_wrapp .box_cont ul.street li.icon {
+  margin-top: 3px;
+}
+#contact .map .box_wrapp .box_cont ul.street li.icon .text {
+  color: #777777;
+  font-size: 15px;
+  margin-left: 6px;
+}
+#contact .map .box_wrapp .box_cont ul.street li.icontop {
+  margin-top: 13px;
+}
+#contact .map .box_wrapp .box_cont ul.street li .headbottom {
+  margin-top: 42px;
+}

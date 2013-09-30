@@ -10,7 +10,7 @@
                             <li>C.C. El Hatillo piso 2, Ofic. 26.</li>
                             <li>Av. Bolivar de Naguanagua,</li>
                             <li>Valencia, Edo. Carabobo. Venezuela.</li>
-                            <li>Zip Code, TX 76006.</li>
+                            <li>RIF J-297103406-</li>
                             <li class="icon icontop">
                                 <span class="icon-phone"></span>
                                 <span class="text">0241 990 6982</span>

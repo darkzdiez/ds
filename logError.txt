@@ -433,3 +433,39 @@ Array
     [url] => webgob
 )
 
+59 - Sunday 29th of September 2013 07:53:13 PM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+60 - Sunday 29th of September 2013 07:55:58 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+61 - Sunday 29th of September 2013 10:56:07 PM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
