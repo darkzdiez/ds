@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload User Interface Plugin 8.8.5
+ * jQuery File Upload User Interface Plugin 8.3
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2010, Sebastian Tschan
@@ -120,7 +120,7 @@
                             !$.support.transition && 'progress-animated'
                         )
                         .attr('aria-valuenow', 100)
-                        .children().first().css(
+                        .find('.bar').css(
                             'width',
                             '100%'
                         );
@@ -139,8 +139,8 @@
                 if (data.context) {
                     data.context.each(function (index) {
                         var file = files[index] ||
-                                {error: 'Empty file upload result'};
-                        deferred = that._addFinishedDeferreds();
+                                {error: 'Empty file upload result'},
+                            deferred = that._addFinishedDeferreds();
                         that._transition($(this)).done(
                             function () {
                                 var node = $(this);
@@ -159,9 +159,8 @@
                         );
                     });
                 } else {
-                    template = that._renderDownload(files)[
-                        that.options.prependFiles ? 'prependTo' : 'appendTo'
-                    ](that.options.filesContainer);
+                    template = that._renderDownload(files)
+                        .appendTo(that.options.filesContainer);
                     that._forceReflow(template);
                     deferred = that._addFinishedDeferreds();
                     that._transition(template).done(
@@ -216,9 +215,8 @@
                         }
                     });
                 } else if (data.errorThrown !== 'abort') {
-                    data.context = that._renderUpload(data.files)[
-                        that.options.prependFiles ? 'prependTo' : 'appendTo'
-                    ](that.options.filesContainer)
+                    data.context = that._renderUpload(data.files)
+                        .appendTo(that.options.filesContainer)
                         .data('data', data);
                     that._forceReflow(data.context);
                     deferred = that._addFinishedDeferreds();
@@ -238,16 +236,14 @@
             },
             // Callback for upload progress events:
             progress: function (e, data) {
-                var progress = Math.floor(data.loaded / data.total * 100);
                 if (data.context) {
-                    data.context.each(function () {
-                        $(this).find('.progress')
-                            .attr('aria-valuenow', progress)
-                            .children().first().css(
-                                'width',
-                                progress + '%'
-                            );
-                    });
+                    var progress = Math.floor(data.loaded / data.total * 100);
+                    data.context.find('.progress')
+                        .attr('aria-valuenow', progress)
+                        .find('.bar').css(
+                            'width',
+                            progress + '%'
+                        );
                 }
             },
             // Callback for global upload progress events:
@@ -266,7 +262,7 @@
                 globalProgressNode
                     .find('.progress')
                     .attr('aria-valuenow', progress)
-                    .children().first().css(
+                    .find('.bar').css(
                         'width',
                         progress + '%'
                     );
@@ -295,7 +291,7 @@
                     function () {
                         $(this).find('.progress')
                             .attr('aria-valuenow', '0')
-                            .children().first().css('width', '0%');
+                            .find('.bar').css('width', '0%');
                         $(this).find('.progress-extended').html('&nbsp;');
                         deferred.resolve();
                     }
@@ -462,11 +458,9 @@
 
         _cancelHandler: function (e) {
             e.preventDefault();
-            var template = $(e.currentTarget)
-                    .closest('.template-upload,.template-download'),
+            var template = $(e.currentTarget).closest('.template-upload'),
                 data = template.data('data') || {};
             if (!data.jqXHR) {
-                data.context = data.context || template;
                 data.errorThrown = 'abort';
                 this._trigger('fail', e, data);
             } else {
@@ -617,9 +611,6 @@
         _create: function () {
             this._super();
             this._resetFinishedDeferreds();
-            if (!$.support.fileInput) {
-                this._disableFileInputButton();
-            }
         },
 
         enable: function () {

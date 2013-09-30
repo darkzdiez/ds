@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload Plugin JS Example 8.8.2
+ * jQuery File Upload Plugin JS Example 8.0.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2010, Sebastian Tschan
@@ -10,7 +10,7 @@
  */
 
 /*jslint nomen: true, regexp: true */
-/*global $, window, blueimp */
+/*global $, window, navigator */
 
 $(function () {
     'use strict';
@@ -32,31 +32,31 @@ $(function () {
         )
     );
 
-    if (window.location.hostname === 'blueimp.github.io') {
-        // Demo settings:
-        $('#fileupload').fileupload('option', {
-            url: '//jquery-file-upload.appspot.com/',
-            // Enable image resizing, except for Android and Opera,
-            // which actually support image resizing, but fail to
-            // send Blob objects via XHR requests:
-            disableImageResize: /Android(?!.*Chrome)|Opera/
-                .test(window.navigator.userAgent),
-            maxFileSize: 5000000,
-            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
-        });
-        // Upload server status check for browsers with CORS support:
-        if ($.support.cors) {
-            $.ajax({
-                url: '//jquery-file-upload.appspot.com/',
-                type: 'HEAD'
-            }).fail(function () {
-                $('<div class="alert alert-danger"/>')
-                    .text('Upload server currently unavailable - ' +
-                            new Date())
-                    .appendTo('#fileupload');
-            });
-        }
-    } else {
+    // if (window.location.hostname === 'blueimp.github.io') {
+    //     // Demo settings:
+    //     $('#fileupload').fileupload('option', {
+    //         url: '//jquery-file-upload.appspot.com/',
+    //         // Enable image resizing, except for Android and Opera,
+    //         // which actually support image resizing, but fail to
+    //         // send Blob objects via XHR requests:
+    //         disableImageResize: /Android(?!.*Chrome)|Opera/
+    //             .test(window.navigator && navigator.userAgent),
+    //         maxFileSize: 5000000,
+    //         acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+    //     });
+    //     // Upload server status check for browsers with CORS support:
+    //     if ($.support.cors) {
+    //         $.ajax({
+    //             url: '//jquery-file-upload.appspot.com/',
+    //             type: 'HEAD'
+    //         }).fail(function () {
+    //             $('<span class="alert alert-error"/>')
+    //                 .text('Upload server currently unavailable - ' +
+    //                         new Date())
+    //                 .appendTo('#fileupload');
+    //         });
+    //     }
+    // } else {
         // Load existing files:
         $('#fileupload').addClass('fileupload-processing');
         $.ajax({
@@ -71,6 +71,6 @@ $(function () {
             $(this).fileupload('option', 'done')
                 .call(this, null, {result: result});
         });
-    }
+    // }
 
 });

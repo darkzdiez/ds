@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload Image Preview & Resize Plugin 1.3.0
+ * jQuery File Upload Image Preview & Resize Plugin 1.2.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2013, Sebastian Tschan
@@ -39,6 +39,9 @@
     $.blueimp.fileupload.prototype.options.processQueue.unshift(
         {
             action: 'loadImageMetaData',
+            // Always trigger this action,
+            // even if the previous action was rejected: 
+            always: true,
             disableImageHead: '@',
             disableExif: '@',
             disableExifThumbnail: '@',
@@ -64,7 +67,6 @@
             minWidth: '@',
             minHeight: '@',
             crop: '@',
-            orientation: '@',
             disabled: '@disableImageResize'
         },
         {
@@ -77,6 +79,9 @@
         },
         {
             action: 'resizeImage',
+            // Always trigger this action,
+            // even if the previous action was rejected: 
+            always: true,
             // Use "preview" as prefix for the "@" options:
             prefix: 'preview',
             maxWidth: '@',
@@ -110,9 +115,6 @@
             imageMaxWidth: 1920,
             // The maximum height of resized images:
             imageMaxHeight: 1080,
-            // Defines the image orientation (1-8) or takes the orientation
-            // value from Exif data if set to true:
-            imageOrientation: false,
             // Define if resized images should be cropped or only scaled:
             imageCrop: false,
             // Disable the resize image functionality by default:
@@ -135,7 +137,7 @@
         processActions: {
 
             // Loads the image given via data.files and data.index
-            // as img element, if the browser supports the File API.
+            // as img element if the browser supports canvas.
             // Accepts the options fileTypes (regular expression)
             // and maxFileSize (integer) to limit the files to load:
             loadImage: function (data, options) {
@@ -152,40 +154,37 @@
                         !loadImage(
                             file,
                             function (img) {
-                                if (img.src) {
-                                    data.img = img;
+                                if (!img.src) {
+                                    return dfd.rejectWith(that, [data]);
                                 }
+                                data.img = img;
                                 dfd.resolveWith(that, [data]);
                             },
                             options
                         )) {
-                    return data;
+                    dfd.rejectWith(that, [data]);
                 }
                 return dfd.promise();
             },
 
             // Resizes the image given as data.canvas or data.img
             // and updates data.canvas or data.img with the resized image.
-            // Also stores the resized image as preview property.
             // Accepts the options maxWidth, maxHeight, minWidth,
             // minHeight, canvas and crop:
             resizeImage: function (data, options) {
                 if (options.disabled) {
                     return data;
                 }
-                options = $.extend({canvas: true}, options);
                 var that = this,
                     dfd = $.Deferred(),
-                    img = (options.canvas && data.canvas) || data.img,
                     resolve = function (newImg) {
-                        if (newImg && (newImg.width !== img.width ||
-                                newImg.height !== img.height)) {
-                            data[newImg.getContext ? 'canvas' : 'img'] = newImg;
-                        }
-                        data.preview = newImg;
+                        data[newImg.getContext ? 'canvas' : 'img'] = newImg;
                         dfd.resolveWith(that, [data]);
                     },
-                    thumbnail;
+                    thumbnail,
+                    img,
+                    newImg;
+                options = $.extend({canvas: true}, options);
                 if (data.exif) {
                     if (options.orientation === true) {
                         options.orientation = data.exif.get('Orientation');
@@ -198,9 +197,14 @@
                         }
                     }
                 }
+                img = (options.canvas && data.canvas) || data.img;
                 if (img) {
-                    resolve(loadImage.scale(img, options));
-                    return dfd.promise();
+                    newImg = loadImage.scale(img, options);
+                    if (newImg.width !== img.width ||
+                            newImg.height !== img.height) {
+                        resolve(newImg);
+                        return dfd.promise();
+                    }
                 }
                 return data;
             },
@@ -262,8 +266,7 @@
             },
 
             saveImageMetaData: function (data, options) {
-                if (!(data.imageHead && data.canvas &&
-                        data.canvas.toBlob && !options.disabled)) {
+                if (!data.imageHead || options.disabled) {
                     return data;
                 }
                 var file = data.files[data.index],
@@ -281,8 +284,9 @@
             // Sets the resized version of the image as a property of the
             // file object, must be called after "saveImage":
             setImage: function (data, options) {
-                if (data.preview && !options.disabled) {
-                    data.files[data.index][options.name || 'preview'] = data.preview;
+                var img = data.canvas || data.img;
+                if (img && !options.disabled) {
+                    data.files[data.index][options.name || 'preview'] = img;
                 }
                 return data;
             }

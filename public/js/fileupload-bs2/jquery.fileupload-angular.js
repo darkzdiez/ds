@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload AngularJS Plugin 1.4.5
+ * jQuery File Upload AngularJS Plugin 1.2.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2013, Sebastian Tschan
@@ -32,20 +32,13 @@
 
     angular.module('blueimp.fileupload', [])
 
-        // The fileUpload service provides configuration options
-        // for the fileUpload directive and default handlers for
-        // File Upload events:
         .provider('fileUpload', function () {
             var scopeApply = function () {
                     var scope = angular.element(this)
-                            .fileupload('option', 'scope')(),
-                        $timeout = angular.injector(['ng'])
-                            .get('$timeout');
-                    // Safe apply, makes sure $apply is called
-                    // asynchronously outside of the $digest cycle:
-                    $timeout(function () {
+                        .fileupload('option', 'scope')();
+                    if (!scope.$$phase) {
                         scope.$apply();
-                    });
+                    }
                 },
                 $config;
             $config = this.defaults = {
@@ -69,21 +62,18 @@
                                 submit = function () {
                                     return data.submit();
                                 };
-                            angular.forEach(data.files, function (file, index) {
-                                file._index = index;
-                                file.$state = function () {
-                                    return data.state();
-                                };
-                                file.$progress = function () {
-                                    return data.progress();
-                                };
-                                file.$response = function () {
-                                    return data.response();
-                                };
-                            });
                             file.$cancel = function () {
                                 scope.clear(data.files);
                                 return data.abort();
+                            };
+                            file.$state = function () {
+                                return data.state();
+                            };
+                            file.$progress = function () {
+                                return data.progress();
+                            };
+                            file.$response = function () {
+                                return data.response();
                             };
                             if (file.$state() === 'rejected') {
                                 file._$submit = submit;
@@ -138,6 +128,7 @@
                     return this.scope().queue.length;
                 },
                 dataType: 'json',
+                prependFiles: true,
                 autoUpload: false
             };
             this.$get = [
@@ -149,9 +140,8 @@
             ];
         })
 
-        // Format byte numbers to readable presentations:
         .provider('formatFileSizeFilter', function () {
-            var $config = {
+            var $config = this.defaults = {
                 // Byte units following the IEC format
                 // http://en.wikipedia.org/wiki/Kilobyte
                 units: [
@@ -160,34 +150,26 @@
                     {size: 1000, suffix: ' KB'}
                 ]
             };
-            this.defaults = $config;
             this.$get = function () {
                 return function (bytes) {
                     if (!angular.isNumber(bytes)) {
                         return '';
                     }
                     var unit = true,
-                        i = 0,
-                        prefix,
-                        suffix;
+                        i = -1;
                     while (unit) {
-                        unit = $config.units[i];
-                        prefix = unit.prefix || '';
-                        suffix = unit.suffix || '';
+                        unit = $config.units[i += 1];
                         if (i === $config.units.length - 1 || bytes >= unit.size) {
-                            return prefix + (bytes / unit.size).toFixed(2) + suffix;
+                            return (bytes / unit.size).toFixed(2) + unit.suffix;
                         }
-                        i += 1;
                     }
                 };
             };
         })
 
-        // The FileUploadController initializes the fileupload widget and
-        // provides scope methods to control the File Upload functionality: 
         .controller('FileUploadController', [
-            '$scope', '$element', '$attrs', '$window', 'fileUpload',
-            function ($scope, $element, $attrs, $window, fileUpload) {
+            '$scope', '$element', '$attrs', 'fileUpload',
+            function ($scope, $element, $attrs, fileUpload) {
                 var uploadMethods = {
                     progress: function () {
                         return $element.fileupload('progress');
@@ -211,7 +193,8 @@
                         return $element.fileupload('processing', data);
                     }
                 };
-                $scope.disabled = !$window.jQuery.support.fileInput;
+                $scope.disabled = angular.element('<input type="file">')
+                    .prop('disabled');
                 $scope.queue = $scope.queue || [];
                 $scope.clear = function (files) {
                     var queue = this.queue,
@@ -223,8 +206,7 @@
                         length = files.length;
                     }
                     while (i) {
-                        i -= 1;
-                        if (queue[i] === file) {
+                        if (queue[i -= 1] === file) {
                             return queue.splice(i, length);
                         }
                     }
@@ -298,9 +280,7 @@
                     'fileuploadprocessalways',
                     'fileuploadprocessstop'
                 ].join(' '), function (e, data) {
-                    if ($scope.$emit(e.type, data).defaultPrevented) {
-                        e.preventDefault();
-                    }
+                    $scope.$emit(e.type, data);
                 }).on('remove', function () {
                     // Remove upload methods from the scope,
                     // when the widget is removed:
@@ -313,8 +293,8 @@
                 });
                 // Observe option changes:
                 $scope.$watch(
-                    $attrs.fileUpload,
-                    function (newOptions) {
+                    $attrs.fileupload,
+                    function (newOptions, oldOptions) {
                         if (newOptions) {
                             $element.fileupload('option', newOptions);
                         }
@@ -323,11 +303,10 @@
             }
         ])
 
-        // Provide File Upload progress feedback:
         .controller('FileUploadProgressController', [
             '$scope', '$attrs', '$parse',
             function ($scope, $attrs, $parse) {
-                var fn = $parse($attrs.fileUploadProgress),
+                var fn = $parse($attrs.progress),
                     update = function () {
                         var progress = fn($scope);
                         if (!progress || !progress.total) {
@@ -339,7 +318,7 @@
                     };
                 update();
                 $scope.$watch(
-                    $attrs.fileUploadProgress + '.loaded',
+                    $attrs.progress + '.loaded',
                     function (newValue, oldValue) {
                         if (newValue !== oldValue) {
                             update();
@@ -349,11 +328,10 @@
             }
         ])
 
-        // Display File Upload previews:
         .controller('FileUploadPreviewController', [
             '$scope', '$element', '$attrs', '$parse',
             function ($scope, $element, $attrs, $parse) {
-                var fn = $parse($attrs.fileUploadPreview),
+                var fn = $parse($attrs.preview),
                     file = fn($scope);
                 if (file.preview) {
                     $element.append(file.preview);
@@ -361,30 +339,26 @@
             }
         ])
 
-        .directive('fileUpload', function () {
+        .directive('fileupload', function () {
             return {
-                controller: 'FileUploadController',
-                scope: true
+                controller: 'FileUploadController'
             };
         })
 
-        .directive('fileUploadProgress', function () {
+        .directive('progress', function () {
             return {
-                controller: 'FileUploadProgressController',
-                scope: true
+                controller: 'FileUploadProgressController'
             };
         })
 
-        .directive('fileUploadPreview', function () {
+        .directive('preview', function () {
             return {
                 controller: 'FileUploadPreviewController'
             };
         })
 
-        // Enhance the HTML5 download attribute to
-        // allow drag&drop of files to the desktop:
         .directive('download', function () {
-            return function (scope, elm) {
+            return function (scope, elm, attrs) {
                 elm.on('dragstart', function (e) {
                     try {
                         e.originalEvent.dataTransfer.setData(

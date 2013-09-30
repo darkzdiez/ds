@@ -22,9 +22,9 @@
   <link href="<?php print DOMAIN; ?>public/css/jquery-ui/redmond/jquery-ui-1.10.0.custom.min.css" rel="stylesheet">
   <link href="<?php print DOMAIN; ?>public/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
   <link href="<?php print PATH_FILE; ?>public/css/default.css" rel="stylesheet">
-  <link rel="stylesheet" href="<?php print DOMAIN;?>public/css/fileupload/style.css">
-  <link rel="stylesheet" href="<?php print DOMAIN;?>public/css/fileupload/jquery.fileupload-ui.css">
-  <link rel="stylesheet" href="<?php print DOMAIN;?>public/css/fileupload/query.fileupload-ui-noscript.css">
+  <link rel="stylesheet" href="<?php print DOMAIN;?>public/css/fileupload-bs2/style.css">
+  <link rel="stylesheet" href="<?php print DOMAIN;?>public/css/fileupload-bs2/jquery.fileupload-ui.css">
+  <link rel="stylesheet" href="<?php print DOMAIN;?>public/css/fileupload-bs2/query.fileupload-ui-noscript.css">
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
@@ -60,37 +60,37 @@
     <script type="text/javascript" src="<?php echo DOMAIN; ?>public/js/jquery.jCombo.js"></script>
 
     <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/vendor/jquery.ui.widget.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/vendor/jquery.ui.widget.js"></script>
     <!-- The Templates plugin is included to render the upload/download listings -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/tmpl.min.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/tmpl.min.js"></script>
     <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/load-image.min.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/load-image.min.js"></script>
     <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/canvas-to-blob.min.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/canvas-to-blob.min.js"></script>
     <!-- Bootstrap JS and Bootstrap Image Gallery are not required, but included for the demo -->
-   <!--<script src="<?php echo DOMAIN; ?>public/js/fileupload/bootstrap.min.js"></script>-->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/bootstrap-image-gallery.min.js"></script>
+   <!--<script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/bootstrap.min.js"></script>-->
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/bootstrap-image-gallery.min.js"></script>
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.iframe-transport.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.iframe-transport.js"></script>
     <!-- The basic File Upload plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload.js"></script>
     <!-- The File Upload processing plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload-process.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload-process.js"></script>
     <!-- The File Upload image preview & resize plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload-image.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload-image.js"></script>
     <!-- The File Upload audio preview plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload-audio.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload-audio.js"></script>
     <!-- The File Upload video preview plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload-video.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload-video.js"></script>
     <!-- The File Upload validation plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload-validate.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload-validate.js"></script>
     <!-- The File Upload user interface plugin -->
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.fileupload-ui.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.fileupload-ui.js"></script>
     <!-- The main application script -->
 
 
     <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
-<!--[if gte IE 8]><script src="<?php echo DOMAIN; ?>public/js/fileupload/jquery.xdr-transport.js"></script><![endif]-->
+<!--[if gte IE 8]><script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/jquery.xdr-transport.js"></script><![endif]-->
     
     <?php $this->showJs() ?>
 </head>

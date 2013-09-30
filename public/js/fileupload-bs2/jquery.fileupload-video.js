@@ -1,5 +1,5 @@
 /*
- * jQuery File Upload Video Preview Plugin 1.0.3
+ * jQuery File Upload Video Preview Plugin 1.0.1
  * https://github.com/blueimp/jQuery-File-Upload
  *
  * Copyright 2013, Sebastian Tschan
@@ -35,6 +35,9 @@
     $.blueimp.fileupload.prototype.options.processQueue.unshift(
         {
             action: 'loadVideo',
+            // Always trigger this action,
+            // even if the previous action was rejected: 
+            always: true,
             // Use the action as prefix for the "@" options:
             prefix: true,
             fileTypes: '@',
@@ -70,7 +73,9 @@
                 if (options.disabled) {
                     return data;
                 }
-                var file = data.files[data.index],
+                var that = this,
+                    file = data.files[data.index],
+                    dfd = $.Deferred(),
                     url,
                     video;
                 if (this._videoElement.canPlayType &&
@@ -81,14 +86,16 @@
                             options.fileTypes.test(file.type))) {
                     url = loadImage.createObjectURL(file);
                     if (url) {
-                        video = this._videoElement.cloneNode(false);
+                        video = this._videoElement.cloneNode();
                         video.src = url;
                         video.controls = true;
                         data.video = video;
-                        return data;
+                        dfd.resolveWith(that, [data]);
+                        return dfd.promise();
                     }
                 }
-                return data;
+                dfd.rejectWith(that, [data]);
+                return dfd.promise();
             },
 
             // Sets the video element as a property of the file object:
