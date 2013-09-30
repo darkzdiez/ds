@@ -1,4 +1,4 @@
-RewriteBase /webt/
+RewriteBase /w/
 RewriteEngine On
 
 #RewriteCond %{REQUEST_FILENAME} !-d
