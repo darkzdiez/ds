@@ -4,22 +4,20 @@ $(function() {
     });
 });
 $(document).ready(function() {
-    $('#slide_article')
-    .cycle({
-        fx: 'turnDown',
-        speed: 'fast',
-        timeout: 6000,
-        pager: '.nav_slide_article'
+    $('#slide_article').cycle({
+    fx:     'fade', 
+    speed:  'fast', 
+    timeout: 0, 
+    next:   '#next2', 
+    prev:   '#prev2' 
     });
-    $('#slide_282x236')
-    .cycle({
+    $('#slide_282x236').cycle({
         fx: 'fade,scrollLeft,fadeZoom,scrollDown,growX,scrollRight,turnUp,scrollUp,wipe',
         next: '#slide_282x236',
         timeout: 2987,
         pause: 1
     });
-    $('#anuncio_col_der')
-    .cycle({
+    $('#anuncio_col_der').cycle({
         fx: 'scrollRight',
         timeout: 4000
     });

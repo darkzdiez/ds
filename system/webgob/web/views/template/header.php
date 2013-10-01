@@ -157,7 +157,10 @@
         if (isset($this->coverAdShow) && $this->coverAdShow == TRUE) {
             print '<div class="fondo" id="slide_ppal_f">
             <div class="contenedor" id="slide_ppal">
-
+            </div>
+            <div class="nav">
+                <a id="prev2" class="btnnav" href="#"><span class="icon-angle-left"></span></a>
+                <a id="next2" class="btnnav" href="#"><span class="icon-angle-right"></span></a>
             </div>
             </div>';
         }

@@ -32,7 +32,7 @@ $(function () {
         )
     );
 
-    if (window.location.hostname === 'blueimp.github.io') {
+   /* if (window.location.hostname === 'blueimp.github.io') {
         // Demo settings:
         $('#fileupload').fileupload('option', {
             url: '//jquery-file-upload.appspot.com/',
@@ -56,7 +56,7 @@ $(function () {
                     .appendTo('#fileupload');
             });
         }
-    } else {
+    } else {*/
         // Load existing files:
         $('#fileupload').addClass('fileupload-processing');
         $.ajax({
@@ -71,6 +71,6 @@ $(function () {
             $(this).fileupload('option', 'done')
                 .call(this, null, {result: result});
         });
-    }
+    /*}*/
 
 });

@@ -53,13 +53,13 @@ $(document).ready(function() {
                 if (data[i].dtexto!=1) {
                     slidehtml+='<div class="descriptionContainer">' +
                         '<div class="descripcion">' +
-                        '<div class="titulo">' + data[i].toptitle + '</div>' +
+                        /*'<div class="titulo">' + data[i].toptitle + '</div>' +*/
                         '<div class="subtitulo">' + data[i].title + '</div>' +
                         '<div class="comentario">' + data[i].description + '.</div>' +
                         '</div>' +
                         '</div>';
                 };
-                slidehtml+='<div class="nav_slide"></div>' +
+                /* slidehtml+='<div class="nav_slide"></div>' + esto es por si quiero abilitar la numeracion */
                 '</div>';
                 $('#slide_ppal').append(slidehtml);
             }

@@ -12,14 +12,10 @@ class Galeria extends Controller {
             header('location: ' . URL . 'login');
             exit;
         }
-        $this->view->js = array('directorio/js/default.js');
+        $this->view->js = array('galeria/js/default.js');
     }
 
     public function index() {
-        $this->view->singleList = $this->model->singleList();
-        $this->view->formAction = PATH_NAV . 'directorio/creargrupo/';
-        $this->view->display = 'none';
-        $this->view->action = 'creargrupo';
         $this->view->render('galeria/index');
     }
     public function creargrupo(){

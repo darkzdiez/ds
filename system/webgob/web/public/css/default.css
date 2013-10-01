@@ -881,26 +881,33 @@ textarea{
     overflow:hidden;
 }
 #slide_ppal .item .descriptionContainer{
-    height: 450px;
-    width: 400px;
+    transition: all 1s linear 0.5s;
+    -moz-transition: all 1s linear 0.5s;
+    -webkit-transition: all 1s linear 0.5s;
+    -o-transition: all 1s linear 0.5s;
+    height: 100px;
+    width: 900px;
     float: left;
     overflow:hidden;
+    bottom: -50px;
+    position: absolute;
 }
 #slide_ppal .item .descripcion{
     background-color: rgba(255, 255, 255, 0.5);
     background-repeat: repeat-y;
-    height: 450px;
-    width: 400px;
+    height: 100px;
+    width: 880px;
     float: left;
     overflow:hidden;
     text-align: justify;
+    padding-right: 20px;
 }
 #slide_ppal .item .descripcion .titulo{
     margin-top: 20px;
     padding-left: 10px;
     font-size: 19px;
     float: left;
-    width: 380px;
+    width: 100%;
     margin-right: 10px;
     font-weight: bold;
 }
@@ -911,8 +918,11 @@ textarea{
     font-weight: bold;
     padding-top: 5px;
     float: left;
-    width: 380px;
+    width: 100%;
     margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #slide_ppal .item .descripcion .comentario{
     font-size: 18px;
@@ -920,7 +930,7 @@ textarea{
     color: #000;
     padding-top: 10px;
     float: left;
-    width: 380px;
+    width: 100%;
     margin-right: 10px;
     text-shadow: 1px 1px 1px #000000;
 }

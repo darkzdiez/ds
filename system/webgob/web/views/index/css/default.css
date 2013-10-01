@@ -1,21 +1,18 @@
 .descriptionContainer > .descripcion{
-    transition-property:  all;
-    transition-duration: 1s;
-    -moz-transition-property:  all;
-    -moz-transition-duration: 1s;
-    -webkit-transition-property:  all;
-    -webkit-transition-duration: 1s;
-    -o-transition-property:  all;
-    -o-transition-duration: 1s;
+    transition: all 1s linear 0.5s;
+    -moz-transition: all 1s linear 0.5s;
+    -webkit-transition: all 1s linear 0.5s;
+    -o-transition: all 1s linear 0.5s;
     /*animation:descripcion1 2s;
     -moz-animation:descripcion1 2s;
     -webkit-animation:descripcion1 2s;
     -o-animation:descripcion1 2s;*/
 }
-.descriptionContainer:hover > .descripcion{
-    opacity: 0 !important;
-    width: 0px !important;
-    height: 0px !important;
+#slide_ppal .item:hover .descripcion{
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+#slide_ppal .item:hover .descriptionContainer{
+    bottom: 0px;
 }
 .descriptionContainer > .descripcionHide{
     opacity: 0 !important;
@@ -54,3 +51,39 @@ to {width: 400px; height: 450px; opacity: 1;}
     from {width: 0px; height: 0px; opacity: 0;}
 to {width: 400px; height: 450px; opacity: 1;}
 }*/
+.btnnav{
+    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.5);
+    top: 150px;
+    position: absolute;
+    z-index: 1000;
+}
+.btnnav span{
+    position: absolute;
+    transform: scale(1.4);
+    top: 5px;
+    left: 20px;
+    font-size: 60px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 1px 1px 1px #000;
+    text-decoration: none;
+    opacity: 0.6;
+}
+.btnnav:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.btnnav:hover span{
+    opacity: 0.8;
+}
+#prev2{
+    left: 10px;
+}
+#next2{
+    right: 10px;
+}
+span:hover{
+    text-decoration: none;
+}
