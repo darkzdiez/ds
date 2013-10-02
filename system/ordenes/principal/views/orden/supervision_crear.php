@@ -17,7 +17,7 @@
         <div class="descriptionForm">SUPERVISION:</div>
         <p id="textoEnviado"></p>
     </div>
-    <script src="<?php echo DOMAIN; ?>public/js/fileupload/main.js"></script>
+    <script src="<?php echo DOMAIN; ?>public/js/fileupload-bs2/main.js"></script>
 <form id="fileupload" action="" method="POST" enctype="multipart/form-data">
     <div class="bs-docs-example">
         <div class="descriptionForm">Subir Archivos:</div>

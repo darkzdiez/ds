@@ -1,3 +1,12 @@
+function isset(strVariableName){ 
+    try { 
+        eval( strVariableName );
+    } catch(err) { 
+        if (err instanceof ReferenceError) 
+           return false;
+    }
+    return true;
+} 
 $(document).ready(function() {
     cargarRecursos(PATH_FILE + 'views/' + 'index/css/default.css');
     /*var categorySEARCH = [14, 15, 16];
@@ -63,12 +72,59 @@ $(document).ready(function() {
                 '</div>';
                 $('#slide_ppal').append(slidehtml);
             }
-            $('#slide_ppal').cycle({
+            banner='#slide_ppal';
+            $(banner).cycle({
+                after: function accion(currSlideElement, nextSlideElement, options, forwardFlag) {
+                    $(banner).addClass('hover');
+                    $(banner).cycle('pause');
+                    if(isset('hoverSlide')){
+                        clearTimeout(hoverSlide);
+                    }
+                    hoverSlide=setTimeout(function(){
+                        $(banner).removeClass('hover');
+                        if(isset('continuarSlide')){
+                            clearTimeout(continuarSlide);
+                        }
+                        continuarSlide=setTimeout(function(){
+                            $(banner).cycle('resume');
+                        },3000)
+                    },3000)
+                },
                 fx: 'fade',
                 speed: 'fast',
-                timeout: 6000,
-                pager: '.nav_slide',
-                pause: 1
+                timeout: 3000,
+                /*pause: 1,*/
+                next:   '#next2', 
+                prev:   '#prev2' 
+            });
+            function bannerHover(){
+                $(banner).addClass('hover');
+                $(banner).cycle('pause');
+                if(isset('hoverSlide')){
+                    clearTimeout(hoverSlide);
+                }
+                if(isset('continuarSlide')){
+                    clearTimeout(continuarSlide);
+                }
+            }
+            function noBannerHover(){
+                if(isset('continuarSlide')){
+                    clearTimeout(continuarSlide);
+                }
+                $(banner).removeClass('hover');
+                continuarSlide=setTimeout(function(){
+                    $(banner).cycle('resume');
+                },3000)
+            }
+            $(banner).hover(function(){
+                bannerHover();
+            },function(){
+                noBannerHover();
+            });
+            $('.btnnav').hover(function(){
+                bannerHover();
+            },function(){
+                noBannerHover();
             });
 //            $('.descriptionContainer').on({
 //                mouseenter: function() {
