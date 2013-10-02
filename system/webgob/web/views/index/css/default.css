@@ -13,7 +13,7 @@
     -moz-transition: all 0.5s linear 0s;
     -webkit-transition: all 0.5s linear 0s;
     -o-transition: all 0.5s linear 0s;
-    background-color: rgba(255, 255, 255, 1) !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
 }
 #slide_ppal.hover .item .descriptionContainer{
     transition: all 0.5s linear 0s;
@@ -60,10 +60,10 @@ to {width: 400px; height: 450px; opacity: 1;}
 to {width: 400px; height: 450px; opacity: 1;}
 }*/
 .btnnav{
-    border-radius: 5px;
+    border-radius: 35px;
     width: 70px;
     height: 70px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     top: 150px;
     position: absolute;
     z-index: 1000;
@@ -75,13 +75,13 @@ to {width: 400px; height: 450px; opacity: 1;}
     left: 20px;
     font-size: 60px;
     font-weight: bold;
-    color: #000;
+    color: #fff;
     text-shadow: 1px 1px 1px #000;
     text-decoration: none;
     opacity: 0.6;
 }
 .btnnav:hover{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .btnnav:hover span{
     opacity: 0.8;
