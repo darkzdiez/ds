@@ -155,7 +155,7 @@ class Orden_Model extends Model {
         }else{
             $where="";
         }
-        return $this->db->select("SELECT `app_user`.*, count(if(`orden`.`estatus` = 0, `orden`.`estatus`, NULL)) as pendiente_orden, count(if(`orden`.`estatus` = 1, `orden`.`estatus`, NULL)) as proceso_orden, count(if(`orden`.`estatus` = 2, `orden`.`estatus`, NULL)) as ejecutada_orden, count(`orden`.`id_usuario_recibe`) as total_orden FROM `app_user` LEFT JOIN  `orden` ON `app_user`.`iduser` =`orden`.`id_usuario_recibe` $where GROUP BY `app_user`.`iduser` HAVING total_orden>0");
+        return $this->db->select("SELECT `institutos`.`nombre` as 'instituto', `app_user`.*, count(if(`orden`.`estatus` = 0, `orden`.`estatus`, NULL)) as pendiente_orden, count(if(`orden`.`estatus` = 1, `orden`.`estatus`, NULL)) as proceso_orden, count(if(`orden`.`estatus` = 2, `orden`.`estatus`, NULL)) as ejecutada_orden, count(`orden`.`id_usuario_recibe`) as total_orden FROM `app_user` LEFT JOIN `institutos` ON `app_user`.`id_instituto`=`institutos`.`id` LEFT JOIN  `orden` ON `app_user`.`iduser` =`orden`.`id_usuario_recibe` $where GROUP BY `app_user`.`iduser` HAVING total_orden>0 ORDER BY total_orden DESC");
     }
     public function selectResponsables() {
         return $this->db->select("SELECT * FROM `app_user`, `institutos` where `app_user`.id_instituto=`institutos`.id");

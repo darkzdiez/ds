@@ -160,6 +160,7 @@ and also iPads specifically.
 				
 			</ul>
 		</div>
+
 		<table id="tabla-administrar" class="table table-bordered table-hover table-responsive">
 			<thead>
 				<tr>
@@ -184,10 +185,18 @@ and also iPads specifically.
 		</div>
 		</div>
 		<div class="tab-pane" id="cantidades">
+			<div class="bs-docs-example">
+				<div class="descriptionForm">ACCIONES</div>
+				<div class="row-fluid">
+					<div class="span3"><a class="btn btn-danger span12" href="<?php print PATH_NAV.'orden/pdfcantidades'; ?>" target="_new"><i class="icon-print"></i> GENERAR PDF</a></div>
+				</div>
+			</div>
+			<br>
 			<table id="cantidadOrdenes" class="table-responsive">
 				<thead>
 					<tr>
 						<th>N°</th>
+						<th>INSTITUTO</th>
 						<th>RESPONSABLE</th>
 						<th>PENDIENTE</th>
 						<th>EN PROCESO</th>

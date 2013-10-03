@@ -35,14 +35,17 @@ function __autoload($class) {
         define('BASE', 'tema1');
     }
     $file = LIBS . $class . ".php";
-    $file2 = 'system/base/' . BASE . '/controllers/' . $class . ".php";
-    $file3 = 'system/base/' . BASE . '/models/' . $class . ".php";
+    $file2 = LIBS . $class . "/" . $class . ".php";
+    $file3 = 'system/base/' . BASE . '/controllers/' . $class . ".php";
+    $file4 = 'system/base/' . BASE . '/models/' . $class . ".php";
     if (file_exists($file)) {
         require $file;
     }elseif(file_exists($file2)){
         require $file2;
     }elseif(file_exists($file3)){
         require $file3;
+    }elseif(file_exists($file4)){
+        require $file4;
     }
 }
 function gestor_excepciones($excepcion) {

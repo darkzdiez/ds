@@ -5,7 +5,7 @@ class TemplateOrdenes extends Tcpdf {
         $this->writeHTML('<table width="" cellspacing="0" cellpadding="0" style="margin: 0; padding: 0px">
     <tbody>
         <tr valign="TOP">
-            <td width="80" style="text-align: left;"><img style="width: 60px;" src="libs/tcpdf/images/report_cucey/escudo-de-yaracuy-506x550.jpg"></td>
+            <td width="80" style="text-align: left;"><img style="width: 60px;" src="' . _pathMODULE . '/views/template/TemplateOrdenes/escudo-de-yaracuy-506x550.jpg"></td>
             <td style="vertical-align: middle; width: 636px;">
                 <div style="height: 10px; line-height:1; color: #0000ff; color: #0000ff; text-align: center; margin: 0px; padding: 0px;">
                     <strong>REPÚBLICA BOLIVARIANA DE VENEZUELA<br>

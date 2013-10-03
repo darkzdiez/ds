@@ -109,7 +109,6 @@ class View {
 
             $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-            $pdf->setLanguageArray(TcpdfLang::get());
 
             $pdf->SetFont('helvetica', '', 12);
 
