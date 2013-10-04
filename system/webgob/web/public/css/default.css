@@ -885,7 +885,7 @@ textarea{
     -moz-transition: all 0.5s linear 1s;
     -webkit-transition: all 0.5s linear 1s;
     -o-transition: all 0.5s linear 1s;
-    height: 100px;
+    height: 130px;
     width: 900px;
     float: left;
     overflow:hidden;
@@ -894,6 +894,8 @@ textarea{
 }
 #slide_ppal .item .descripcion{
     background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 30px;
     background-repeat: repeat-y;
     height: 100px;
     width: 880px;
