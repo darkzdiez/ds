@@ -1853,3 +1853,23 @@ a:hover .ccontratacionDenominacionHome{
     background-color: #F0F0F0;
 }
 /* fin de informacion */
+
+.iconSocial{
+    width: 40px;
+    height: 40px;
+    background-color: #f00;
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    transition: all 0.5s linear 1s;
+    -moz-transition: all 0.5s linear 1s;
+    -webkit-transition: all 0.5s linear 1s;
+    -o-transition: all 0.5s linear 1s;
+}
+.iconSocial:hover{
+    text-decoration: none;
+    color: #fff;
+    transform:rotate(7deg)
+}
