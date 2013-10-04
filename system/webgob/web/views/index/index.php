@@ -12,15 +12,15 @@
                     }else{
                         $filename=$value[0]['filename'];
                     }
-                    $fileThumb='system/webgob/temp/thumbnail/' . $value[0]['idarticle'] . '-170x170-'.$filename;
+                    $fileThumb='system/webgob/temp/thumbnail/' . $value[0]['idarticle'] . '-540x230-'.$filename;
                     if(!file_exists($fileThumb)){
                         $obj = new Thumbnail();
-                        $thumbnail = $obj->generateThumbnail('system/webgob/'.$value[0]['location'] . $value[0]['idarticle'] . '/' . $filename, $fileThumb, 170, 160);
+                        $thumbnail = $obj->generateThumbnail('system/webgob/'.$value[0]['location'] . $value[0]['idarticle'] . '/' . $filename, $fileThumb, 540, 230);
                     }else{
                         $thumbnail=$fileThumb;
                     }
-                    $dia=Date::format_date($value[0]['release_date'], $format = DATETIME_ARRAY);
-                    @print '<article>'
+                    $dia=Date::format_date($value[0]['release_date'], $format = DATE_EXTENDED);
+                    /*@print '<article>'
                     . '<div class="noticias_inicio">'
                     . '<div class="der"></div>'
                     . '<div class="med">'
@@ -40,7 +40,28 @@
                     . '</div>'
                     . '<div class="izq"></div>'
                     . '</div>'
-                    . '</article>';
+                    . '</article>';*/
+                @print '<div class="noticias_inicio">'
+                . '<table>'
+                . '<tbody>'
+                . '<tr>'
+                . '<td class="first">' . $dia . ' en <a href="#">' . $value[0]['categoryTipe'] . '</a>, <a href="#">' . $value[0]['categoryLocation'] . '</a></td>'
+                . '</tr>'
+                . '<tr>'
+                . '<td class="title"><a href="'.PATH_NAV.'noticias/more/'. $value[0]['idarticle'] . '-' . Text::CleanURL($value[0]['title']) . '">' . Text::cut(strip_tags(htmlspecialchars_decode($value[0]['title'])), 60, END) . '</a></td>'
+                . '</tr>'
+                . '<tr>'
+                . '<td class="img"><img alt="" src="'.DOMAIN.$thumbnail.'" class="img_min" /></td>'
+                . '</tr>'
+                . '<tr>'
+                . '<td class="summary"><p>' . Text::cut(strip_tags($value[0]['summary']), 180, END) . '</p></td>'
+                . '</tr>'
+                . '<tr>'
+                . '<td class="bottom">0 <a href="'.PATH_NAV.'noticias/more/'. $value[0]['idarticle'] . '-' . Text::CleanURL($value[0]['title']) . '">Comentarios</a>, <a href="'.PATH_NAV.'noticias/more/'. $value[0]['idarticle'] . '-' . Text::CleanURL($value[0]['title']) . '">Leer Mas...</a></td>'
+                . '</tr>'
+                . '</tbody>'
+                . '</table>'
+                . '</div>';
                 }
                 $filenameExplode=explode('/', $value[$i]['filename']);
                 if(count($filenameExplode)>1){

@@ -81,7 +81,7 @@
                 <div class="contenedor" id="nav_c">
                     <nav>
                         <ul id="menu">
-                            <li><a href="<?php print PATH_NAV; ?>" title="Inicio"><span class="cufon_myriad_bold">Inicio</span></a></li>
+                            <li><a href="<?php print PATH_NAV; ?>"><span class="cufon_myriad_bold">Inicio</span></a></li>
                             <li>
                                 <a href="<?php print PATH_NAV; ?>noticias"><span class="cufon_myriad_bold">Noticias</span></a>
                                 <!--<ul class="submenu">
@@ -128,13 +128,13 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a style="cursor: default;"><span class="cufon_myriad_bold">Galeria</span></a>
+                            <li><a style="cursor: default;"><span class="cufon_myriad_bold">Galería</span></a>
                                 <ul class="submenu">
                                     <li>
                                        <a href="<?php print PATH_NAV . 'galeria/movie'; ?>"><span>Videos</span></a>
                                     </li>
                                     <li>
-                                        <a href="<?php print PATH_NAV . 'galeria/photo'; ?>"><span>Fotografias</span></a>
+                                        <a href="<?php print PATH_NAV . 'galeria/photo'; ?>"><span>Fotografías</span></a>
                                     </li>
                                 </ul>
                             </li>
