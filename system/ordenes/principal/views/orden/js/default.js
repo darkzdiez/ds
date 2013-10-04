@@ -98,6 +98,7 @@ function cantidadordenes(){
                 p.ejecutada_orden=((item.ejecutada_orden * 100) / item.total_orden).toFixed(1);
                 tablehtml += "<tr>"
                 + "<td>" + n + "</td>"
+                + "<td>" + item.instituto.toUpperCase() + "</td>"
                 + "<td>" + item.nombres.toUpperCase() + "</td>"
                 + '<td><table><tr><td style="width: 50%">' + item.pendiente_orden + '</td><td  style="width: 50%">' + p.pendiente_orden + "%</td></tr></table></td>"
                 + '<td><table><tr><td style="width: 50%">' + item.proceso_orden + '</td><td  style="width: 50%">' + p.proceso_orden + "%</td></tr></table></td>"

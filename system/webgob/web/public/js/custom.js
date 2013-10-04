@@ -5,11 +5,10 @@ $(function() {
 });
 $(document).ready(function() {
     $('#slide_article').cycle({
-    fx:     'fade', 
-    speed:  'fast', 
-    timeout: 0, 
-    next:   '#next2', 
-    prev:   '#prev2' 
+        fx: 'turnDown',
+        speed: 'fast',
+        timeout: 6000,
+        pager: '.nav_slide_article'
     });
     $('#slide_282x236').cycle({
         fx: 'fade,scrollLeft,fadeZoom,scrollDown,growX,scrollRight,turnUp,scrollUp,wipe',

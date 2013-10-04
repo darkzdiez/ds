@@ -58,6 +58,24 @@ class orden extends Controller {
             $this->view->render('error/index');
         }
     }
+    public function pdfcantidades(){
+        if (Session::get('role') == 1 or Session::get('role') == 2) {
+            $result=$this->model->selectOrdenes(Session::get('TempPDF'), FALSE);
+            $this->view->data=$this->model->cantidadordenes();
+            $data['location'] = 'orden/pdfcantidades';
+            $data['autor'] = 'Gobernacion del Estado Yaracuy';
+            $data['title'] = 'REPORTE DE ORDENES';
+            $data['subject'] = 'DIRECCION DE INFORMATICA DE LA GOBERNACIÓN DEL ESTADO YARACUY';
+            $data['keywords'] = 'REPORTE, ORDENES, FILTRO';
+            $data['output'] = 'REPORTE.pdf';
+            $this->view->genPDF($data,'TemplateOrdenes','L');
+            //$this->view->render('orden/pdf', TRUE);
+        }else{
+            $this->view->render('error/index');
+        }
+        /*$this->view->data=$this->model->cantidadordenes();
+        $this->view->render('orden/pdfcantidades',true);*/
+    }
     public function admin($trash = NULL) {
         $this->view->render('orden/index');
     }
