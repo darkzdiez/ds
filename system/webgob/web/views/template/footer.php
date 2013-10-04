@@ -13,6 +13,9 @@
     </div>
     <div id="fondo_top_colum_b"></div>
     <div class="container_col_right">
+        <span class="iconSocial"></span>
+    </div>
+    <div class="container_col_right">
         <?php
         if($_SERVER['REMOTE_ADDR'] != '200.11.197.74'){
             $this->callControllerModule('videoyoutube','printlast');

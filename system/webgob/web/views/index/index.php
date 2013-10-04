@@ -48,7 +48,7 @@
                 . '<td class="first">' . $dia . ' en <a href="#">' . $value[0]['categoryTipe'] . '</a>, <a href="#">' . $value[0]['categoryLocation'] . '</a></td>'
                 . '</tr>'
                 . '<tr>'
-                . '<td class="title"><a href="'.PATH_NAV.'noticias/more/'. $value[0]['idarticle'] . '-' . Text::CleanURL($value[0]['title']) . '">' . Text::cut(strip_tags(htmlspecialchars_decode($value[0]['title'])), 60, END) . '</a></td>'
+                . '<td class="title"><a href="'.PATH_NAV.'noticias/more/'. $value[0]['idarticle'] . '-' . Text::CleanURL($value[0]['title']) . '">' . strip_tags(htmlspecialchars_decode($value[0]['title'])) . '</a></td>'
                 . '</tr>'
                 . '<tr>'
                 . '<td class="img"><img alt="" src="'.DOMAIN.$thumbnail.'" class="img_min" /></td>'
