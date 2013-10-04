@@ -190,7 +190,7 @@ textarea{
     height: 42px;
 }
 #nav_c{
-    background-image: url(../images/nav_ppal_fondo2.png);
+    background-image: url(../images/nav_ppal_fondo.png);
     height: 41px;
     box-shadow: 0 0 2px #000000;
     border-bottom: 1px solid white;
@@ -224,8 +224,8 @@ textarea{
     margin-top: -3px;
 }
 #nav_c #menu li .submenu{
-    background-color: #C3182C;
-    background-image: linear-gradient(#C3182C, #6c0311);
+    background-color: #D9D9D9;
+    background-image: linear-gradient(#D9D9D9, #A9A9A9);
     position: absolute;
     z-index: 1000;
     margin: 0px;
@@ -249,7 +249,7 @@ textarea{
     transition-duration: 1s;
 }
 #nav_c #menu .submenu li:hover{
-    background-color: #6c0311;
+    background-color: #D9D9D9;
 }
 #nav_c #menu li .submenu li a span{
     float: left;
@@ -357,7 +357,7 @@ textarea{
     padding-top: 8px;
     padding-right: 15px;
     padding-left: 20px;
-    color: #FFF;
+    color: #222;
     text-decoration: none;
     font-style: italic;
     font-size: 20px;
@@ -373,7 +373,8 @@ textarea{
     vertical-align: middle;
 }
 #nav_c #menu li:hover{
-    background-color: #C3182C;
+    background-color: #E6E6E6;
+    background-image: linear-gradient(#E6E6E6, #D9D9D9);
 }
 #nav_c .separador_nav{
     float: left;
