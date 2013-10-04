@@ -87,12 +87,12 @@ $(document).ready(function() {
                         }
                         continuarSlide=setTimeout(function(){
                             $(banner).cycle('resume');
-                        },3000)
-                    },3000)
+                        },6000)
+                    },6000)
                 },
                 fx: 'fade',
                 speed: 'fast',
-                timeout: 3000,
+                timeout: 6000,
                 /*pause: 1,*/
                 next:   '#next2', 
                 prev:   '#prev2' 
@@ -114,7 +114,7 @@ $(document).ready(function() {
                 $(banner).removeClass('hover');
                 continuarSlide=setTimeout(function(){
                     $(banner).cycle('resume');
-                },3000)
+                },6000)
             }
             $(banner).hover(function(){
                 bannerHover();
