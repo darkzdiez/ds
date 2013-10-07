@@ -12,7 +12,7 @@
         <div style="float: right; height: 6px; width: 232px;"></div>
     </div>
     <div id="fondo_top_colum_b"></div>
-    <div class="container_col_right">
+    <div class="container_col_right cIconSocial">
         <a href="?" class="iconSocial"><i class="icon-twitter"></i></a>
         <a href="?" class="iconSocial"><i class="icon-facebook"></i></a>
         <a href="?" class="iconSocial"><i class="icon-youtube"></i></a>

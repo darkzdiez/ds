@@ -1853,7 +1853,9 @@ a:hover .ccontratacionDenominacionHome{
     background-color: #F0F0F0;
 }
 /* fin de informacion */
-
+.cIconSocial{
+    text-align: center;
+}
 .iconSocial{
     width: 40px;
     height: 40px;
@@ -1862,14 +1864,19 @@ a:hover .ccontratacionDenominacionHome{
     border-radius: 20px;
     text-align: center;
     color: #fff;
-    font-size: 2em;
-    transition: all 0.5s linear 1s;
-    -moz-transition: all 0.5s linear 1s;
-    -webkit-transition: all 0.5s linear 1s;
-    -o-transition: all 0.5s linear 1s;
+    font-size: 1.9em;
+    transition: all 0s linear 0s;
+    -moz-transition: all 0s linear 0s;
+    -webkit-transition: all 0s linear 0s;
+    -o-transition: all 0s linear 0s;
 }
 .iconSocial:hover{
     text-decoration: none;
     color: #fff;
-    transform:rotate(7deg)
+    transform:rotate(360deg) scale(1.1);
+    -webkit-transform:rotate(360deg) scale(1.1);
+    transition: all 0.5s linear 0s;
+    -moz-transition: all 0.5s linear 0s;
+    -webkit-transition: all 0.5s linear 0s;
+    -o-transition: all 0.5s linear 0s;
 }
