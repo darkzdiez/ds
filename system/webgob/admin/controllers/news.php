@@ -26,6 +26,9 @@ class News extends Controller {
         $this->view->display = 'none';
         $this->view->render('news/index');
     }
+    public function agregarportada($idnews){
+        $this->view->render('news/agregarportada');
+    }
     public function agregar() {
         //exit(print_r(Pagination::extract(10)));
         $this->view->js = array('news/js/default.js', 'news/js/editar.js');

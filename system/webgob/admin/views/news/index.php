@@ -7,7 +7,7 @@
 </div>
 <table id="list-news" class="ui-widget ui-widget-content table-content">
     <thead>
-        <tr class="ui-widget-header ">
+        <tr class="ui-widget-header">
             <th>Título</th>
             <th>Sumario</th>
             <th>Fecha</th>

@@ -72,6 +72,8 @@ function filtrarGaleria(id){
 }
 
 function listarGaleria(init){
+    $('.itemList').remove();
+    $('#insertargaleria')[0].reset();
     $.ajax({
         type: 'POST',
         dataType: 'json',
@@ -85,13 +87,16 @@ function listarGaleria(init){
                 if(window.listaRepActiva==item.idgallery){
                     active='active'
                 }
-                $('#listasRep').append('<li onclick="filtrarGaleria(' + item.idgallery + ')" id="listaItem' + item.idgallery + '" class="list-group-item ' + active + '"><span class="pull-right ajaxLoader oculto"><img src="' + DOMAIN + '/public/images/ajax-loader2.gif" alt=""></span>' + item.name.toUpperCase() + '</li>');
+                $('#listasRep').append('<li onclick="filtrarGaleria(' + item.idgallery + ')" id="listaItem' + item.idgallery + '" class="list-group-item itemList ' + active + '"><span class="pull-right ajaxLoader oculto"><img src="' + DOMAIN + '/public/images/ajax-loader2.gif" alt=""></span>' + item.name.toUpperCase() + '</li>');
             });
             cargarGaleriaFotos(window.listaRepActiva);
         }
     });
 }
-
+function crearGaleria(data){
+    alert(data.mensaje);
+    iniciar();
+}
 $(document).ready(iniciar);
 
 function iniciar(){
