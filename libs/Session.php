@@ -11,14 +11,14 @@ class Session {
     }
 
     public static function init($recordar=false) {
-        $Session = new Session;
-        session_name($Session->_nameSession);
+        @$Session = new Session;
+        @session_name($Session->_nameSession);
         if ($recordar==true) {
-            session_set_cookie_params($Session->_timeSession, $Session->_pathSession);
+            @session_set_cookie_params($Session->_timeSession, $Session->_pathSession);
         }
         if (isset($_COOKIE['recordarme']) and $_COOKIE['recordarme']=='ab') {
-            session_set_cookie_params($Session->_timeSession, $Session->_pathSession);
-            setcookie($Session->_nameSession, $_COOKIE[$Session->_nameSession], time() + 24*60*60, $Session->_pathSession);
+            @session_set_cookie_params($Session->_timeSession, $Session->_pathSession);
+            @setcookie($Session->_nameSession, $_COOKIE[$Session->_nameSession], time() + 24*60*60, $Session->_pathSession);
         }
         @session_start();
     }
