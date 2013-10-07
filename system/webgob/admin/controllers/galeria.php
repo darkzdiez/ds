@@ -18,16 +18,20 @@ class Galeria extends Controller {
     public function index() {
         $this->view->render('galeria/index');
     }
+
+    public function listargaleria() {
+        print json_encode($this->model->listarGaleria());
+    }
+
     public function creargrupo(){
         print json_encode($this->model->creargrupo($_POST));
     }
     public function upload($id){
         $upload_handler = new UploadHandler(
             array(
-                'script_url' => PATH_NAV . 'orden/upload/',
+                'script_url' => PATH_NAV . 'galeria/upload/' . $id . '/',
                 'upload_dir' => PATH_SYSTEM_L . '/media/images/galeria/' . $id . '/',
-                'upload_url' => PATH_SYSTEM . 'media/images/galeria/' . $id . '/'/*,
-                'delete_type' => 'POST'*/
+                'upload_url' => PATH_SYSTEM . '/media/images/galeria/' . $id . '/'
             )
         );
     }

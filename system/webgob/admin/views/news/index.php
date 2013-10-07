@@ -26,7 +26,8 @@ foreach ($this->singleList['array'] as $key => $value) {
                 <?php
                 print '<td style="white-space: nowrap;">
                         <div ref="' . $value['idarticle'] . '" class="styleLink edit close">Editar</div>
-                        <div ref="' . $value['idarticle'] . '" class="styleLink images close">Imagenes</div> ';
+                        <div ref="' . $value['idarticle'] . '" class="styleLink images close">Imagenes</div>
+                        <a href="' . PATH_NAV . 'news/agregarportada/' . $value['idarticle'] . '" class="styleLink">Portada</a> ';
                 if ($value['status'] == 1) {
                     print '<div ref="' . $value['idarticle'] . '" class="styleLink state disable">Desactivar</div></td>';
                 } else {

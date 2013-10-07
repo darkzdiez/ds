@@ -23,7 +23,7 @@ if ($_SERVER['REMOTE_ADDR'] == '::1' OR $_SERVER['REMOTE_ADDR'] == '127.0.0.1') 
 }
 define('PATH_SYSTEM', DOMAIN . 'system/webgob/');
 define('PATH_FILE', PATH_SYSTEM . 'admin/');
-define('PATH_SYSTEM_L',dirname($_SERVER['SCRIPT_FILENAME']).'/system/ordenes');
+define('PATH_SYSTEM_L',dirname($_SERVER['SCRIPT_FILENAME']).'/system/webgob');
 
 // The sitewide hashkey, do not change this because its used for passwords!
 // This is for other hash keys... Not sure yet
