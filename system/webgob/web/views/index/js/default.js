@@ -60,8 +60,11 @@ $(document).ready(function() {
             for (var i in data) {
                 var slidehtml='<div class="item" style="background-image:url(' + PATH_SYSTEM + data[i].location + data[i].id + '/' + data[i].filename + ')">';
                 if (data[i].dtexto!=1) {
-                    slidehtml+='<div class="descriptionContainer"><div class="leermasSp">Leer mas <span class="icon-angle-right"></span><span class="icon-angle-right"></span></div>' +
-                        '<div class="descripcion">' +
+                    slidehtml+='<div class="descriptionContainer">';
+                    if(data[i].idarticle != null){
+                        slidehtml+='<a href="' + PATH_NAV + 'noticias/more/' + data[i].idarticle + '" class="leermasSp">Leer mas <span class="icon-angle-right"></span><span class="icon-angle-right"></span></a>';
+                    }
+                    slidehtml+='<div class="descripcion">' +
                         /*'<div class="titulo">' + data[i].toptitle + '</div>' +*/
                         '<div class="subtitulo">' + data[i].title + '</div>' +
                         '<div class="comentario">' + data[i].description + '.</div>' +

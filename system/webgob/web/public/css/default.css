@@ -698,6 +698,10 @@ textarea{
 /* slider ppal */
 #slide_ppal_f{
 }
+#slide_ppal a,#slide_ppal a:hover, a:visited{
+    color: #fff;
+    text-decoration: none;
+}
 #slide_ppal{
     height: 450px;
     width: 900px;

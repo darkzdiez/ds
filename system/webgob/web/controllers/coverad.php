@@ -18,7 +18,7 @@
 
 class coverad extends Controller{
     function index() {
-            print json_encode($this->model->singleList('0,10'));
+        print json_encode($this->model->singleList('0,10'));
     }
 }
 
