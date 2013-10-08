@@ -5,7 +5,9 @@ class news_Model extends Model {
     public function __construct() {
         parent::__construct();
     }
-
+    public function listarcoverad_article(){
+        return $this->db->select('SELECT * FROM `listar-coverad_article`');
+    }
     public function singleList() {
         $limit = ' LIMIT ' . implode(',', Pagination::extract(10));
         $result['array'] = $this->db->select("SELECT `article`.`idarticle`,`article`.`title`,`article`.`summary`,`article`.`release_date`,`user`.`nameuser`,`article`.`status`, SUM(c.`idcategory`) as 'category', SUM( l.`idcategory`) as 'location'

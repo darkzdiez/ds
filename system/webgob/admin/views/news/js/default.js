@@ -8,6 +8,37 @@
         fdialog(null,data.result_error,'message');
     }
 }*/
+function listarPortadas(){
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: PATH_NAV + 'news/listarportadas',
+        success : function(data){
+            ihtml='';
+            $.each(data, function(i, item){
+                ihtml += '<tr>'
+                    + '<td>' + item.titlecover + '</td>'
+                    + '<td>' + item.titlearticle + '</td>'
+                    + '<td><div class="btn btn-primary" onclick="asignarPortada(' + item.idcover + ')"><i class="icon icon-check"></i> Seleccionar</div></td>'
+                + '</tr>';
+            });
+            $('#listaPortadas tbody').html(ihtml);
+        }
+    });
+}
+function asignarPortada(val){
+    $.ajax({
+        type: 'POST',
+        data: {
+            'idcover': val
+        },
+        dataType: 'json',
+        url: PATH_NAV + 'news/asignarportada',
+        success : function(data){
+            alert(val+data.hola);
+        }
+    });
+}
 function setTinymce(){
     tinymce.init({
         selector: ".tinymce",
@@ -24,6 +55,7 @@ function setTinymce(){
     });
 }
 $(document).ready(function() {
+    listarPortadas();
     fecha_alt();
     setTinymce();
     $(".state").on({

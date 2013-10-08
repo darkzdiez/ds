@@ -13,9 +13,9 @@
     </div>
     <div id="fondo_top_colum_b"></div>
     <div class="container_col_right cIconSocial">
-        <a href="?" class="iconSocial"><i class="icon-twitter"></i></a>
-        <a href="?" class="iconSocial"><i class="icon-facebook"></i></a>
-        <a href="?" class="iconSocial"><i class="icon-youtube"></i></a>
+        <a href="https://twitter.com/prensayaracuy" target="_blank" class="iconSocial"><i class="icon-twitter"></i></a>
+        <a href="https://www.facebook.com/prensagobernacion.yaracuy" target="_new" class="iconSocial"><i class="icon-facebook"></i></a>
+        <a href="http://www.youtube.com/user/GobiernoYaracuy" target="_new" class="iconSocial"><i class="icon-youtube"></i></a>
     </div>
     <div class="container_col_right">
         <?php

@@ -1880,3 +1880,7 @@ a:hover .ccontratacionDenominacionHome{
     -webkit-transition: all 0.5s linear 0s;
     -o-transition: all 0.5s linear 0s;
 }
+.iconSocial:visited{
+    text-decoration: none;
+    color: #fff;
+}

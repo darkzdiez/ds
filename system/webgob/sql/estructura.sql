@@ -3,11 +3,10 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-09-2013 a las 09:32:23
+-- Tiempo de generación: 08-10-2013 a las 16:32:02
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.3.10-1ubuntu3.8
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -18,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `sitioweb2`
+-- Base de datos: `sitioweb5`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`idarticle`),
   KEY `fk_article_user1` (`user_iduser`),
   KEY `fk_article_file1` (`main_idfile`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8419 ;
 
 -- --------------------------------------------------------
 
@@ -226,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `idparent_category` int(11) DEFAULT NULL,
   PRIMARY KEY (`idcategory`),
   KEY `fk_categoria_categoria1` (`idparent_category`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=277 ;
 
 -- --------------------------------------------------------
 
@@ -334,7 +333,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `article_idarticle` int(11) NOT NULL,
   PRIMARY KEY (`idcomment`),
   KEY `fk_comentario_noticia1` (`article_idarticle`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50021 ;
 
 -- --------------------------------------------------------
 
@@ -363,10 +362,12 @@ CREATE TABLE IF NOT EXISTS `cover_ad` (
   `description` text NOT NULL,
   `file_idfile` int(11) NOT NULL,
   `user_iduser` int(11) NOT NULL,
+  `idarticle` int(11) DEFAULT NULL,
   `dtexto` int(1) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`),
+  KEY `idarticle` (`idarticle`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -461,7 +462,7 @@ CREATE TABLE IF NOT EXISTS `file` (
   PRIMARY KEY (`idfile`),
   KEY `fk_image_image_location1` (`file_location_idfile_location`),
   KEY `fk_file_file_type1` (`file_type_idfile_type`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10690 ;
 
 -- --------------------------------------------------------
 
@@ -518,7 +519,7 @@ CREATE TABLE IF NOT EXISTS `gallery` (
   `description` mediumtext NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`idgallery`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
 
 -- --------------------------------------------------------
 
@@ -534,6 +535,19 @@ CREATE TABLE IF NOT EXISTS `gallery_has_file` (
   KEY `fk_gallery_has_file_2_idx` (`idfile`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `listar-coverad_article`
+--
+CREATE TABLE IF NOT EXISTS `listar-coverad_article` (
+`idcover` int(11)
+,`titlecover` varchar(250)
+,`file_idfile` int(11)
+,`dtexto` int(1)
+,`idarticle` int(11)
+,`titlearticle` varchar(255)
+);
 -- --------------------------------------------------------
 
 --
@@ -630,7 +644,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `role` varchar(255) NOT NULL,
   `creation` datetime DEFAULT NULL,
   PRIMARY KEY (`iduser`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -656,7 +670,7 @@ CREATE TABLE IF NOT EXISTS `videoyoutube` (
   `idyoutube` varchar(200) NOT NULL,
   `idvideoyoutubegrupo` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -670,9 +684,24 @@ CREATE TABLE IF NOT EXISTS `videoyoutubegrupo` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `listar-coverad_article`
+--
+DROP TABLE IF EXISTS `listar-coverad_article`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `listar-coverad_article` AS (select `cover_ad`.`id` AS `idcover`,`cover_ad`.`title` AS `titlecover`,`cover_ad`.`file_idfile` AS `file_idfile`,`cover_ad`.`dtexto` AS `dtexto`,`cover_ad`.`idarticle` AS `idarticle`,`article`.`title` AS `titlearticle` from (`cover_ad` left join `article` on((`cover_ad`.`idarticle` = `article`.`idarticle`))) where (`cover_ad`.`status` = 1) order by `cover_ad`.`id` desc limit 0,10);
+
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `cover_ad`
+--
+ALTER TABLE `cover_ad`
+  ADD CONSTRAINT `cover_ad_ibfk_2` FOREIGN KEY (`idarticle`) REFERENCES `article` (`idarticle`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `file_gallery`
@@ -686,7 +715,6 @@ ALTER TABLE `file_gallery`
 ALTER TABLE `gallery_has_file`
   ADD CONSTRAINT `gallery_has_file_ibfk_4` FOREIGN KEY (`idgallery`) REFERENCES `gallery` (`idgallery`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `gallery_has_file_ibfk_5` FOREIGN KEY (`idfile`) REFERENCES `file_gallery` (`idfile_gallery`) ON DELETE CASCADE ON UPDATE CASCADE;
-SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
