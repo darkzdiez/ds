@@ -1598,6 +1598,7 @@ a:hover .ccontratacionDenominacionHome{
     overflow: hidden;
     box-shadow: 1px 1px 4px #444444;
     padding-top: 160px;
+    background-size: 100%;
 }
 .photoGallery .infoPanel{
     width: 100%;
@@ -1887,4 +1888,7 @@ a:hover .ccontratacionDenominacionHome{
 .iconSocial:visited{
     text-decoration: none;
     color: #fff;
+}
+.thumbnails a img{
+    height: 85px;
 }
