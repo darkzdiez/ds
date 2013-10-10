@@ -1,4 +1,10 @@
-<div class="title_section cufon_myriad">Programa 155 - Rindiendo Cuentas</div>
+<?php
+foreach ($this->videos as $key => $value) {
+  print '<iframe style="width:100%; height: 300px;" src="http://www.youtube.com/embed/' . $value['idyoutube'] . '" frameborder="0" allowfullscreen></iframe>';
+}
+?>
+
+<!--<div class="title_section cufon_myriad">Programa 155 - Rindiendo Cuentas</div>
 <object width="425" height="355">
   <param name="movie"
          value="http://www.youtube.com/v/ujcioaxEmls?version=3
@@ -31,7 +37,7 @@
          type="application/x-shockwave-flash" allowscriptaccess="always"
          width="425" height="355"></embed>
 </object>
-<!--<video poster="<?php print URL; ?>site/template/img/tapa_video.jpg" controls="controls" preload="none" width="564" class="video">
+<video poster="<?php print URL; ?>site/template/img/tapa_video.jpg" controls="controls" preload="none" width="564" class="video">
     <source src="<?php print URL; ?>media/movie/programa/rc/6/6.theora.ogv" />
     <source src="<?php print URL; ?>media/movie/programa/rc/6/6.mp4video.mp4" />
     <source src="<?php print URL; ?>media/movie/programa/rc/6/6.webmvp8.webm" />

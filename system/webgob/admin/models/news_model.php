@@ -118,6 +118,17 @@ ORDER BY `article`.`idarticle` DESC", array(':id' => $id));
         }
         echo json_encode($data);
     }
+    public function asignarportada($id) {
+        $postData = array(
+            'idarticle' => $id
+        );
+        if ($this->db->update('cover_ad', $postData, "`id` = " . $_POST['idcover'])) {
+            $data = array('mensaje' => 'Se a asignado Correctamente esta la portada a la Noticia.');
+        } else {
+            $data = array('mensaje' => 'Se a producido un error al asignar la portada.');
+        }
+        return $data;
+    }
 
     public function disable($id) {
         $postData = array(

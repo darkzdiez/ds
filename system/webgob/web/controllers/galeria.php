@@ -12,6 +12,7 @@ class Galeria extends Controller {
         $this->view->render('galeria/photo');
     }
     public function movie() {
+        $this->view->videos=$this->model->listarVideos();
         $this->view->render('galeria/movie');
     }
     public function seePhoto($idGaleria) {

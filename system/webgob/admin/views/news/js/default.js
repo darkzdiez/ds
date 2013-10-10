@@ -35,7 +35,8 @@ function asignarPortada(val){
         dataType: 'json',
         url: PATH_NAV + 'news/asignarportada',
         success : function(data){
-            alert(val+data.hola);
+            alert(data.mensaje);
+            listarPortadas();
         }
     });
 }
