@@ -65,7 +65,7 @@ body {
     text-decoration: none;
 }
 a, img, a img, .estiloEnlace{
-    border:#ffffff solid 0px;
+    border:#0066FF solid 0px;
     outline: none;
     text-decoration: none;
 }
@@ -698,7 +698,7 @@ textarea{
 /* slider ppal */
 #slide_ppal_f{
 }
-#slide_ppal a,#slide_ppal a:hover, a:visited{
+#slide_ppal a,#slide_ppal a:hover,#slide_ppal a:visited{
     color: #fff;
     text-decoration: none;
 }

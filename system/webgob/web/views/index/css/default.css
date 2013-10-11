@@ -123,7 +123,6 @@ span:hover{
     top: 0px;
     height: 20px;
     padding: 5px 5px 5px 10px;
-
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -149,6 +148,7 @@ span:hover{
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
+    line-height: 1em;
 }
 .noticias_inicio .title a:hover{
     text-decoration: none;
