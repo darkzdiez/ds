@@ -130,9 +130,11 @@
                             </li>
                             <li><a style="cursor: default;"><span class="cufon_myriad_bold">Galería</span></a>
                                 <ul class="submenu">
+                                    <?php if($_SERVER['REMOTE_ADDR'] != '200.11.197.74'){ ?>
                                     <li>
                                        <a href="<?php print PATH_NAV . 'galeria/movie'; ?>"><span>Videos</span></a>
                                     </li>
+                                    <?php } ?>
                                     <li>
                                         <a href="<?php print PATH_NAV . 'galeria/photo'; ?>"><span>Fotografías</span></a>
                                     </li>
