@@ -21,7 +21,7 @@ $version = (float) phpversion();
 require 'generalConfig.php';
 require 'util/Auth.php';
 require LIBS . 'System.php';
-exit(print get_magic_quotes_gpc());
+//exit(print get_magic_quotes_gpc());
 // Also spl_autoload_register (Take a look at it if you like)
 
 $path = new System();
