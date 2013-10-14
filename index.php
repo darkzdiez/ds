@@ -12,7 +12,7 @@ $version = (float) phpversion();
     }else{
         ini_set('error_reporting', E_ALL ^ E_STRICT);
     }
-	ini_set('display_errors', true);
+    ini_set('display_errors', true);
 /*}else{
 	ini_set('track_errors', 0);
 	ini_set('error_reporting', 0);
@@ -22,8 +22,28 @@ require 'generalConfig.php';
 require 'util/Auth.php';
 require LIBS . 'System.php';
 //exit(print get_magic_quotes_gpc());
-// Also spl_autoload_register (Take a look at it if you like)
+if (get_magic_quotes_gpc()) {
 
+    function stripslashes_array(&$arr) {
+        foreach ($arr as $k => &$v) {
+            $nk = stripslashes($k);
+            if ($nk != $k) {
+                $arr[$nk] = &$v;
+                unset($arr[$k]);
+            }
+            if (is_array($v)) {
+                stripslashes_array($v);
+            } else {
+                $arr[$nk] = stripslashes($v);
+            }
+        }
+    }
+
+    @stripslashes_array($_POST);
+    @stripslashes_array($_GET);
+    @stripslashes_array($_REQUEST);
+    @stripslashes_array($_COOKIE);
+}
 $path = new System();
 $path->path($listSYSTEM,$RewriteBase);
 
