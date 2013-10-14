@@ -33,7 +33,6 @@ $(document).ready(function() {
                 type: "POST",
                 url: url,
                 dataType: 'json',
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                 enctype: 'multipart/form-data',
                 data: data,
                 success: function(data) {

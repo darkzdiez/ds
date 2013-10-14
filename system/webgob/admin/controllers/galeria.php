@@ -23,6 +23,7 @@ class Galeria extends Controller {
         print json_encode($this->model->listarGaleria());
     }
     public function crear() {
+        exit(print_r($_POST));
         print json_encode($this->model->crear($_POST));
     }
 
