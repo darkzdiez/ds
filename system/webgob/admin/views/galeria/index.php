@@ -3,7 +3,7 @@
         <ul class="list-group link" id="listasRep">
             <li class="list-group-item"><strong>Galeria</strong></li>
             <li class="list-group-item">
-                <form name="form1" method="post" id="insertargaleria" class="input-group input-group-sme ajaxForm" action="<?php print PATH_NAV; ?>galeria/crear">
+                <form name="form1" method="post" id="insertargaleria" class="input-group input-group-sme " action="<?php print PATH_NAV; ?>galeria/crear">
                     <div class="input-group">
                         <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
                         <span class="input-group-btn">
