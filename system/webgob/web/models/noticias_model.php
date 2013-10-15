@@ -95,7 +95,7 @@ public function busquedaSimple($idarticle){
         $bcategory = implode("' OR `article_has_category`.`category_idcategory`='", $category);
         $bcategory = " AND (`article_has_category`.`category_idcategory`='" . $bcategory . "')";
         $limit = ' LIMIT 0,' . $limit;
-        $result = $this->db->select("SELECT `article`.`idarticle`, `article`.`release_date`,`article`.`title`,`article`.`summary`,
+        $sql="SELECT `article`.`idarticle`, `article`.`release_date`,`article`.`title`,`article`.`summary`,
         `category`.`idcategory` as 'categoryIdLocation',`category`.`name` as 'categoryLocation',
         `file`.`filename`,
         `file_location`.`location`,
@@ -119,7 +119,10 @@ public function busquedaSimple($idarticle){
         AND `article`.`main_idfile`=`file`.`idfile`
         AND `file`.`file_location_idfile_location`=`file_location`.`idfile_location`
         AND `article`.`status`=1
-        ORDER BY `article`.`idarticle` DESC" . $limit);
+        GROUP BY `article`.`idarticle`
+        ORDER BY `article`.`idarticle` DESC" . $limit;
+        //exit($sql);
+        $result = $this->db->select($sql);
         return $result;
     }
 
