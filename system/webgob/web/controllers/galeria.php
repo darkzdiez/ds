@@ -18,6 +18,7 @@ class Galeria extends Controller {
     public function seePhoto($idGaleria) {
         $this->view->photos=scandir('system/webgob/media/images/galeria/'.$idGaleria);
         $this->view->idGaleria=$idGaleria;
+        $this->view->data=$this->model->selectGaleria($idGaleria);
         $this->view->model=$this->model;
         $this->view->render('galeria/seePhoto');
     }

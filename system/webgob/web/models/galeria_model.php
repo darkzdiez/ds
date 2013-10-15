@@ -57,6 +57,9 @@ LEFT JOIN `file_location` ON `file_gallery`.`file_location_idfile_location` = `f
     public function listarVideos() {
         return $this->db->select('SELECT * FROM `videoyoutube` WHERE `idvideoyoutubegrupo`=2 ORDER BY `id` DESC');
     }
+    public function selectGaleria($id){
+        return $this->db->select('SELECT *  FROM `gallery` WHERE `idgallery` = :id', array(':id' => $id));
+    }
 }
 
 ?>
