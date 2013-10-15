@@ -1,5 +1,5 @@
 <?php
 
 $DEFAULT_MODULE = 'principal';
-$MODULE = array('');
+$MODULE = array('admin');
 ?>
