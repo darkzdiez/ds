@@ -1,6 +1,16 @@
 $(function() {
     $('a').tooltip({
-        track: true
+        show: null,
+        position: {
+            my: "left top",
+            at: "left bottom"
+        },
+        open: function( event, ui ) {
+            ui.tooltip.animate({ top: ui.tooltip.position().top + 10 }, "fast" );
+        },
+        /*hide: {
+            effect: "explode", duration: 100000
+        }*/
     });
 });
 $(document).ready(function() {
@@ -219,65 +229,65 @@ $(document).ready(function() {
         }
         return false;
     });
-    function mostrarLoaderBuscar() {
-        $('#contenido_culum_a').html('<img id="loader_gif_general" src="' + PATH_FILE + 'public/images/loader1.gif" />');
-        $("#btn_buscar_nav").attr('disabled', 'disabled');
-    }
-    ;
-    function agregarRespuestaBuscar(responseText) {
+function mostrarLoaderBuscar() {
+    $('#contenido_culum_a').html('<img id="loader_gif_general" src="' + PATH_FILE + 'public/images/loader1.gif" />');
+    $("#btn_buscar_nav").attr('disabled', 'disabled');
+}
+;
+function agregarRespuestaBuscar(responseText) {
+    setTimeout(function() {
+        $("#loader_gif_general").hide("fade", 10);
+        if ($('#slide_ppal').css('display') != 'none') {
+            $('.descriptionContainer > .descripcion').addClass('descripcionHide', setTimeout(function() {
+                $('.descriptionContainer > .descripcion').removeClass('descripcion');
+                $("#slide_ppal").addClass('slide_ppal_hide');
+            }, 1000));
+            $('.ui-effects-wrapper').css('width', '910px');
+        }
+        $("#contenido_culum_a").html('Resultado de la Busqueda');
         setTimeout(function() {
-            $("#loader_gif_general").hide("fade", 10);
-            if ($('#slide_ppal').css('display') != 'none') {
-                $('.descriptionContainer > .descripcion').addClass('descripcionHide', setTimeout(function() {
-                    $('.descriptionContainer > .descripcion').removeClass('descripcion');
-                    $("#slide_ppal").addClass('slide_ppal_hide');
-                }, 1000));
-                $('.ui-effects-wrapper').css('width', '910px');
-            }
-            $("#contenido_culum_a").html('Resultado de la Busqueda');
-            setTimeout(function() {
-                $("#btn_buscar_nav").removeAttr('disabled');
-            }, 3000);
-        }, 2000);
-    }
-    ;
+            $("#btn_buscar_nav").removeAttr('disabled');
+        }, 3000);
+    }, 2000);
+}
+;
 $('.photoGallery').on({
     mouseenter: function() {
         $(this).stop().animate({
             height: '40px',
             paddingTop: '120px'
         }, 500);
-        },
-        mouseleave: function() {
-            $(this).stop().animate({
-                height: '0px',
-                paddingTop: '160px'
-            }, 500);
-        }
-    });
+    },
+    mouseleave: function() {
+        $(this).stop().animate({
+            height: '0px',
+            paddingTop: '160px'
+        }, 500);
+    }
+});
 });
 function zoominNews(ruta){
     //alert(PATH_SYSTEM + 'media/images/news/' + ruta);
     $("#zoominimage").attr('src', PATH_SYSTEM + 'media/images/news/' + ruta);
+    $( "#dialogZoominimage" ).dialog({
+        modal: true,
+        dialogClass: "no-close",
+        dialogClass: "noTitle",
+        resizable: false,
+        position: {
+            my: "center center"
+        }
+    });
+    $("#zoominimage").load(function() {
         $( "#dialogZoominimage" ).dialog({
-            modal: true,
-            dialogClass: "no-close",
-            dialogClass: "noTitle",
-            resizable: false,
             position: {
                 my: "center center"
             }
         });
-        $("#zoominimage").load(function() {
-            $( "#dialogZoominimage" ).dialog({
-                position: {
-                    my: "center center"
-                }
-            });
-        });
-        $(".ui-widget-overlay").on("click",function(){
-             $( "#dialogZoominimage" ).dialog("close");
-        });
+    });
+    $(".ui-widget-overlay").on("click",function(){
+       $( "#dialogZoominimage" ).dialog("close");
+   });
 }
 /* agrandar imagenes miniaturas */
 /*
