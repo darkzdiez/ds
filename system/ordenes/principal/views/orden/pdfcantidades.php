@@ -25,21 +25,21 @@ TBODY;
 }
 ?>
 <style>
-td{
+.tableppal td{
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
 }
 /*tr:nth-child(2n+1) {
   background-color: #99ff99;
 }*/
-th{
+.tableppal th{
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
   text-align: center;
   font-weight: bold;
   background-color: #CFCFCF;
 }
-table{
+.tableppal{
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
   border-right: 1px solid #000000;
@@ -51,7 +51,22 @@ table{
 .par{
     background-color: #E5E5E5;
 }
+.fechagenerado{
+  text-align: right;
+}
+.fechagenerado .titulo{
+  font-weight: bold;
+}
+.fechagenerado .fecha{
+  text-decoration: underline;
+  font-weight: bold;
+}
 </style>
+<div class="fechagenerado">
+  <span class="titulo">Fecha Generado:</span>
+  <span class="fecha">&nbsp;&nbsp;<?php print date('Y/m/d H:i:s'); ?>&nbsp;&nbsp;</span>
+</div>
+<br>
 <table class="tableppal">
     <thead>
         <tr>
