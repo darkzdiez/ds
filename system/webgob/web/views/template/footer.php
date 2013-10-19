@@ -81,7 +81,7 @@
                     <footer>
                         <div id="columna_a" class="columna_footer">
                             <div class="titulo">Informacion del Sitio</div>
-                            Diseño, Desarrollo e implantación por Gobierno Bolivariano del Estado Yaracuy | Dirección de Informática, ultima actualización 24-09-2012<br />
+                            Diseño, Desarrollo e implantación por Gobierno Bolivariano del Estado Yaracuy | Dirección de Informática, ultima actualización 18-10-2013<br />
                             <a href="<?php print PATH_NAV; ?>">www.yaracuy.gob.ve</a>
                             <div id="address"><address>Av Libertador E/ Av Caracas y Calle 9 Edif Adm Piso 2 Of de Adm y Finanza, Sector Centro. - San Felipe - Yaracuy - Venezuela RIF.: G-20000164-0</address></div>
                         </div>

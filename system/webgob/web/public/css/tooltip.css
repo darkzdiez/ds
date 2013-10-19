@@ -1,5 +1,33 @@
 /* CSS Document */
 .ui-tooltip {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    position: absolute;
+    z-index: 3000;
+    background-image: none !important;
+    background-color: #eee !important;
+    padding: 5px;
+    opacity: 1;
+    text-align: center;
+    max-width: 200px;
+    font-weight: normal;
+    text-align: justify;
+    border: none !important;
+    border-radius: 0px !important;
+    max-width: 253px !important;
+}
+.ui-widget{
+    border: none !important;
+    border-radius: 0px !important;
+    max-width: 253px !important;
+}
+.ui-tooltip-content {
+    font-size: 1.2em !important;
+    font-weight: bold;
+    color: #333;
+}
+/* old
+.ui-tooltip {
     position: absolute;
     z-index: 3000;
     background-color: #eee;
@@ -12,3 +40,4 @@
     text-align: justify;
     box-shadow: 2px 2px 4px #444444;
 }
+*/
