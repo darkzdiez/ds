@@ -529,3 +529,39 @@ Array
     [url] => webgob
 )
 
+67 - Wednesday 16th of October 2013 03:20:36 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+68 - Wednesday 16th of October 2013 03:26:32 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+69 - Wednesday 16th of October 2013 03:26:43 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
