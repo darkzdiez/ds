@@ -105,7 +105,7 @@
                                         <a href="<?php print PATH_NAV . 'informacion/gobernacion/organigrama'; ?>"><span>Organigrama</span></a>
                                     </li>
                                     <li>
-                                        <a href="<?php print PATH_NAV . 'informacion/gobernacion/secretarias'; ?>"><span>Secretatias</span></a>
+                                        <a href="<?php print PATH_NAV . 'informacion/gobernacion/secretarias'; ?>"><span>Secretarias</span></a>
                                     </li>
                                     <li>
                                         <a href="<?php print PATH_NAV . 'informacion/gobernacion/institutos'; ?>"><span>Institutos Descentralizados</span></a>
