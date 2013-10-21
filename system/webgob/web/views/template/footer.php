@@ -47,9 +47,7 @@
     </div>
     <div id="slide_282x236">
         <?php
-        if($_SERVER['REMOTE_ADDR'] != '200.11.197.74'){
-            $this->callControllerModule('banner','b282x236');
-        }
+        $this->callControllerModule('banner','b282x236');
         ?>
     </div>
     <!--<div id="slide_282x236">
