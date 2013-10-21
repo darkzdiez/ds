@@ -529,7 +529,11 @@ Array
     [url] => webgob
 )
 
+<<<<<<< HEAD
 67 - Monday 21st of October 2013 08:39:17 AM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+=======
+67 - Wednesday 16th of October 2013 03:20:36 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+>>>>>>> 164df2a04a6f73613f350abfc892460397b09933
 Informacion de _POST: 
 Array
 (
@@ -541,7 +545,23 @@ Array
     [url] => webgob
 )
 
+<<<<<<< HEAD
 68 - Monday 21st of October 2013 08:39:43 AM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+=======
+68 - Wednesday 16th of October 2013 03:26:32 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+69 - Wednesday 16th of October 2013 03:26:43 PM: SQLSTATE[28000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+>>>>>>> 164df2a04a6f73613f350abfc892460397b09933
 Informacion de _POST: 
 Array
 (
