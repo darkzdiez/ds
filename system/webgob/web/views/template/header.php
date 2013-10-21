@@ -134,6 +134,9 @@
                                     <li>
                                        <a href="<?php print PATH_NAV . 'galeria/movie'; ?>"><span>Videos</span></a>
                                     </li>
+                                    <li>
+                                       <a href="<?php print PATH_NAV . 'galeria/rcuentas'; ?>"><span>Rindiendo Cuentas</span></a>
+                                    </li>
                                     <?php } ?>
                                     <li>
                                         <a href="<?php print PATH_NAV . 'galeria/photo'; ?>"><span>Fotografías</span></a>

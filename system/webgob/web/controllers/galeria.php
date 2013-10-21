@@ -12,7 +12,11 @@ class Galeria extends Controller {
         $this->view->render('galeria/photo');
     }
     public function movie() {
-        $this->view->videos=$this->model->listarVideos();
+        $this->view->videos=$this->model->listarVideos(3);
+        $this->view->render('galeria/movie');
+    }
+    public function rcuentas() {
+        $this->view->videos=$this->model->listarVideos(2);
         $this->view->render('galeria/movie');
     }
     public function seePhoto($idGaleria) {

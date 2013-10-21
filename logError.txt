@@ -529,3 +529,27 @@ Array
     [url] => webgob
 )
 
+67 - Monday 21st of October 2013 08:39:17 AM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+
+68 - Monday 21st of October 2013 08:39:43 AM: SQLSTATE[42000] [1049] Unknown database 'sitioweb5'
+Informacion de _POST: 
+Array
+(
+)
+
+Informacion de _GET: 
+Array
+(
+    [url] => webgob
+)
+

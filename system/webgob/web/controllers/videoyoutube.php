@@ -1,13 +1,5 @@
 <?php
-/*
- * Controlador ComisionContratacion V1
- */
 
-/**
- * Controlador para ComisionContratacion
- *
- * @author sistemas01
- */
 class Videoyoutube extends Controller {
 
     public function index() {
