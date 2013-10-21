@@ -5,8 +5,7 @@
 /system/ordenes/media/
 /system/ordenes/temp/
 /nbproject/private/
-logError.txt
-logErrorCount.txt
+
 # htaccess #
 ###################
 .htaccess
