@@ -1,7 +1,7 @@
 #/bin/bash
 # var project
 read -p 'Ingrese Nombre del Projecto [webt]: ' project
-project=${project:-'webt'}
+project=${project:-'ds'}
 read -p 'Subir al Servidor FTP [Y,n]: ' ftp
 read -p 'Procesar Less [Y,n]: ' plessc
 read -p "Mensaje [commit $(date +%F' '%r)]:" mensaje
