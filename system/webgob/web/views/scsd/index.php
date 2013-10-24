@@ -1,1 +1,0 @@
-<iframe src="http://www.yaracuy.gob.ve/scsd/vista/consulta_ayuda.php" name="scsd" width="100%" height="500" scrolling="no" frameborder="0"></iframe>

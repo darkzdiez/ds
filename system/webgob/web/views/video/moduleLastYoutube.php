@@ -1,1 +1,0 @@
-<iframe title="YouTube video player" width="282" height="160" src="http://www.youtube.com/embed/-JCyl4QJOlk?rel=0" frameborder="0" allowfullscreen></iframe>

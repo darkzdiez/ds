@@ -1,2 +1,0 @@
-background-position: 0px 0px;
-background-position: 0px -44px;
