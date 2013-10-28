@@ -5,8 +5,15 @@ class DS{
     }
     public static function logERROR($contenido){
         $nombre_archivo = 'logError.txt';
+        if (!file_exists($nombre_archivo)) {
+             $nuevoarchivo = fopen($nombre_archivo, "w+"); 
+             fclose($nuevoarchivo); 
+        }
         $nombre_archivo_contador = 'logErrorCount.txt';
-
+        if (!file_exists($nombre_archivo_contador)) {
+             $nuevoarchivo = fopen($nombre_archivo_contador, "w+"); 
+             fclose($nuevoarchivo); 
+        }
         // el archivo existe y es escribible.
         if (is_writable($nombre_archivo)) {
 
