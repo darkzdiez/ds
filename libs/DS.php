@@ -1,6 +1,6 @@
 <?php
 class DS{
-    public static function callStatic($name, $arguments) {
+    public static function __callStatic($name, $arguments) {
         $this->$name($arguments);
     }
     public static function logERROR($contenido){
