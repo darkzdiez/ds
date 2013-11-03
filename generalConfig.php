@@ -23,6 +23,6 @@ $RewriteBase = array(
     'www.primasalud.com.ve' => '',
     'iameg.org.ve' => '',
     'www.iameg.org.ve' => '',
-    'diezsoluciones.com' => 'w',
-    'www.diezsoluciones.com' => 'w'
+    'diezsoluciones.com' => '',
+    'www.diezsoluciones.com' => ''
 );
