@@ -15,7 +15,9 @@ $listSYSTEM = array(
     'iameg.org.ve' => 'iameg',
     'www.iameg.org.ve' => 'iameg',
     'diezsoluciones.com' => 'diezs',
-    'www.diezsoluciones.com' => 'diezs'
+    'www.diezsoluciones.com' => 'diezs',
+    'ihavey.gob.ve' => 'ihavey',
+    'www.ihavey.gob.ve' => 'ihavey'
 );
 $RewriteBase = array(
     'prueba' => '',
@@ -24,5 +26,7 @@ $RewriteBase = array(
     'iameg.org.ve' => '',
     'www.iameg.org.ve' => '',
     'diezsoluciones.com' => '',
-    'www.diezsoluciones.com' => ''
+    'www.diezsoluciones.com' => '',
+    'ihavey.gob.ve' => '',
+    'www.ihavey.gob.ve' => ''
 );
