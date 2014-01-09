@@ -41,7 +41,7 @@ class View {
             }    
         }
     }
-    public function breadcrumb() {
+    public function breadcrumb($returnArray=FALSE) {
         if (isset($this->bc)) {
             print '<ul class="breadcrumb">
             <li><a href="' . PATH_NAV . '">Inicio</a> <span class="divider">/</span></li>';
