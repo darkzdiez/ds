@@ -6,23 +6,22 @@ class View {
         //echo 'this is the view';
     }
     public function render($name, $noInclude = false){
+        if (!defined('BASE')) {
+            $BASE = _pathMODULE . '/views/';
+        }else{
+            $BASE = 'system/base/'. BASE . '/views/';
+        }
         if ($noInclude == true) {
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
                 DS::incluir(_pathMODULE . '/views/' . $name . '.php');
             }else{
                 DS::incluir($BASE . $name . '.php');
             }
-        } 
-        else {
+        } else {
             if ((!defined('TEMPLATE') OR TEMPLATE=='LOCAL')) {
                 $BASET = _pathMODULE . '/views/';
             }else{
                 $BASET = 'system/base/'. BASE . '/views/';
-            }
-            if (!defined('BASE')) {
-                $BASE = _pathMODULE . '/views/';
-            }else{
-                $BASE = 'system/base/'. BASE . '/views/';
             }
             DS::incluir($BASET . 'template/header.php');
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
@@ -49,7 +48,7 @@ class View {
             $last_key = end(array_keys($array));
             foreach ($array as $key => $value) {
                 if ($key == $last_key) {
-                    print '<li class="active">'.$key.'</li>';
+                    print '<li class="active"><span>'.$key.'</span></li>';
                 } else {
                     print '<li><a href="' . PATH_NAV . $value . '">' . $key . '</a> <span class="divider">/</span></li>';
                 }
