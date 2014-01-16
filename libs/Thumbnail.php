@@ -4,7 +4,7 @@ ini_set('display_errors', true);
 
 Class Thumbnail {
 	
-	public function generateThumbnail ($sourceimagepath,$thumbnailpath,$div_width,$div_height) {
+	public function generateThumbnail ($sourceimagepath,$thumbnailpath,$div_width,$div_height,$forceEXT=NULL) {
 		$img = $this->readImage($sourceimagepath);
 		if (!$img) {
 			return false;
@@ -50,7 +50,7 @@ Class Thumbnail {
 
 		imagecopyresized($thumb_img, $img, 0-$left, 0-$top, 0, 0, $xCapa, $yCapa, $xVal, $yVal);
 
-		$result = $this->saveImage($thumbnailpath, $thumb_img, 100);
+		$result = $this->saveImage($thumbnailpath, $thumb_img, 100,$forceEXT);
 		imagedestroy($thumb_img);
 
 		if($result) {
@@ -62,8 +62,11 @@ Class Thumbnail {
 
 	}
 
-	private function saveImage($imagepath, $image, $quality) {
+	private function saveImage($imagepath, $image, $quality,$forceEXT=NULL) {
 		$ext = strtolower(pathinfo($imagepath, PATHINFO_EXTENSION));
+		if($forceEXT != NULL){
+			$ext=$forceEXT;
+		}
 		switch ($ext) {
 			case 'jpg': case 'jpeg':
 			return imagejpeg($image, $imagepath, $quality);
@@ -89,6 +92,5 @@ Class Thumbnail {
 			return false;
 		}
 	}
-
 }
 ?>

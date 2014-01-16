@@ -79,4 +79,8 @@ class DS{
             echo $e->getMessage(), "\n";
         }
     }*/
+    public static function nameToPNG($name){
+        $ext = array(".jpeg", ".jpg", ".gif", ".bmp");
+        return str_ireplace($ext,'.png',$name);
+    }
 }
