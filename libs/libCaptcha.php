@@ -53,7 +53,7 @@ class libCaptcha {
         imageline($image, 0, 26, $ancho, 26, $gray);
         imageline($image, 0, 39, $ancho, 39, $gray);
 //TextFont
-        $ttf = dirname(__DIR__) . "/libs/libCaptcha/font/gunplay rg.ttf";
+        $ttf = dirname(dirname(__FILE__)) . "/libs/libCaptcha/font/gunplay rg.ttf";
         //exit($ttf);
         imagefttext($image, 22, rand(-10, 10), 15, 40, $RandomColorInverted, $ttf, $this->_textRamdom);
 
