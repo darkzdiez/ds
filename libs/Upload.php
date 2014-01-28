@@ -47,6 +47,15 @@ class Upload {
      * $object->$_key('file'); es igual a $_FILES['file']
      */
     public $_key;
+    
+    /**
+     * Convertir Imagen a algun formato
+     * @author DiezSoluciones.com
+     * @version 1.0
+     * @example Definir la extencion de salida
+     * $object->_convertImage();
+     */    
+    public $_convertImage;
 
     /**
      * Ejecutar
@@ -55,19 +64,23 @@ class Upload {
      * @example Ejecuta la funcion
      * $object->run();
      * @return string Retorna TRUE en caso de Exito o FALSE en caso de Error.
-     */
+     */    
     public function run() {
         if ($this->_fileName == NULL) {
             $this->_fileName = Text::CleanNameFile($_FILES[$this->_key]['name']);
         }
         if (copy($_FILES[$this->_key]['tmp_name'], $this->_dir . $this->_fileName)) {
-            $array = array('dir' => $this->_dir, 'filename' => $this->_fileName);
+            if ($this->_convertImage=='png') {
+                Img::convertirPNG($this->_dir . $this->_fileName, true);
+                $array = array('dir' => $this->_dir, 'filename' => DS::nameToPNG($this->_fileName));
+            }else{
+                $array = array('dir' => $this->_dir, 'filename' => $this->_fileName);
+            }
             return $array;
         } else {
             return FALSE;
         }
     }
-
 }
 
 ?>

@@ -150,6 +150,12 @@ class Img {
         return $data;
     }
 
+    public function convertirPNG($entrada,$quitarOriginal=false){
+        imagepng(imagecreatefromstring(file_get_contents($entrada)), DS::nameToPNG($entrada));
+        if ($quitarOriginal==true) {
+            unlink($entrada);
+        }
+    }
 }
 
 ?>

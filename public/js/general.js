@@ -20,11 +20,12 @@ $(document).ready(function() {
     $('form.ajaxForm').on({
         submit: function(a) {
             a.preventDefault();
-            /*if(eval("typeof(tinyMCE) == typeof(Function)")) {*/
-            if(typeof tinyMCE == 'object'){
-                tinyMCE.triggerSave();
-            }else{
-                console.log('tinyMCE: No Existe');
+            if(eval("typeof(tinyMCE) == typeof(Function)")) {
+                if(typeof tinyMCE == 'object'){
+                    tinyMCE.triggerSave();
+                }else{
+                    console.log('tinyMCE: No Existe');
+                }
             }
             ajaxLoader();
             var url = $(this).attr('action');
