@@ -1043,16 +1043,7 @@ imagick::RESOURCETYPE_MEMORY => 32
                     );
                 } else {
                     /* Aqui se alteran los formatos de entrado y salida */
-                    $imageType=array('image/jpeg','image/gif');
-                    if(in_array($type, $imageType)){
-                        move_uploaded_file($uploaded_file, $file_path);
-                        Img::convertirPNG($file_path, true);
-                        $file_path=DS::nameToPNG($file_path);
-                        $file->size = $this->get_file_size($file_path, $append_file);
-                        $file->name=basename(DS::nameToPNG($file_path));
-                    }else{
-                        move_uploaded_file($uploaded_file, $file_path);
-                    }
+                    move_uploaded_file($uploaded_file, $file_path);
                 }
             } else {
                 // Non-multipart uploads (PUT method support)
@@ -1064,6 +1055,13 @@ imagick::RESOURCETYPE_MEMORY => 32
             }
             $file_size = $this->get_file_size($file_path, $append_file);
             if ($file_size === $file->size) {
+                $imageType=array('image/jpeg','image/gif');
+                if(in_array($type, $imageType)){
+                    Img::convertirPNG($file_path, true);
+                    $file_path=DS::nameToPNG($file_path);
+                    $file->size = $this->get_file_size($file_path, $append_file);
+                    $file->name=basename(DS::nameToPNG($file_path));
+                }
                 $file->url = $this->get_download_url($file->name);
                 if ($this->is_valid_image_file($file_path)) {
                     $this->handle_image_file($file_path, $file);
