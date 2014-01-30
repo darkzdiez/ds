@@ -13,7 +13,10 @@
 class Pagination {
 
 //put your code here
-    public static function insert($result, $quantity) {
+    public static function insert($result, $quantity, $tBootstrap=false) {
+        if ($result<20) {
+            $result=20;
+        }
         $array = explode('/', rtrim($_GET['url'], '/'));
         $bootstrap= new Bootstrap();
         $bootstrap->_getUrl();
@@ -63,6 +66,7 @@ class Pagination {
         } else {
             $url = PATH_NAV . $bootstrap->_url[0] . '/page/';
         }
+        if ($tBootstrap==false) {
         $pagination = '<table class="table_pagination"><tr class="tr_pagination">';
         if ($page > 1) {
             $pagination = $pagination . '<td class="td_pagination_first"><a href="' . $url . $first . '"><<</a></td>';
@@ -80,6 +84,17 @@ class Pagination {
             $pagination = $pagination . '<td class="td_pagination_last"><a href="' . $url . $last . '">>></a></td>';
         }
         $pagination.= '</tr></table>';
+        }else{
+/*<ul class="pagination">
+  <li><a href="#">&laquo;</a></li>
+  <li><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>*/
+        }
         return $pagination;
     }
 
