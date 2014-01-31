@@ -67,33 +67,42 @@ class Pagination {
             $url = PATH_NAV . $bootstrap->_url[0] . '/page/';
         }
         if ($tBootstrap==false) {
-        $pagination = '<table class="table_pagination"><tr class="tr_pagination">';
-        if ($page > 1) {
-            $pagination = $pagination . '<td class="td_pagination_first"><a href="' . $url . $first . '"><<</a></td>';
-            $pagination = $pagination . '<td class="td_pagination_previous"><a href="' . $url . $previous . '"><</a></td>';
-        }
-        for ($index = $start; $index <= $end; $index++) {
-            if ($index != $page) {
-                $pagination = $pagination . '<td class="td_pagination"><a href="' . $url . $index . '">' . $index . '</a></td>';
-            } else {
-                $pagination = $pagination . '<td class="td_pagination">' . $index . '</td>';
+            $pagination = '<table class="table_pagination"><tr class="tr_pagination">';
+            if ($page > 1) {
+                $pagination = $pagination . '<td class="td_pagination_first"><a href="' . $url . $first . '"><<</a></td>';
+                $pagination = $pagination . '<td class="td_pagination_previous"><a href="' . $url . $previous . '"><</a></td>';
             }
-        }
-        if ($page < $end) {
-            $pagination = $pagination . '<td class="td_pagination_following"><a href="' . $url . $following . '">></a></td>';
-            $pagination = $pagination . '<td class="td_pagination_last"><a href="' . $url . $last . '">>></a></td>';
-        }
-        $pagination.= '</tr></table>';
+            for ($index = $start; $index <= $end; $index++) {
+                if ($index != $page) {
+                    $pagination = $pagination . '<td class="td_pagination"><a href="' . $url . $index . '">' . $index . '</a></td>';
+                } else {
+                    $pagination = $pagination . '<td class="td_pagination">' . $index . '</td>';
+                }
+            }
+            if ($page < $end) {
+                $pagination = $pagination . '<td class="td_pagination_following"><a href="' . $url . $following . '">></a></td>';
+                $pagination = $pagination . '<td class="td_pagination_last"><a href="' . $url . $last . '">>></a></td>';
+            }
+            $pagination.= '</tr></table>';
         }else{
-/*<ul class="pagination">
-  <li><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>*/
+            $pagination = '<ul class="pagination">';
+            if ($page > 1) {
+                $pagination = $pagination . '<li><a href="' . $url . $first . '"><<</a></li>';
+                $pagination = $pagination . '<li><a href="' . $url . $previous . '"><</a></li>';
+            }
+            for ($index = $start; $index <= $end; $index++) {
+                if ($index != $page) {
+                    $pagination = $pagination . '<li><a href="' . $url . $index . '">' . $index . '</a></li>';
+                } else {
+                    $pagination = $pagination . '<li class="active"><span>' . $index . '</span></li>';
+                }
+            }
+            if ($page < $end) {
+                $pagination = $pagination . '<li><a href="' . $url . $following . '">></a></li>';
+                $pagination = $pagination . '<li><a href="' . $url . $last . '">>></a></li>';
+            }
+            $pagination.= '</ul>';
+
         }
         return $pagination;
     }
