@@ -80,7 +80,7 @@ class DS{
         }
     }*/
     public static function nameToPNG($name){
-        $ext = array(".jpeg", ".jpg", ".gif", ".bmp");
+        $ext = array(".png", ".jpeg", ".jpg", ".gif", ".bmp");
         return str_ireplace($ext,'.png',$name);
     }
 }

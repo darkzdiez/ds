@@ -70,8 +70,9 @@ class Upload {
             $this->_fileName = Text::CleanNameFile($_FILES[$this->_key]['name']);
         }
         if (copy($_FILES[$this->_key]['tmp_name'], $this->_dir . $this->_fileName)) {
-            if ($this->_convertImage=='png') {
+            if ($this->_convertImage=='png' and $_FILES[$this->_key]['type'] !='image/png') {
                 Img::convertirPNG($this->_dir . $this->_fileName, true);
+                //exit('si subio');
                 $array = array('dir' => $this->_dir, 'filename' => DS::nameToPNG($this->_fileName));
             }else{
                 $array = array('dir' => $this->_dir, 'filename' => $this->_fileName);
