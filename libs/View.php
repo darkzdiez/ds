@@ -13,9 +13,9 @@ class View {
         }
         if ($noInclude == true) {
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
-                DS::incluir(_pathMODULE . '/views/' . $name . '.php');
+                @DS::incluir(_pathMODULE . '/views/' . $name . '.php');
             }else{
-                DS::incluir($BASE . $name . '.php');
+                @DS::incluir($BASE . $name . '.php');
             }
         } else {
             if ((!defined('TEMPLATE') OR TEMPLATE=='LOCAL')) {
@@ -23,13 +23,13 @@ class View {
             }else{
                 $BASET = 'system/base/'. BASE . '/views/';
             }
-            DS::incluir($BASET . 'template/header.php');
+            @DS::incluir($BASET . 'template/header.php');
             if (file_exists(_pathMODULE . '/views/' . $name . '.php')) {
-                DS::incluir(_pathMODULE . '/views/' . $name . '.php');
+                @DS::incluir(_pathMODULE . '/views/' . $name . '.php');
             }else{
-                DS::incluir($BASE . $name . '.php');
+                @DS::incluir($BASE . $name . '.php');
             }
-            DS::incluir($BASET . 'template/footer.php');
+            @DS::incluir($BASET . 'template/footer.php');
         }
     }
 
