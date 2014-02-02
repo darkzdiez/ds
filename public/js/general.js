@@ -20,13 +20,15 @@ $(document).ready(function() {
     $('form.ajaxForm').on({
         submit: function(a) {
             a.preventDefault();
-            if(eval("typeof(tinyMCE) == typeof(Function)")) {
+            //if(eval("typeof(tinyMCE) == typeof(Function)")) { se desconoce porque esto dejo de funcionar *** Revisar ***
+                console.log('si entra');
                 if(typeof tinyMCE == 'object'){
                     tinyMCE.triggerSave();
+                    console.log('si se ejecuta el tinyMCE.triggerSave();');
                 }else{
                     console.log('tinyMCE: No Existe');
                 }
-            }
+            //} se desconoce porque esto dejo de funcionar *** Revisar ***
             ajaxLoader();
             var url = $(this).attr('action');
             var data = $(this).serialize();
