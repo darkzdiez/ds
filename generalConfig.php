@@ -17,7 +17,9 @@ $listSYSTEM = array(
     'diezsoluciones.com' => 'diezs',
     'www.diezsoluciones.com' => 'diezs',
     'ihavey.gob.ve' => 'ihavey',
-    'www.ihavey.gob.ve' => 'ihavey'
+    'www.ihavey.gob.ve' => 'ihavey',
+    'hablemosweb.com.ve' => 'hweb',
+    'www.hablemosweb.com.ve' => 'hweb'
 );
 $RewriteBase = array(
     'prueba' => '',
@@ -28,5 +30,7 @@ $RewriteBase = array(
     'diezsoluciones.com' => '',
     'www.diezsoluciones.com' => '',
     'ihavey.gob.ve' => '',
-    'www.ihavey.gob.ve' => ''
+    'www.ihavey.gob.ve' => '',
+    'hablemosweb.com.ve' => '',
+    'www.hablemosweb.com.ve' => ''
 );
