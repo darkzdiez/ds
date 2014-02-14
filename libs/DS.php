@@ -64,11 +64,41 @@ class DS{
     public static function UTF8_json_encode($array){
 		return json_encode(self::_utf8_encode($array,"convert_before_json"));
     }
-    public function incluir($filename){
+    public function incluir($filename, $filtrarPermisos=FALSE,$arrayPermisos=FALSE, $releUser=''){
         if (!file_exists($filename)) {
             throw new Exception("Imposible cargar lo requerido" . ": $filename");
         }else{
-            require $filename;
+            if ($filtrarPermisos != FALSE AND $arrayPermisos != FALSE AND is_array($arrayPermisos)) {
+                /* Obtengo el contenido del elemento */
+                ob_start();
+                include $filename;
+                /* guardo dicho contenido ya procesado en una variable */
+                $contents = ob_get_contents();
+                ob_end_clean();
+                /* defino el profeijo por defecto para los permisos Ejemplo PMS_ */
+                $classname = "PMS_";
+                /* Instancio la libreria para leer el DOM del objeto */
+                $domdocument = new DOMDocument();
+                /* Cargo el contenido a la libreria */
+                $domdocument->loadHTML($contents);
+                /* utilizo la libreria DOMXPath para realizar consultas y alteraciones en el DOM */
+                $a = new DOMXPath($domdocument);
+                /* Consulta que busca los elementos U etiquetas que contengan la clase que inicie con el Prefijo definido */
+                $node = $a->query("//*/@class[contains(., '$classname')]/..");
+                /* defino los privilegios a los cuales el usuario no tiene acceso */
+                $SinPermisosA=array('PMS_5','PMS_4');
+                /* recorro el array con las incurrencias encontradas en la anterior consulta */
+                foreach ($node as $nodeElement) {
+                    $classArray = explode(' ', $nodeElement->getAttribute('class'));
+                    $CantSinPermisos = count(array_intersect($SinPermisosA, $classArray));
+                    if ($CantSinPermisos > 0) {
+                        $nodeElement->parentNode->removeChild($nodeElement);
+                    }
+                }
+                print $domdocument->saveHTML();
+            }else{
+                require $filename;
+            }
         }
     }
     /*public static function file_exists($filename){
