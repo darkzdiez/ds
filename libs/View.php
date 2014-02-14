@@ -3,7 +3,7 @@
 class View {
 
     function __construct() {
-        //echo 'this is the view';
+//echo 'this is the view';
     }
     public function render($name, $noInclude = false){
         if (!defined('BASE')) {
@@ -56,7 +56,7 @@ class View {
             print '</ul>';
         }
     }
-    
+
     public function getContent($name) {
         $filename = _pathMODULE.'/views/' . $name . '.php';
         if (is_file($filename)) {
@@ -81,7 +81,7 @@ class View {
         }
     }
     public function genPDF($data,$template,$orientacion='P') {
-        //exit(print_r($data) . $this->getContent($data['location']));
+//exit(print_r($data) . $this->getContent($data['location']));
         $ruta=_pathMODULE.'/views/template/' . $template . '.php';
         if (file_exists($ruta)) {
             require $ruta;
@@ -111,8 +111,8 @@ class View {
 
             $pdf->SetFont('helvetica', '', 12);
 
-            #$resolution= array(100, 100);
-            #$pdf->AddPage('P', $resolution);
+#$resolution= array(100, 100);
+#$pdf->AddPage('P', $resolution);
             $pdf->AddPage();
             $pdf->setOpenCell(0);
             $pdf->writeHTML($this->getContent($data['location']));
