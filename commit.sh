@@ -1,21 +1,28 @@
 #/bin/bash
 
+git config --global push.default simple
 git add --all
-git commit -a -m "commit $(date +%F' '%r)"
+git commit -a --reset-author -m "commit $(date +%F' '%r)"
 git pull
 git push
 
 cd system/webgob/
-git commit -a -m "commit $(date +%F' '%r)"
+git config --global push.default simple
+git add --all
+git commit -a --reset-author -m "commit $(date +%F' '%r)"
 git pull
 git push
 
-cd system/ordenes/
-git commit -a -m "commit $(date +%F' '%r)"
+cd ../ordenes/
+git config --global push.default simple
+git add --all
+git commit -a --reset-author -m "commit $(date +%F' '%r)"
 git pull
 git push
 
-cd system/ihavey/
-git commit -a -m "commit $(date +%F' '%r)"
+cd ../ihavey/
+git config --global push.default simple
+git add --all
+git commit -a --reset-author -m "commit $(date +%F' '%r)"
 git pull
 git push

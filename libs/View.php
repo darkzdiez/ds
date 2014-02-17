@@ -69,13 +69,17 @@ class View {
             return false;
         }
     }
-    public function callControllerModule($controllerName,$methodName){
+    public function callControllerModule($controllerName,$methodName,$param=NULL){
         $file = _pathMODULE.'/controllers/' . $controllerName . '.php';
         if (file_exists($file)) {
             require_once $file;
             $controller = new $controllerName;
             $controller->loadModel($controllerName, _pathMODULE.'/models/');
-            $controller->{$methodName}();
+            if ($param==NULL) {
+                $controller->{$methodName}();
+            }else{
+                $controller->{$methodName}($param);
+            }
         } else {
             print 'no existe el modulo';
         }
