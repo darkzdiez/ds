@@ -21,7 +21,7 @@ class Database extends PDO
      * @param constant $fetchMode A PDO Fetch mode
      * @return mixed
      */
-    public function select($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC)
+    public function select($sql, $array = array(), $prefix = FALSE, $fetchMode = PDO::FETCH_ASSOC)
     {
         $sth = $this->prepare($sql);
         foreach ($array as $key => $value) {
@@ -29,7 +29,22 @@ class Database extends PDO
         }
         
         $sth->execute();
-        return $sth->fetchAll($fetchMode);
+        $subResult = $sth->fetchAll($fetchMode);
+        if ($prefix == TRUE) {
+            foreach(range(0, $sth->columnCount() - 1) as $column_index){
+                $meta = $sth->getColumnMeta($column_index);
+                $metaPrefix[$meta['name']] = $meta['table'] . '.' . $meta['name'];
+            }
+            foreach ($subResult as $row) {
+                foreach ($row as $key => $value) {
+                    $resultPrefix[$metaPrefix[$key]]=$value;
+                }
+            }
+            $result = $resultPrefix;
+        } else {
+            $result = $subResult;
+        }
+        return $result;
     }
     
     /**
