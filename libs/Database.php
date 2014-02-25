@@ -21,8 +21,9 @@ class Database extends PDO
      * @param constant $fetchMode A PDO Fetch mode
      * @return mixed
      */
-    public function select($sql, $array = array(), $prefix = FALSE, $fetchMode = PDO::FETCH_ASSOC)
-    {
+    public function select($sql, $array = array(), $prefix = FALSE, $fetchMode = PDO::FETCH_ASSOC){
+        /* ejemplo para borrado logico */
+        /* SELECT * FROM (SELECT * FROM `article` WHERE `idarticle`=1 ORDER BY `idarticle` DESC) AS QUERY WHERE status=0 */
         $sth = $this->prepare($sql);
         foreach ($array as $key => $value) {
             $sth->bindValue("$key", $value);
