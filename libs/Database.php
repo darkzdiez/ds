@@ -33,11 +33,11 @@ class Database extends PDO
         if ($prefix == TRUE) {
             foreach(range(0, $sth->columnCount() - 1) as $column_index){
                 $meta = $sth->getColumnMeta($column_index);
-                $metaPrefix[$meta['name']] = $meta['table'] . '.' . $meta['name'];
+                $metaPrefix[$meta['name']] = $meta['table'];
             }
-            foreach ($subResult as $row) {
+            foreach ($subResult as $posicion => $row) {
                 foreach ($row as $key => $value) {
-                    $resultPrefix[$metaPrefix[$key]]=$value;
+                    $resultPrefix[$posicion][$metaPrefix[$key]][$key]=$value;
                 }
             }
             $result = $resultPrefix;
@@ -46,7 +46,6 @@ class Database extends PDO
         }
         return $result;
     }
-    
     /**
      * insert
      * @param string $table A name of table to insert into
