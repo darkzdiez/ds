@@ -103,8 +103,10 @@ class View {
             $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
             $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-
-            $pdf->SetMargins(30, 35, 30);
+            $marginLeft = isset($data['marginLeft']) ? $data['marginLeft'] : 30;
+            $marginTop = isset($data['marginTop']) ? $data['marginTop'] : 30;
+            $marginRight = isset($data['marginRight']) ? $data['marginRight'] : 30;
+            $pdf->SetMargins($marginLeft, $marginTop, $marginRight);
             $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
             $pdf->SetFooterMargin(30);
 
