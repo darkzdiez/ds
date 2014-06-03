@@ -1,7 +1,9 @@
 <?php
 
 class View {
-
+    
+    public $_scriptJS = '';
+    
     function __construct() {
 //echo 'this is the view';
     }
@@ -29,10 +31,21 @@ class View {
             }else{
                 @DS::incluir($BASE . $name . '.php');
             }
+            print $this->_scriptJS;
             @DS::incluir($BASET . 'template/footer.php');
         }
     }
-
+    public function exejs($js){
+        $this->_scriptJS = '<script type="text/javascript">';
+        if(!is_array($js)){
+            $this->_scriptJS .= "$js";
+        }else{
+            foreach($js as $script){
+                $this->_scriptJS .= "{$script}";
+            }
+        }
+        $this->_scriptJS .= '</script>';
+    }
     public function showJs() {
         if (isset($this->js)) {
             foreach ($this->js as $js) {

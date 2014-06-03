@@ -19,7 +19,9 @@ $listSYSTEM = array(
     'ihavey.gob.ve' => 'ihavey',
     'www.ihavey.gob.ve' => 'ihavey',
     'hablemosweb.com.ve' => 'hweb',
-    'www.hablemosweb.com.ve' => 'hweb'
+    'www.hablemosweb.com.ve' => 'hweb',
+    'alcaldiasanfelipe.gob.ve' => 'sanf',
+    'www.alcaldiasanfelipe.gob.ve' => 'sanf'
 );
 $RewriteBase = array(
     'prueba' => '',
@@ -32,5 +34,7 @@ $RewriteBase = array(
     'ihavey.gob.ve' => '',
     'www.ihavey.gob.ve' => '',
     'hablemosweb.com.ve' => '',
-    'www.hablemosweb.com.ve' => ''
+    'www.hablemosweb.com.ve' => '',
+    'alcaldiasanfelipe.gob.ve' => '',
+    'www.alcaldiasanfelipe.gob.ve' => ''
 );
